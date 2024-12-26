@@ -1,0 +1,131 @@
+/* General styles */
+body {
+    font-family: "Fira Code", "Georgia", serif; /* Use Fira Code as primary font */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #fff;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: center; /* Center-align the navigation bar */
+    align-items: center; /* Vertically align items */
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+}
+
+/* Navigation styling */
+nav {
+    display: flex;
+    gap: 20px; /* Space between links */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Navigation links */
+nav a {
+    font-family: "Fira Code", sans-serif;
+    text-decoration: none; /* Remove underline */
+    color: black; /* Default color for inactive links */
+    font-size: 16px;
+    font-weight: 500; /* Medium weight for links */
+    padding: 5px 10px;
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+/* Active state */
+nav a.active {
+    color: #1877F2; /* Blue color for the active link */
+}
+
+/* Main content styling */
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto; /* Center the content */
+}
+
+/* Essay container */
+#essays-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between essay items */
+}
+
+/* Individual essay item */
+.essay-item {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+/* Essay date styling */
+.essay-date {
+    font-family: "Fira Code", serif;
+    font-size: 14px;
+    color: #999;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+/* Essay title styling */
+.essay-title {
+    font-family: "Fira Code", serif;
+    font-size: 20px;
+    color: #1877F2;
+    margin: 0;
+    font-weight: 500; /* Medium weight */
+    cursor: pointer; /* Indicate interactivity */
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.essay-title:hover {
+    color: #145db7; /* Darker blue on hover */
+}
+
+/* Essay snippet styling */
+.essay-snippet {
+    font-family: "Fira Code", serif;
+    font-size: 16px;
+    color: #666;
+    font-weight: 400; /* Regular weight for snippets */
+    margin-top: 5px;
+}
+
+/* Hover effects for essays */
+.essay-item:hover {
+    background-color: #f9f9f9;
+    transition: background-color 0.3s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack the navigation vertically */
+        align-items: center; /* Center-align items */
+    }
+
+    nav {
+        margin-top: 10px;
+        gap: 10px; /* Reduce spacing between links */
+    }
+
+    #essays-container {
+        gap: 15px; /* Reduce spacing between essays */
+    }
+
+    .essay-title {
+        font-size: 18px; /* Adjust title size */
+    }
+
+    .essay-snippet {
+        font-size: 14px; /* Adjust snippet size */
+    }
+}

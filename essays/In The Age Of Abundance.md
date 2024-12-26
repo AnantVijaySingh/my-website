@@ -1,0 +1,52 @@
+## In The Age Of Abundance
+
+> "I wondered if the motto of our era should be: "I tried to live, but I got distracted." — Johann Hari.
+
+This essay is my attempt to work through a dilemma I find myself in. My work and life have afforded me the luxury of choice, with options increasing exponentially in every aspect. From the insignificant, such as genres of TV shows, to the critical, like healthcare. I have at my fingertips a hundred restaurants and a thousand dishes. I can travel to almost any city or country in the world. My life is better for it. Billions of people’s lives are better for it. Yet, I find myself questioning this abundance. Perhaps it is the thought that what got us here will not get us there, "there" as in through the next great filter we as a civilization will have to pass through. Or perhaps it is the question: Am I letting life pass by or actually living it? Abundance seems like both a blessing and a curse and, if we are not careful, I fear it can impact our ability to live meaningfully.
+
+**Less Joy & Appreciation:** If I understood Andrew Huberman correctly, delaying gratification and putting in effort increase the endorphins that literally create the feeling of happiness. When I was a kid, I would look forward to Sundays because my dad would rent us a movie to watch. I savoured those moments. I watched those movies with focus, talked about them for a week, and relived the best parts. Today, when I think about my favourite movies, so many of them are from those days. In contrast, in the past few years, I find myself and observe in my peers the tendency to jump from one show or movie to the next. We are finding less joy in the same hour and a half of screen time.
+
+The product manager who came up with the ‘Skip Intro’ button on Netflix was and is hailed as a genius, but they took away boredom from our lives, that minute of delayed gratification that would make us savour the show just a bit more.
+
+When fashion was slow, pieces were more timeless, and we wore them more often, extracting more joy from them and appreciating each one a little more as we wove more memories into each one.
+
+Ups and downs, highs and lows, fast and slow, entertaining and boring are all critical ingredients needed to help us truly enjoy and appreciate the things and people in life. Like salt in a cake, you need more than just sugar. Abundance has allowed us to go from high to high, always driving in the fast lane, never slowing down to look outside. Ordering takeout is a good example; and I am guilty of this. Getting ready and going to a restaurant adds to the journey; we dress up, and we take a trip to the destination during which we may find ourselves talking about the story behind the restaurant, how we found it, or the fun we had the last time we went there. All of this adds to the joy of the meal. There is this restaurant, Dishoom in London, that I love going to especially because it requires you to queue for about thirty minutes, time that is spent in conversations sipping hot chai that they serve for the people queuing.
+
+**Depth:** I find that abundance ever so slightly nudges the balance between temptation and willpower in the former’s favor. If you start learning an instrument or a language, the start is amazing, especially if your teacher is great. But soon, the gulf that needs to be crossed in terms of skill before one can truly enjoy playing the piano or holding a conversation in a new language dawns upon us. In an age of abundance, with temptations a mere tap away, the magnitude of willpower needed has increased exponentially. As it stands, we have not evolved our neurobiology enough and often find ourselves slipping. We jump onto the next experience, often on a different track, unable to build depth. "You can become passionate about anything if you reach the furthest edges of that field. Everything looks boring on the surface."
+
+And not just in things, but in people too, and perhaps to a greater degree given how complex we are and how we change over time. All relationships—friends, romantic, family, colleagues—require time and effort, and we only have twenty-four hours. So we can either go deep or broad. We now live in times where people move more often. Our childhood friends are spread across the globe, unlike a generation ago when it was not uncommon for people to spend their entire lifetime in the same city. Add to that the fact that our daily lives have become busier than ever thanks to tech that vies for every second of our attention. It is easy to not hold deep conversations and add to important relationships.
+
+There is a long-standing, widespread belief that attention carries value. In English, attention is something that we “pay.” In Spanish, it is “lent.” We live in an age of the attention economy, so we are tugged and pulled to shift this away from what we want, what we like, to what makes someone else profit. Abundance brings with it novelty which comes at the cost of attention and hence depth.
+
+**Unmeaningful Choices:** Choice paralysis is a real phenomenon. If there are too many and they are almost the same, or at least the ones that we are exposed to (thanks in no small part to algorithms that understand us better than we do, or at least think they do), then are they really meaningful choices? Like when we choose between the hundreds of cereal options in the supermarket aisles that are just colour variations on sugar.
+
+Often we also find ourselves having to understand the nuances between the choices we face in subjects we are not experts in. We let the catchiest slogan, brightest packaging, or views on that one TikTok video sway us. And time, so much time is spent on choices that hold little meaning.
+
+**My Choices:** Given this abundance both in choices and in recommendations of choices, how many of the ones we make are our own versus those conferred onto us by society, peer pressure, social media, and genius marketers?
+
+Countless behavioural economics studies have demonstrated how easy it is to nudge humans. Making a conscious choice, one that reflects what we want, which has the potential to sustainably improve our happiness, takes time and thought. Teasing apart what we are told we must like, what is the latest trend versus what connects with our deeply held values is not easy. This isn’t something that we can get up one day and decide to do; it takes time to weave off all the nudges that have been implanted in our minds. We need to dig deep into ourselves to surface our core beliefs and values, and then find choices that connect to those. This means saying no to a lot of things, a lot of people, and a lot of adventures, which stands in stark contrast to abundance and the society it has created, which seems to favour novelty at an ever-accelerating rate instead of long-form commitment and truly savouring what life has to offer.
+
+Baking in a bit of serendipity can help here, but in a world where algorithms do a lot of the recommendations, that is hard to come by.
+
+**The Absurd:** One of the absurd outcomes of abundance is that we also seem to have more facts than what physics (or reality) can support. We are so used to just having what we want based on the first thought that pops into our heads or is pushed into our minds that we will seek the absurd in the form of fake news and alternate facts. Instead of being uncomfortable and having tough conversations to resolve conflicts, we just create more choices (Abundance)!
+
+**Withstanding the Test of Time:** Abundance leads us to consume more and more, faster and faster, which leads the economic engine to incentivise production to fuel this momentum. Building something that can withstand the test of time, be it a piece of art or a memory, takes considerable time and effort because, and if I may invoke the philosopher in me, it is the effort, the pain, blood, sweat, and tears that make the end artefact withstand the test of time and bring a deep sense of happiness.
+
+**Unfair Balance:** Abundance can mean more for everyone, but currently, it is imbalanced in both distribution and impact. Most people either have too much or too little. A significant number of things we have an abundance of we don’t need or perhaps should not have. Unfortunately, a lot of this abundance is coming at the cost of the environment or our fellow human beings.
+
+**Life Lived:** I will leave the definition of what it means to live and what it means to live a good life to the likes of Socrates and Kant, but I will quote Oscar Wilde: "To live is the rarest thing in the world. Most people exist, that is all."
+
+I sometimes find us going through the motions, the daily routines from which we then try to escape, often manifesting as binge-watching or midnight online shopping sprees or ordering takeout day. Abundance, in my view, seems to be fuelling this vicious cycle of motion that, in turn, funds indulging in abundance, which increases the motion to further fund indulgence.
+
+For me, happiness that lingers beyond that moment of peak is found in the small things, in the struggle, in the uncomfortable, in the people around us, in the nature that surrounds us. Maybe the acid test is being able to go for a walk without our phone (and without headphones), and being able to pull from our minds memories that make us smile.
+
+
+**Figuring Out How to Tackle Abundance**
+
+I am still figuring this out. Abundance by default is not bad; it does make our lives better.
+
+**Time:** Reflecting on how I spend my time and discerning whether my actions are self-directed or dictated by external sources. Am I truly living or merely existing?
+
+**People:** In the known universe, the only thing that is known to be unique to Earth as it stands is life; our fellow human beings. We are biologically engineered to find happiness in our fellow humans. I am trying to spend more and higher quality time with people important to me.
+
+**Less is More:** In the beginning of the year, I wrote down what I wanted to do, what I believe will make me happy, especially as I look back at the year in December. This list is sacred. I read it often. I have tweaked it but only after a lot of deliberation. I am hoping this will allow me to go deep on things that truly add value and happiness to my life and are for the long run. (There is nothing about work on this list :) )
