@@ -10,37 +10,41 @@ body {
 
 /* Header styling */
 header {
-    display: flex;
-    justify-content: center; /* Center-align the navigation bar */
-    align-items: center; /* Vertically align items */
-    padding: 20px;
-    border-bottom: 1px solid #ddd;
-    background-color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    padding: 20px 0; /* Increased padding for more spacing */
+    border-bottom: 1px solid transparent; /* Placeholder for the thin line */
 }
 
-/* Navigation styling */
-nav {
+header::after {
+    content: '';
+    display: block;
+    width: 60%; /* Adjust width to control the line's length */
+    height: 2px; /* Thinner line */
+    background-color: #1877F2; /* Blue color for the line */
+    margin: 20px auto 0; /* Center the line and add spacing above */
+}
+
+header nav {
     display: flex;
-    gap: 20px; /* Space between links */
     justify-content: center;
-    align-items: center;
+    gap: 40px; /* Increased gap between navigation items */
 }
 
-/* Navigation links */
-nav a {
-    font-family: "Space Grotesk", sans-serif;
-    text-decoration: none; /* Remove underline */
-    color: black; /* Default color for inactive links */
-    font-size: 16px;
-    font-weight: 500; /* Medium weight for links */
-    padding: 5px 10px;
-    transition: color 0.3s; /* Smooth transition for color change */
+header a {
+    text-decoration: none;
+    font-size: 18px; /* Slightly larger font size */
+    color: black;
+    font-weight: 500;
 }
 
-/* Active state */
-nav a.active {
-    color: #1877F2; /* Blue color for the active link */
+header a:hover,
+header a.active {
+    color: #1877F2; /* Blue for active or hovered links */
 }
+
 
 /* Main content styling */
 main {
@@ -50,60 +54,72 @@ main {
 }
 
 /* Essay container */
+#essays-list-section {
+    margin-top: 20px;
+}
+/* Essay container */
 #essays-container {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Space between essay items */
+    gap: 20px; /* Space between essays */
 }
 
-/* Individual essay item */
+/* Container for each essay */
 .essay-item {
     display: flex;
-    flex-direction: column;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 15px;
-    margin-bottom: 15px;
+    align-items: flex-start; /* Align items at the top */
+    gap: 15px; /* Space between date and content */
 }
 
-/* Essay date styling */
+/* Style for the date */
 .essay-date {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 14px;
-    color: #999;
-    text-transform: uppercase;
-    margin-bottom: 5px;
+    flex-shrink: 0;
+    width: 90px; /* Fixed width for consistent alignment */
+    padding-top: 5px; /* Aligns date with the title */
+    font-size: 12px;
+    font-weight: 300; /* Light weight for the date */
+    color: #1877F2; /* Blue color for the date */
+    text-transform: uppercase; /* Use short month names */
+    text-align: right; /* Align the text to the right */
+    line-height: 1.4; /* Proper vertical spacing */
+    white-space: nowrap; /* Prevent wrapping */
 }
 
-/* Essay title styling */
+/* Container for title and snippet */
+.essay-content {
+    display: flex;
+    flex-direction: column; /* Stack title and snippet */
+    flex-grow: 1; /* Take up the remaining space */
+}
+
+/* Style for the title */
 .essay-title {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 20px;
-    color: #1877F2;
-    margin: 0;
-    font-weight: 500; /* Medium weight */
-    cursor: pointer; /* Indicate interactivity */
-    text-decoration: underline;
-    transition: color 0.3s;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 0px; /* Space below the title */
 }
 
-.essay-title:hover {
-    color: #145db7; /* Darker blue on hover */
-}
-
-/* Essay snippet styling */
+/* Style for the snippet */
 .essay-snippet {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 16px;
-    color: #666;
-    font-weight: 400; /* Regular weight for snippets */
-    margin-top: 5px;
+    font-size: 14px;
+    color: #555; /* Softer color for the snippet */
+    line-height: 1.6; /* Better readability */
+    margin-top: 5px; /* Space below the title */
 }
 
-/* Hover effects for essays */
-.essay-item:hover {
-    background-color: #f9f9f9;
-    transition: background-color 0.3s;
+
+/* Images within essays */
+.essay-content img {
+    max-width: 100%; /* Ensures the image doesn't exceed the container's width */
+    max-height: 400px; /* Reduced max height for more compact layout */
+    height: auto; /* Maintain aspect ratio */
+    width: auto; /* Maintain aspect ratio */
+    display: block; /* Prevents inline images from adding extra spacing */
+    margin: 10px auto; /* Center the image and add spacing */
 }
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -179,6 +195,22 @@ main {
     gap: 10px; /* Space between icons */
 }
 
+/* Social icons for quotes */
+/* Social icons for quotes */
+.quote-icons img {
+    width: auto; /* Maintain aspect ratio */
+    height: 16px; /* Set height to 16px */
+    cursor: pointer;
+    filter: grayscale(100%); /* Make the icons grey */
+    transition: filter 0.3s ease, opacity 0.3s ease;
+    opacity: 0.7; /* Set initial grey opacity */
+}
+
+.quote-icons img:hover {
+    filter: grayscale(0%); /* Remove grey on hover */
+    opacity: 1; /* Fully visible on hover */
+}
+
 .quote-copy,
 .quote-share {
     background: none;
@@ -193,6 +225,12 @@ main {
 .quote-share:hover {
     color: #1877F2;
 }
+
+
+
+
+
+
 
 /* Toast notification styles */
 .toast {
@@ -228,3 +266,104 @@ main {
         transform: translateX(-50%) translateY(10px);
     }
 }
+
+
+/* General page layout */
+#about-section {
+    max-width: 800px;
+    margin: 40px auto;
+    margin-top: 20px;
+    font-family: "Space Grotesk", sans-serif;
+    line-height: 1.8;
+    font-size: 16px;
+    color: #333;
+}
+
+#about-section p {
+    margin-bottom: 20px;
+}
+
+#about-section a {
+    color: #1877F2;
+    text-decoration: none;
+}
+
+#about-section a:hover {
+    text-decoration: underline;
+}
+
+/* Social icons container */
+/* Social icons container */
+#social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Slightly reduce the space between icons */
+    margin-top: 40px;
+}
+
+/* Social icons */
+#social-icons a img {
+    width: 24px; /* Set a fixed width */
+    height: auto; /* Maintain aspect ratio */
+    filter: grayscale(100%);
+    transition: filter 0.3s;
+    vertical-align: middle; /* Ensure consistent vertical alignment */
+}
+
+#social-icons a img:hover {
+    filter: grayscale(0%);
+}
+
+
+/* Style for essay content */
+article {
+    max-width: 800px;
+    margin: 40px auto;
+    font-family: "Space Grotesk", sans-serif;
+    line-height: 1.8;
+    font-size: 16px;
+    color: #333;
+}
+
+article h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.essay-date {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.essay-content {
+    margin-bottom: 40px;
+}
+
+.essay-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Space between actions */
+}
+
+.essay-actions a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #1877F2; /* Matches your link style */
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.essay-actions .icon {
+    width: 16px; /* Set consistent width */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 8px; /* Space between icon and text */
+}
+
+
+.essay-actions a:hover {
+    text-decoration: underline;
+}
+

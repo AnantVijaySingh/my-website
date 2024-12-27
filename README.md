@@ -130,3 +130,8 @@ MyWebsite/
 
 This setup ensures a clean workflow for generating and maintaining your static website. If you encounter any issues, feel free to refine the scripts or structure as needed.
 
+---
+## **Credits**
+
+Icons used on the website were sourced from https://feathericons.com/
+

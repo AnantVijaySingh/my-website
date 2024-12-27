@@ -1,5 +1,3 @@
-## In The Age Of Abundance
-
 > "I wondered if the motto of our era should be: "I tried to live, but I got distracted." — Johann Hari.
 
 This essay is my attempt to work through a dilemma I find myself in. My work and life have afforded me the luxury of choice, with options increasing exponentially in every aspect. From the insignificant, such as genres of TV shows, to the critical, like healthcare. I have at my fingertips a hundred restaurants and a thousand dishes. I can travel to almost any city or country in the world. My life is better for it. Billions of people’s lives are better for it. Yet, I find myself questioning this abundance. Perhaps it is the thought that what got us here will not get us there, "there" as in through the next great filter we as a civilization will have to pass through. Or perhaps it is the question: Am I letting life pass by or actually living it? Abundance seems like both a blessing and a curse and, if we are not careful, I fear it can impact our ability to live meaningfully.

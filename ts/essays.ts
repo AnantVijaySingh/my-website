@@ -6,6 +6,20 @@ interface Essay {
     snippet: string;
 }
 
+// Helper function to format the date
+function formatDate(dateString: string): string {
+    const date = new Date(dateString);
+    const options: Intl.DateTimeFormatOptions = {
+        day: '2-digit',
+        month: 'short', // Use short form for the month (e.g., "Jan", "Feb")
+        year: 'numeric',
+    };
+    return date
+        .toLocaleDateString('en-US', options)
+        .toUpperCase(); // Convert to uppercase for consistency (e.g., "JAN")
+}
+
+
 // Load essays and render the list
 function loadEssays(): void {
     console.log("Loading essays...");
@@ -40,26 +54,31 @@ function loadEssays(): void {
                 const essayDiv = document.createElement('div');
                 essayDiv.className = 'essay-item';
 
-                // Add the date
-                const essayDate = document.createElement('span');
+                // Add the formatted date
+                const essayDate = document.createElement('div');
                 essayDate.className = 'essay-date';
-                essayDate.textContent = essay.date;
+                essayDate.textContent = formatDate(essay.date);
 
                 // Add the title with a link
-                const essayLink = document.createElement('a');
-                essayLink.href = `essays/${essay.filename.replace('.md', '.html')}`;
-                essayLink.className = 'essay-title';
-                essayLink.textContent = essay.title;
+                const essayTitle = document.createElement('a');
+                essayTitle.href = `essays/${essay.filename.replace('.md', '.html')}`;
+                essayTitle.className = 'essay-title';
+                essayTitle.textContent = essay.title;
 
                 // Add the snippet
                 const essaySnippet = document.createElement('p');
                 essaySnippet.className = 'essay-snippet';
                 essaySnippet.textContent = essay.snippet;
 
-                // Append elements to the essay div
+                // Create a wrapper for title and snippet
+                const essayContent = document.createElement('div');
+                essayContent.className = 'essay-content';
+                essayContent.appendChild(essayTitle);
+                essayContent.appendChild(essaySnippet);
+
+                // Append date and content to the essay div
                 essayDiv.appendChild(essayDate);
-                essayDiv.appendChild(essayLink);
-                essayDiv.appendChild(essaySnippet);
+                essayDiv.appendChild(essayContent);
 
                 // Append the essay div to the container
                 essaysContainer.appendChild(essayDiv);

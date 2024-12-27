@@ -4,6 +4,15 @@ interface Quote {
     author: string;
 }
 
+// Function to shuffle an array (Fisher-Yates Shuffle)
+function shuffleArray<T>(array: T[]): T[] {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
 // Function to load and render quotes
 function loadQuotes(): void {
     console.log("Loading quotes...");
@@ -19,6 +28,9 @@ function loadQuotes(): void {
         .then((quotes: Quote[]) => {
             console.log("Quotes fetched successfully:", quotes);
 
+            // Shuffle the quotes to display them in random order
+            const shuffledQuotes = shuffleArray(quotes);
+
             const quotesContainer = document.getElementById('quotes-container');
             if (!quotesContainer) {
                 console.error("Quotes container not found.");
@@ -27,7 +39,7 @@ function loadQuotes(): void {
 
             quotesContainer.innerHTML = '';
 
-            quotes.forEach((quote) => {
+            shuffledQuotes.forEach((quote) => {
                 console.log(`Rendering quote: ${quote.text}`);
 
                 const quoteDiv = document.createElement('div');
@@ -47,18 +59,20 @@ function loadQuotes(): void {
                 const iconsContainer = document.createElement('div');
                 iconsContainer.className = 'quote-icons';
 
-                const copyIcon = document.createElement('button');
+                const copyIcon = document.createElement('img');
                 copyIcon.className = 'quote-copy';
-                copyIcon.innerHTML = '📋';
+                copyIcon.src = 'icons/copy.svg'; // Path to the copy SVG
+                copyIcon.alt = 'Copy';
                 copyIcon.title = 'Copy Quote';
                 copyIcon.addEventListener('click', () => {
                     navigator.clipboard.writeText(quote.text);
                     showToast('Quote copied to clipboard!');
                 });
 
-                const shareIcon = document.createElement('button');
+                const shareIcon = document.createElement('img');
                 shareIcon.className = 'quote-share';
-                shareIcon.innerHTML = '🔗';
+                shareIcon.src = 'icons/share.svg'; // Path to the share SVG
+                shareIcon.alt = 'Share';
                 shareIcon.title = 'Share Quote';
                 shareIcon.addEventListener('click', () => {
                     const shareUrl = `${window.location.href}?quote=${encodeURIComponent(
@@ -92,15 +106,12 @@ function loadQuotes(): void {
 
 // Toast notification function
 function showToast(message: string): void {
-    // Create the toast element
     const toast = document.createElement('div');
     toast.className = 'toast';
     toast.textContent = message;
 
-    // Append the toast to the body
     document.body.appendChild(toast);
 
-    // Remove the toast after 2 seconds
     setTimeout(() => {
         toast.remove();
     }, 2000);

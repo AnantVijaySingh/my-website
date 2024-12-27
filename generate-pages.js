@@ -14,6 +14,13 @@ if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true });
 }
 
+// Helper function to format the date
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    const options = { day: '2-digit', month: 'long', year: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
+}
+
 // Load essay data
 const essays = JSON.parse(fs.readFileSync(essaysDataPath, 'utf-8'));
 
@@ -37,11 +44,32 @@ essays.forEach((essay) => {
     const markdownContent = fs.readFileSync(markdownPath, 'utf-8');
     const htmlContent = marked.parse(markdownContent);
 
+    // Ensure title and other placeholders are available
+    if (!essay.title || !essay.date) {
+        console.error(`Missing title or date for essay: ${essay.filename}`);
+        return;
+    }
+
+    // Log title and other fields for debugging
+    console.log(`Processing: ${essay.filename}`);
+    console.log(`Title: ${essay.title}`);
+    console.log(`Date: ${essay.date}`);
+    console.log(`Content: ${htmlContent.substring(0, 100)}...`); // Log a snippet of the content
+
+    // Format the date
+    const formattedDate = formatDate(essay.date);
+
     // Replace placeholders in the template
+    const emailLink = `mailto:anantvijayessays@proton.me?subject=Feedback%20for%20${encodeURIComponent(essay.title)}`;
     const outputHTML = template
-        .replace('{{title}}', essay.title)
-        .replace('{{date}}', essay.date)
-        .replace('{{content}}', htmlContent);
+        .replace(/{{title}}/g, essay.title)
+        .replace('{{date}}', formattedDate)
+        .replace('{{content}}', htmlContent)
+        .replace('{{email-link}}', emailLink);
+
+    // Log the generated HTML for debugging
+    // console.log(`Generated HTML: ${outputHTML.substring(0, 200)}...`);
+
 
     // Generate the output file path
     const outputFilename = `${path.basename(essay.filename, '.md')}.html`;
@@ -50,20 +78,5 @@ essays.forEach((essay) => {
     // Write the generated HTML file
     fs.writeFileSync(outputPath, outputHTML);
     console.log(`Generated: ${outputPath}`);
-
-    // Add a link to this essay for the homepage
-    essayLinks.push(
-        `<a href="essays/${outputFilename}" class="essay-title">${essay.title}</a>`
-    );
 });
 
-// Update the homepage (index.html) with the generated links
-let indexHTML = fs.readFileSync(indexHTMLPath, 'utf-8');
-indexHTML = indexHTML.replace(
-    /<div id="essays-container">[\s\S]*?<\/div>/,
-    `<div id="essays-container">\n${essayLinks.join('\n')}\n</div>`
-);
-
-// Write the updated index.html
-fs.writeFileSync(indexHTMLPath, indexHTML);
-console.log('Updated index.html with essay links.');

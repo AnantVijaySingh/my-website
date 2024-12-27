@@ -1,5 +1,3 @@
-## Consumption, Perception Of Learning And Production
-
 A few weeks ago, I had an engrossing conversation with a friend regarding their consumption habits. They detailed how they had painstakingly optimized their consumption for learning and how it played a role in their professional and personal life. Intrigued, I raised the question of what they were producing with all the knowledge they were absorbing. We had to cut our discussion short due to time zone difference and we concluded with me suggesting they sell their TV.
 
 My hypothesis is that despite unprecedented access to quality information, there's a growing disconnect between what we consume in the name of learning and the tangible outputs or changes in our lives, aka production. We are falling prey to the perception of learning. Even for those among us who have invested time and effort to cultivate healthier consumption habits, it appears we're indulging in the digital equivalent of consuming 'healthy' snacks — items that claim to be beneficial but may not truly be so.
