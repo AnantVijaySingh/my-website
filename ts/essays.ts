@@ -45,10 +45,11 @@ function loadEssays(): void {
                 essayDate.className = 'essay-date';
                 essayDate.textContent = essay.date;
 
-                // Add the title
-                const essayTitle = document.createElement('h2');
-                essayTitle.className = 'essay-title';
-                essayTitle.textContent = essay.title;
+                // Add the title with a link
+                const essayLink = document.createElement('a');
+                essayLink.href = `essays/${essay.filename.replace('.md', '.html')}`;
+                essayLink.className = 'essay-title';
+                essayLink.textContent = essay.title;
 
                 // Add the snippet
                 const essaySnippet = document.createElement('p');
@@ -57,7 +58,7 @@ function loadEssays(): void {
 
                 // Append elements to the essay div
                 essayDiv.appendChild(essayDate);
-                essayDiv.appendChild(essayTitle);
+                essayDiv.appendChild(essayLink);
                 essayDiv.appendChild(essaySnippet);
 
                 // Append the essay div to the container

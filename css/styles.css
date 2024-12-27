@@ -1,6 +1,6 @@
 /* General styles */
 body {
-    font-family: "Fira Code", "Georgia", serif; /* Use Fira Code as primary font */
+    font-family: "Space Grotesk", "Georgia", serif; /* Use Space Grotesk as primary font */
     color: #333;
     margin: 0;
     padding: 0;
@@ -28,7 +28,7 @@ nav {
 
 /* Navigation links */
 nav a {
-    font-family: "Fira Code", sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     text-decoration: none; /* Remove underline */
     color: black; /* Default color for inactive links */
     font-size: 16px;
@@ -67,7 +67,7 @@ main {
 
 /* Essay date styling */
 .essay-date {
-    font-family: "Fira Code", serif;
+    font-family: "Space Grotesk", sans-serif;
     font-size: 14px;
     color: #999;
     text-transform: uppercase;
@@ -76,7 +76,7 @@ main {
 
 /* Essay title styling */
 .essay-title {
-    font-family: "Fira Code", serif;
+    font-family: "Space Grotesk", sans-serif;
     font-size: 20px;
     color: #1877F2;
     margin: 0;
@@ -92,7 +92,7 @@ main {
 
 /* Essay snippet styling */
 .essay-snippet {
-    font-family: "Fira Code", serif;
+    font-family: "Space Grotesk", sans-serif;
     font-size: 16px;
     color: #666;
     font-weight: 400; /* Regular weight for snippets */
@@ -127,5 +127,104 @@ main {
 
     .essay-snippet {
         font-size: 14px; /* Adjust snippet size */
+    }
+}
+
+/* Quotes page styles */
+/* Quotes container styles */
+#quotes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Increased gap between quotes */
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Individual quote item */
+.quote-item {
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid #1877F2; /* Thinner blue line */
+    padding: 10px 20px; /* Padding inside the quote item */
+}
+
+/* Quote text */
+.quote-text {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 18px;
+    color: #333;
+    margin: 0 0 10px 0; /* Space below the text */
+    line-height: 1.5;
+}
+
+/* Author and icons container */
+.quote-meta {
+    display: flex;
+    justify-content: space-between; /* Align author to left, icons to right */
+    align-items: center; /* Vertically align items */
+}
+
+/* Quote author */
+.quote-author {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+}
+
+/* Action buttons */
+.quote-icons {
+    display: flex;
+    gap: 10px; /* Space between icons */
+}
+
+.quote-copy,
+.quote-share {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.3s;
+}
+
+.quote-copy:hover,
+.quote-share:hover {
+    color: #1877F2;
+}
+
+/* Toast notification styles */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 14px;
+    text-align: center;
+    z-index: 1000;
+    opacity: 0;
+    animation: fadeInOut 2s forwards;
+}
+
+/* Fade-in and fade-out animation for the toast */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px);
+    }
+    10%, 90% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px);
     }
 }
