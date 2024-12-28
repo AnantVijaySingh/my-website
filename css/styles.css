@@ -90,6 +90,7 @@ main {
     display: flex;
     flex-direction: column; /* Stack title and snippet */
     flex-grow: 1; /* Take up the remaining space */
+    margin-bottom: 20px;
 }
 
 /* Style for the title */
@@ -118,6 +119,12 @@ main {
     width: auto; /* Maintain aspect ratio */
     display: block; /* Prevents inline images from adding extra spacing */
     margin: 10px auto; /* Center the image and add spacing */
+}
+
+
+.essay-intro {
+    margin-bottom: 32px;
+    color: #333; /* Softer color for the intro paragraph */
 }
 
 
@@ -337,9 +344,9 @@ article h1 {
     margin-bottom: 30px;
 }
 
-.essay-content {
-    margin-bottom: 40px;
-}
+/*.essay-content {*/
+/*    margin-bottom: 40px;*/
+/*}*/
 
 .essay-actions {
     display: flex;
