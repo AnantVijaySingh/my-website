@@ -7,7 +7,6 @@ const essaysDataPath = './data/essays.json';
 const markdownDir = './essays-markdowns';
 const outputDir = './essays';
 const templatePath = './templates/essay-template.html';
-const indexHTMLPath = './index.html';
 
 // Ensure the output directory exists
 if (!fs.existsSync(outputDir)) {
@@ -27,9 +26,6 @@ const essays = JSON.parse(fs.readFileSync(essaysDataPath, 'utf-8'));
 // Load HTML template for essays
 const template = fs.readFileSync(templatePath, 'utf-8');
 
-// Initialize an array to hold links for the homepage
-const essayLinks = [];
-
 // Generate static pages
 essays.forEach((essay) => {
     const markdownPath = path.join(markdownDir, essay.filename);
@@ -40,43 +36,24 @@ essays.forEach((essay) => {
         return;
     }
 
-    // Read the Markdown file and convert it to HTML
     const markdownContent = fs.readFileSync(markdownPath, 'utf-8');
     const htmlContent = marked.parse(markdownContent);
 
-    // Ensure title and other placeholders are available
-    if (!essay.title || !essay.date) {
-        console.error(`Missing title or date for essay: ${essay.filename}`);
-        return;
-    }
-
-    // Log title and other fields for debugging
-    console.log(`Processing: ${essay.filename}`);
-    console.log(`Title: ${essay.title}`);
-    console.log(`Date: ${essay.date}`);
-    console.log(`Content: ${htmlContent.substring(0, 100)}...`); // Log a snippet of the content
-
-    // Format the date
     const formattedDate = formatDate(essay.date);
-
-    // Replace placeholders in the template
+    const canonicalLink = `https://anantvijay.com/essays/${path.basename(essay.filename, '.md')}.html`;
     const emailLink = `mailto:anantvijayessays@proton.me?subject=Feedback%20for%20${encodeURIComponent(essay.title)}`;
+
+    // Replace placeholders
     const outputHTML = template
         .replace(/{{title}}/g, essay.title)
-        .replace('{{date}}', formattedDate)
-        .replace('{{content}}', htmlContent)
-        .replace('{{email-link}}', emailLink);
+        .replace(/{{date}}/g, formattedDate)
+        .replace(/{{content}}/g, htmlContent)
+        .replace(/{{canonical-link}}/g, canonicalLink)
+        .replace(/{{email-link}}/g, emailLink)
+        .replace(/{{description}}/g, essay.snippet || 'Read this essay on ' + essay.title);
 
-    // Log the generated HTML for debugging
-    // console.log(`Generated HTML: ${outputHTML.substring(0, 200)}...`);
-
-
-    // Generate the output file path
-    const outputFilename = `${path.basename(essay.filename, '.md')}.html`;
-    const outputPath = path.join(outputDir, outputFilename);
-
-    // Write the generated HTML file
+    // Save the generated HTML file
+    const outputPath = path.join(outputDir, `${path.basename(essay.filename, '.md')}.html`);
     fs.writeFileSync(outputPath, outputHTML);
     console.log(`Generated: ${outputPath}`);
 });
-
