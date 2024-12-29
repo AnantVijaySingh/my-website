@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
+    "build": "tsc && node index-generator.js && node generate-pages.js",
+    "build:essays": "node index-generator.js && node generate-pages.js",
     "build:watch": "tsc --watch",
-    "start": "vite"
+    "start": "vite",
+    "build:essays:watch": "nodemon index-generator.js"
   },
   "keywords": [],
   "author": "",

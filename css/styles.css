@@ -123,7 +123,7 @@ main {
 
 
 .essay-intro {
-    margin-bottom: 32px;
+    margin-bottom: 48px;
     color: #333; /* Softer color for the intro paragraph */
 }
 
@@ -232,11 +232,6 @@ main {
 .quote-share:hover {
     color: #1877F2;
 }
-
-
-
-
-
 
 
 /* Toast notification styles */
@@ -374,3 +369,202 @@ article h1 {
     text-decoration: underline;
 }
 
+
+/* Container for the toggle */
+/* Position the toggle */
+.toggle-container {
+    position: fixed; /* Makes it stick to the viewport */
+    bottom: 20px; /* Adjust the distance from the bottom of the viewport */
+    right: 20px; /* Adjust the distance from the right of the viewport */
+    z-index: 1000; /* Ensures it stays on top of other elements */
+}
+
+
+/* From Uiverse.io by Creatlydev */
+.toggle {
+    background-color: #fff;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    box-shadow: 0 0 50px 20px rgba(0, 0, 0, .1);
+    line-height: 1;
+}
+
+.input {
+    display: none;
+}
+
+.icon {
+    grid-column: 1 / 1;
+    grid-row: 2 / 6;
+    transition: transform 500ms;
+}
+
+.icon--moon {
+    transition-delay: 200ms;
+}
+
+.icon--sun {
+    transform: scale(0);
+}
+
+#switch:checked + .icon--moon {
+    transform: rotate(360deg) scale(0);
+}
+
+#switch:checked ~ .icon--sun {
+    transition-delay: 200ms;
+    transform: scale(1) rotate(360deg);
+}
+
+
+
+
+
+
+/*!* Add other styles for dark mode *!*/
+/* Dark mode general styles */
+body.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text */
+    /*transition: background-color 0.3s ease, color 0.3s ease;*/
+}
+
+body.dark-mode header {
+    background-color: #121212;
+}
+
+body.dark-mode header::after {
+    background-color: #1877F2;
+}
+
+body.dark-mode header a {
+    color: #e0e0e0;
+}
+
+body.dark-mode header a.active,
+body.dark-mode header a:hover {
+    color: #1877F2;
+}
+
+/* Essays list in dark mode */
+/* Intro paragraph styles (Dark Mode) */
+body.dark-mode .essay-intro {
+    color: rgba(224, 224, 224, 0.8); /* Light text for intro */
+}
+
+body.dark-mode .essay-date {
+    color: #1877F2; /* Bright blue for date */
+}
+
+body.dark-mode .essay-title {
+    color: #e0e0e0; /* Light title text */
+}
+
+body.dark-mode .essay-snippet {
+    color: #aaaaaa; /* Softer gray for snippet */
+}
+
+
+/* Toast notification in dark mode */
+body.dark-mode .toast {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+/* Toggle button styles for dark mode */
+body.dark-mode .toggle {
+    background-color: #333;
+    box-shadow: 0 0 50px 20px rgba(255, 255, 255, .1);
+}
+
+
+/* Dark mode for Essays page */
+body.dark-mode #essays-container {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+
+/* Quotes Page */
+body.dark-mode .quote-item {
+    border-left: 4px solid #1877F2;
+    /*background-color: #1e1e1e; !* Subtle dark background *!*/
+}
+
+body.dark-mode .quote-text {
+    color: #e0e0e0;
+}
+
+body.dark-mode .quote-author {
+    color: #aaaaaa;
+}
+
+body.dark-mode .quote-icons img {
+    filter: brightness(0.7);
+}
+
+body.dark-mode .quote-icons img:hover {
+    filter: brightness(1);
+}
+
+/* About Page */
+body.dark-mode #about-section {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode #about-section a {
+    color: #1877F2;
+}
+
+
+/* Default (Light Mode) Icon Styles */
+#social-icons img {
+    filter: none; /* Default icon appearance */
+    /*transition: filter 0.3s ease, opacity 0.3s ease; !* Smooth transition *!*/
+}
+
+/* Dark Mode Icon Styles */
+body.dark-mode #social-icons img {
+    filter: invert(100%) sepia(0%) saturate(1996%) hue-rotate(109deg) brightness(108%) contrast(76%);; /* Dim and desaturate icons */
+}
+
+body.dark-mode .quote-icons img {
+    filter: invert(100%) sepia(0%) saturate(1996%) hue-rotate(109deg) brightness(108%) contrast(76%);; /* Dim and desaturate icons */
+}
+
+body.dark-mode .essay-actions img {
+    filter: invert(100%) sepia(0%) saturate(1996%) hue-rotate(109deg) brightness(108%) contrast(76%);; /* Dim and desaturate icons */
+}
+
+
+/* Dark mode for article content */
+
+/*body.dark-mode article {*/
+/*    background-color: #1e1e1e; !* Dark mode background *!*/
+/*    color: #e0e0e0; !* Light text for readability *!*/
+/*    box-shadow: none; !* Remove shadow in dark mode *!*/
+/*}*/
+
+body.dark-mode .essay-container {
+    color: #e0e0e0; /* Light text for readability */
+    box-shadow: none; /* Remove shadow in dark mode */
+}
+
+
+body.dark-mode article h1 {
+    color: #f5f5f5; /* Light title color for dark mode */
+}
+
+body.dark-mode .essay-date {
+    color: #1877F2; /* Bright purple for date in dark mode */
+}
+
+/* Dark mode for links inside the article */
+body.dark-mode a {
+    color: #1877F2; /* Links in purple */
+}

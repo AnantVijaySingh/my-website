@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES6",              // Target JavaScript version
+    "module": "ES6",              // Module system
+    "moduleResolution": "node",   // Resolve modules using Node.js rules
+    "strict": true,               // Enable strict type checking
+    "outDir": "./js",             // Output directory for compiled .js files
+    "rootDir": "./ts",            // Root directory for .ts files
+    "esModuleInterop": true       // Compatibility with ES6 modules
+  },
+  "include": ["ts/**/*"],           // Include TypeScript files
+  "exclude": ["node_modules"]       // Exclude node_modules
+}

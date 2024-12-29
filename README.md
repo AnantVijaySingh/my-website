@@ -86,14 +86,19 @@ MyWebsite/
    Add a `dev` script to start the Vite server. Your `package.json` should include:
    ```json
    "scripts": {
-       "start": "vite"
-   }
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc && node index-generator.js",
+    "build:watch": "tsc --watch",
+    "start": "vite",
+    "build:essays": "node index-generator.js",
+    "build:essays:watch": "nodemon index-generator.js"
+   },
    ```
 
 3. **Start the Local Server**:
    Use the following command to start the development server:
    ```bash
-   npm run dev
+   npm run start
    ```
 
 4. **Access the Website**:
