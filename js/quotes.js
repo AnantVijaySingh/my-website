@@ -51,18 +51,20 @@ function loadQuotes() {
                 navigator.clipboard.writeText(quote.text);
                 showToast('Quote copied to clipboard!');
             });
-            const shareIcon = document.createElement('img');
-            shareIcon.className = 'quote-share';
-            shareIcon.src = 'icons/share.svg'; // Path to the share SVG
-            shareIcon.alt = 'Share';
-            shareIcon.title = 'Share Quote';
-            shareIcon.addEventListener('click', () => {
-                const shareUrl = `${window.location.href}?quote=${encodeURIComponent(quote.text)}`;
-                navigator.clipboard.writeText(shareUrl);
-                showToast('Share link copied to clipboard!');
-            });
+            // const shareIcon = document.createElement('img');
+            // shareIcon.className = 'quote-share';
+            // shareIcon.src = 'icons/share.svg'; // Path to the share SVG
+            // shareIcon.alt = 'Share';
+            // shareIcon.title = 'Share Quote';
+            // shareIcon.addEventListener('click', () => {
+            //     const shareUrl = `${window.location.href}?quote=${encodeURIComponent(
+            //         quote.text
+            //     )}`;
+            //     navigator.clipboard.writeText(shareUrl);
+            //     showToast('Share link copied to clipboard!');
+            // });
             iconsContainer.appendChild(copyIcon);
-            iconsContainer.appendChild(shareIcon);
+            // iconsContainer.appendChild(shareIcon);
             quoteMeta.appendChild(quoteAuthor);
             quoteMeta.appendChild(iconsContainer);
             quoteDiv.appendChild(quoteText);
