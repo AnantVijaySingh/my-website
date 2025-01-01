@@ -55,5 +55,6 @@ I am not referring to all forms of consumption, but rather to those that we cate
 **Counter argument**
 It is fair to argue that my hypothesis, suggesting that what we are consuming is not leading to effective learning or production, discounts the iterative improvements or refinement of already produced artifacts. For example, my friend, whom I was trying to convince to sell their TV, shared that after reading "Atomic Habits," they made a change wherein they put a box of nuts on the kitchen island, which led to them eating healthier. This is a great outcome and something that my hypothesis doesn’t give enough weight to. 
  
+
 **Coming back to selling the TV**
 While selling the TV is a metaphor to drive home the point of reducing consumption it can be taken literally. And if anyone is concerned about what their furniture will be pointed towards, just like Joey from Friends if you sold your TV (reference to the meme), a bookshelf, a piano, or a great piece of art will work just fine. Trust me, I do not own a TV. Point your couch towards what you want to do more of :) Attached is a photo of the view from my couch.
