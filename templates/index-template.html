@@ -9,6 +9,19 @@
     <link rel="canonical" href="https://anantvijay.com/index.html">
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        (function() {
+            try {
+                var savedTheme = localStorage.getItem('theme');
+                if (savedTheme === 'dark') {
+                    document.documentElement.classList.add('dark-mode');
+                }
+            } catch(e) {
+                // localStorage is unavailable or throws an error (private mode, etc.)
+            }
+        })();
+    </script>
+
     <!-- Add structured data for rich snippets -->
     <script type="application/ld+json">
         {
