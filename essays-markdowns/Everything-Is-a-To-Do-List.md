@@ -49,4 +49,7 @@ Worse, we tend to tackle the small, easy tasks first, postponing the important (
 <br />
 
 
-Despite all our tools, hacks, and apps, we’re still figuring out how to manage our to-dos. While I want to say “Maybe the problem isn’t the system—it’s us.” I do think it is the system because it has let us procrastinate, allowed us to focus on creating and measuring the to-do list instead of focusing on the important tasks. 
+
+Despite all our tools, hacks, and apps, we’re still figuring out how to manage our to-dos. While I want to say “Maybe the problem isn’t the system—it’s us.” I do think it is the system because it has let us procrastinate, allowed our to-do list to proliferate, and in some cases focus on measuring progress instead of working on the tasks.
+
+If I could share and personally stick to one piece of advice, it would be - limit the to-do list to five things. Cross something off to make room for something new. Less is more.  
