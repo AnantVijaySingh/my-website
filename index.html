@@ -9,6 +9,19 @@
     <link rel="canonical" href="https://anantvijay.com/index.html">
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        (function() {
+            try {
+                var savedTheme = localStorage.getItem('theme');
+                if (savedTheme === 'dark') {
+                    document.documentElement.classList.add('dark-mode');
+                }
+            } catch(e) {
+                // localStorage is unavailable or throws an error (private mode, etc.)
+            }
+        })();
+    </script>
+
     <!-- Add structured data for rich snippets -->
     <script type="application/ld+json">
         {
@@ -35,6 +48,14 @@
         </p>
         <div id="essays-container">
             
+        <div class="essay-item">
+            <div class="essay-date">FEB 16, 2025</div>
+            <div class="essay-content">
+                <a href="essays/Everything-Is-a-To-Do-List.html" class="essay-title">Everything Is a To-Do List</a>
+                <p class="essay-snippet">Just when I thought I had seen it all, I’d discover yet another novel way people were repurposing decades-old products to fit their needs.</p>
+            </div>
+        </div>
+    
         <div class="essay-item">
             <div class="essay-date">JUL 17, 2024</div>
             <div class="essay-content">

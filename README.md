@@ -63,14 +63,22 @@ MyWebsite/
    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
    ```
 
-6. **Generate Static Pages**:
-   Run the `generate-pages.js` script to generate the essay HTML files and update `index.html`:
+6. **Generate Essay Pages**:
+   Run the `generate-pages.js` script to generate the essay HTML files:
    ```bash
    node generate-pages.js
    ```
    This will:
     - Convert Markdown files into HTML files stored in the `essays/` folder.
-    - Update the `index.html` file with links to the generated essay pages.
+
+
+7. **Generate Index Pages**:
+   Run the `generate-pages.js` script to generate and update `index.html`:
+   ```bash
+   node index-generator.js
+   ```
+   This will:
+   - Update the `index.html` file with links to the generated essay pages.
 
 ---
 
