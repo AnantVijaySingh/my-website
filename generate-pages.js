@@ -20,6 +20,16 @@ function formatDate(dateString) {
     return date.toLocaleDateString('en-US', options);
 }
 
+// Helper function to escape HTML characters
+function escapeHtml(unsafe) {
+    return unsafe
+         .replace(/&/g, "&amp;")
+         .replace(/</g, "&lt;")
+         .replace(/>/g, "&gt;")
+         .replace(/"/g, "&quot;")
+         .replace(/'/g, "&#039;");
+}
+
 // Load essay data
 const essays = JSON.parse(fs.readFileSync(essaysDataPath, 'utf-8'));
 
@@ -44,13 +54,14 @@ essays.forEach((essay) => {
     const emailLink = `mailto:anantvijayessays@proton.me?subject=Feedback%20for%20${encodeURIComponent(essay.title)}`;
 
     // Replace placeholders
+    const descriptionContent = essay.snippet || ('Read this essay on ' + essay.title);
     const outputHTML = template
         .replace(/{{title}}/g, essay.title)
         .replace(/{{date}}/g, formattedDate)
         .replace(/{{content}}/g, htmlContent)
         .replace(/{{canonical-link}}/g, canonicalLink)
         .replace(/{{email-link}}/g, emailLink)
-        .replace(/{{description}}/g, essay.snippet || 'Read this essay on ' + essay.title);
+        .replace(/{{description}}/g, escapeHtml(descriptionContent));
 
     // Save the generated HTML file
     const outputPath = path.join(outputDir, `${path.basename(essay.filename, '.md')}.html`);
