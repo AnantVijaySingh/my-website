@@ -518,7 +518,7 @@ body.dark-mode #about-section {
 }
 
 body.dark-mode #about-section a {
-    color: #1877F2;
+    color: #1877F2; /* Use the same blue for consistency */
 }
 
 
@@ -567,4 +567,222 @@ body.dark-mode .essay-date {
 /* Dark mode for links inside the article */
 body.dark-mode a {
     color: #1877F2; /* Links in purple */
+}
+
+/* Software page styles */
+#software-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#software-section p {
+    margin-bottom: 20px; /* Space between paragraphs */
+}
+
+.software-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.software-icon img {
+    width: 80px;
+    height: 80px;
+    border-radius: 22%;
+}
+
+.software-content {
+    flex-grow: 1;
+}
+
+.software-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+}
+
+.software-description {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+    margin: 0 0 10px 0;
+}
+
+.software-availability {
+    font-size: 14px;
+    color: #777;
+}
+
+.software-availability a {
+    color: #1877F2;
+    text-decoration: none;
+}
+
+.software-availability a:hover {
+    text-decoration: underline;
+}
+
+/* Dark mode for software page */
+body.dark-mode #software-section p {
+    color: #ccc;
+}
+body.dark-mode .software-item {
+    /* no background change in dark mode for this item specifically, but good to have the class */
+}
+
+body.dark-mode .software-title {
+    color: #f1f1f1;
+}
+
+body.dark-mode .software-description {
+    color: #ccc;
+}
+
+body.dark-mode .software-availability {
+    color: #aaa;
+}
+
+body.dark-mode .software-availability a {
+    color: #1e90ff;
+}
+
+#social-icons img {
+    width: 24px;
+    height: 24px;
+}
+
+body.dark-mode a {
+    color: #1e90ff; /* Light blue for links in dark mode */
+}
+
+/* Software Page Styles */
+#software-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#software-section .principles {
+     margin-left: 20px;
+}
+
+#software-section .principles p {
+    margin-bottom: 20px;
+}
+
+.software-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.software-icon img {
+    width: 80px;
+    height: 80px;
+    border-radius: 22%;
+}
+
+.software-content {
+    flex-grow: 1;
+}
+
+.software-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+}
+
+.software-description {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+    margin: 0 0 10px 0;
+}
+
+.software-availability {
+    font-size: 14px;
+    color: #777;
+}
+
+.software-availability a {
+    color: #1877F2;
+    text-decoration: none;
+}
+
+.software-availability a:hover {
+    text-decoration: underline;
+}
+
+body.dark-mode #software-section .principles p {
+    color: #ccc;
+}
+
+body.dark-mode .software-title {
+    color: #f1f1f1;
+}
+
+body.dark-mode .software-description {
+    color: #ccc;
+}
+
+body.dark-mode .software-availability {
+    color: #aaa;
+}
+
+body.dark-mode .software-availability a {
+    color: #1e90ff;
+}
+
+/* Privacy Policy Page Styles */
+#policy-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#policy-section h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+#policy-section h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+#policy-section p, #policy-section ul {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+#policy-section ul {
+    padding-left: 20px;
+    list-style-position: inside;
+}
+
+#policy-section a {
+    color: #1877F2;
+    text-decoration: none;
+}
+
+#policy-section a:hover {
+    text-decoration: underline;
+}
+
+body.dark-mode #policy-section h1,
+body.dark-mode #policy-section h2,
+body.dark-mode #policy-section p,
+body.dark-mode #policy-section ul {
+    color: #ccc;
+}
+
+body.dark-mode #policy-section a {
+    color: #1e90ff;
 }

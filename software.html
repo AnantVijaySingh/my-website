@@ -3,40 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quotes</title>
+    <title>Software - Anant Vijay</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <script>
-        (function() {
-            try {
-                var savedTheme = localStorage.getItem('theme');
-                if (savedTheme === 'dark') {
-                    document.documentElement.classList.add('dark-mode');
-                }
-            } catch(e) {
-                // localStorage is unavailable or throws an error (private mode, etc.)
-            }
-        })();
-    </script>
 </head>
 <body>
 <header>
     <nav>
         <a href="index.html">Essays</a>
-        <a href="quotes.html" class="active">Quotes</a>
-        <a href="software.html">Software</a>
+        <a href="quotes.html">Quotes</a>
+        <a href="software.html" class="active">Software</a>
         <a href="about.html">Anant Vijay</a>
     </nav>
 </header>
 <main>
-    <section id="quotes-header">
-        <p class="quotes-intro">
-            Words are perhaps the most powerful forces in the universe. Just a few can inspire greatness—urging people to reach for the stars—or wreak havoc and lead to wars. I've collected some that struck a chord with me; I hope they do the same for you.
-        </p>
-        <!-- Quotes will be dynamically inserted here -->
-    </section>
-    <section id="quotes-container">
-        <!-- Quotes will be dynamically inserted here -->
+    <section id="software-section">
+        <p>I build apps based on two principles:</p>
+        <div class="principles">
+            <p>
+                <b>a. Choose Good:</b> A simple principle&mdash;to make the choice that is good. It is easy to spot this by thinking of each choice as one between what is easy and what is right.
+            </p>
+            <p>
+                <b>b. Less is More:</b> The best of something is in an unadulterated version. Our lives have so much going on. Trying to do 'A' should not have 'B' and 'C' also making a play for our attention and time.
+            </p>
+        </div>
+
+        <div class="software-item">
+            <div class="software-icon">
+                <!-- User needs to add the icon here -->
+                <img src="images/FocusAppIcon.png" alt="Focus App Icon">
+            </div>
+            <div class="software-content">
+                <h3 class="software-title">Focus</h3>
+                <p class="software-description">A to-do app that enforces focus, by limit the number to tasks to five.</p>
+                <p class="software-availability">
+                    Available on iOS and macOS. <a href="software/focustodoprivacypolicy.html">Privacy policy.</a>
+                </p>
+            </div>
+        </div>
     </section>
 </main>
 <!-- Dark mode toggle -->
@@ -56,6 +60,5 @@
     </label>
 </div>
 <script src="js/toggle.js"></script>
-<script src="js/quotes.js" type="module"></script>
 </body>
-</html>
+</html> 
