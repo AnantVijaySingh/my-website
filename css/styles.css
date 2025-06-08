@@ -664,10 +664,6 @@ body.dark-mode a {
     padding: 20px;
 }
 
-#software-section .principles {
-     margin-left: 20px;
-}
-
 #software-section .principles p {
     margin-bottom: 20px;
 }
@@ -680,8 +676,8 @@ body.dark-mode a {
 }
 
 .software-icon img {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     border-radius: 22%;
 }
 
