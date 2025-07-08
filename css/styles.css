@@ -45,6 +45,27 @@ header a.active {
     color: #1877F2; /* Blue for active or hovered links */
 }
 
+@media (max-width: 600px) {
+  header nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    justify-content: center;   /* Center the nav items */
+    gap: 24px; /* Slightly smaller gap for mobile */
+    padding-bottom: 4px;
+    padding-left: 16px;   /* Add this line */
+    padding-right: 16px;  /* Add this line */
+    scrollbar-width: none; /* Hide scrollbar on Firefox */
+  }
+  header nav::-webkit-scrollbar {
+    display: none; /* Hide scrollbar on Chrome/Safari */
+  }
+  header a {
+    flex: 0 0 auto;
+    font-size: 16px;
+    padding: 0.25rem 0;
+  }
+}
 
 /* Main content styling */
 main {
