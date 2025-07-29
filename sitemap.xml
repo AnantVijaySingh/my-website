@@ -2,437 +2,112 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
     <loc>https://anantvijay.com/about.html</loc>
-    <lastmod>2024-12-29</lastmod>
+    <lastmod>2025-07-29</lastmod>
     <priority>0.8</priority>
 </url>
 <url>
     <loc>https://anantvijay.com/essays/Ahhhhhh-When-I-hear-Quick-Wins.html</loc>
-    <lastmod>2024-12-29</lastmod>
+    <lastmod>2025-07-29</lastmod>
     <priority>0.8</priority>
 </url>
 <url>
     <loc>https://anantvijay.com/essays/Consumption-Perception-Of-Learning-And-Production.html</loc>
-    <lastmod>2024-12-29</lastmod>
+    <lastmod>2025-07-29</lastmod>
     <priority>0.8</priority>
 </url>
 <url>
     <loc>https://anantvijay.com/essays/Consumption.html</loc>
-    <lastmod>2024-12-29</lastmod>
+    <lastmod>2025-07-29</lastmod>
     <priority>0.8</priority>
 </url>
 <url>
     <loc>https://anantvijay.com/essays/Decisions-And-Conviction.html</loc>
-    <lastmod>2024-12-29</lastmod>
+    <lastmod>2025-07-29</lastmod>
     <priority>0.8</priority>
 </url>
 <url>
     <loc>https://anantvijay.com/essays/Defining-Growth.html</loc>
-    <lastmod>2024-12-29</lastmod>
+    <lastmod>2025-07-29</lastmod>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>https://anantvijay.com/essays/Everything-Is-a-To-Do-List.html</loc>
+    <lastmod>2025-07-29</lastmod>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>https://anantvijay.com/essays/Focus-Progress-Success.html</loc>
+    <lastmod>2025-07-29</lastmod>
     <priority>0.8</priority>
 </url>
 <url>
     <loc>https://anantvijay.com/essays/Hard-Things-Over-Hard-Work.html</loc>
-    <lastmod>2024-12-29</lastmod>
+    <lastmod>2025-07-29</lastmod>
     <priority>0.8</priority>
 </url>
 <url>
     <loc>https://anantvijay.com/essays/Hard-Work.html</loc>
-    <lastmod>2024-12-29</lastmod>
+    <lastmod>2025-07-29</lastmod>
     <priority>0.8</priority>
 </url>
 <url>
     <loc>https://anantvijay.com/essays/In-The-Age-Of-Abundance.html</loc>
-    <lastmod>2024-12-29</lastmod>
+    <lastmod>2025-07-29</lastmod>
     <priority>0.8</priority>
 </url>
 <url>
     <loc>https://anantvijay.com/essays/Linear-Compound-Exponential.html</loc>
-    <lastmod>2024-12-29</lastmod>
+    <lastmod>2025-07-29</lastmod>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>https://anantvijay.com/essays/Momentum-&gt;-Motivation.html</loc>
+    <lastmod>2025-07-29</lastmod>
     <priority>0.8</priority>
 </url>
 <url>
     <loc>https://anantvijay.com/essays/Prioritization-Via-Questions-Not-Formulas.html</loc>
-    <lastmod>2024-12-29</lastmod>
+    <lastmod>2025-07-29</lastmod>
     <priority>0.8</priority>
 </url>
 <url>
     <loc>https://anantvijay.com/essays/Tale-Of-A-Croissant.html</loc>
-    <lastmod>2024-12-29</lastmod>
+    <lastmod>2025-07-29</lastmod>
     <priority>0.8</priority>
 </url>
 <url>
     <loc>https://anantvijay.com/finds.html</loc>
-    <lastmod>2024-12-29</lastmod>
+    <lastmod>2025-07-29</lastmod>
     <priority>0.8</priority>
 </url>
 <url>
     <loc>https://anantvijay.com/index.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync/templates/script-tags-simple.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync/templates/script-tags.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/lib/plugins/connections/connections.directive.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/lib/plugins/connections/connections.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/lib/plugins/help/help.directive.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/lib/plugins/help/help.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/lib/plugins/history/history.directive.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/lib/plugins/history/history.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/lib/plugins/network-throttle/network-throttle.directive.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/lib/plugins/network-throttle/network-throttle.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/lib/plugins/overview/overview.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/lib/plugins/overview/snippet-info.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/lib/plugins/overview/url-info.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/lib/plugins/plugins/plugins.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/lib/plugins/remote-debug/compression.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/lib/plugins/remote-debug/latency/latency.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/lib/plugins/remote-debug/no-cache.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/lib/plugins/remote-debug/overlay-grid/overlay-grid.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/lib/plugins/remote-debug/remote-debug.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/lib/plugins/sync-options/sync-options.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/public/img/icons/preview.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/public/index.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/static/components/button-bars.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/static/components/buttons.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/static/components/footer.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/static/components/forms.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/static/components/header.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/static/components/heading.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/static/components/help-content.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/static/components/lists.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/static/components/panels.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/static/components/switches.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/static/components/type.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/static/components.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/static/content/help.content.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/static/help.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/static/history.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/static/network-throttle.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/static/plugins.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/static/remote-debug.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/static/server-info-snippet.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/static/server-info.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/static/sync-options.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/browser-sync-ui/templates/directives/bs-switch.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/bs-recipes/recipes/grunt.html.injection/app/index.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/bs-recipes/recipes/grunt.sass/app/index.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/bs-recipes/recipes/grunt.sass.autoprefixer/app/index.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/bs-recipes/recipes/gulp.browserify/app/index.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/bs-recipes/recipes/gulp.ruby.sass/app/index.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/bs-recipes/recipes/gulp.sass/app/index.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/bs-recipes/recipes/gulp.swig/app/index.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/bs-recipes/recipes/gulp.task.sequence/app/index.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/bs-recipes/recipes/html.injection/app/index.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/bs-recipes/recipes/middleware.css.injection/app/index.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/bs-recipes/recipes/server/app/index.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/bs-recipes/recipes/server.gzipped.assets/app/index.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/bs-recipes/recipes/server.includes/app/footer.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/bs-recipes/recipes/server.includes/app/header.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/bs-recipes/recipes/server.includes/app/index.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/bs-recipes/recipes/server.middleware/app/index.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/bs-recipes/recipes/webpack.babel/app/index.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/bs-recipes/recipes/webpack.monkey-hot-loader/app/index.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/bs-recipes/recipes/webpack.preact-hot-loader/app/index.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/bs-recipes/recipes/webpack.react-hot-loader/app/index.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/bs-recipes/recipes/webpack.react-transform-hmr/app/index.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/bs-recipes/recipes/webpack.typescript/app/index.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/bs-recipes/recipes/webpack.typescript.react/app/index.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/mark/index.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/serve-index/public/directory.html</loc>
-    <lastmod>2024-12-29</lastmod>
-    <priority>0.8</priority>
-</url>
-<url>
-    <loc>https://anantvijay.com/node_modules/ua-parser-js/dist/ua-parser.html</loc>
-    <lastmod>2024-12-29</lastmod>
+    <lastmod>2025-07-29</lastmod>
     <priority>0.8</priority>
 </url>
 <url>
     <loc>https://anantvijay.com/quotes.html</loc>
-    <lastmod>2024-12-29</lastmod>
+    <lastmod>2025-07-29</lastmod>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>https://anantvijay.com/software/focustodoprivacypolicy.html</loc>
+    <lastmod>2025-07-29</lastmod>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>https://anantvijay.com/software.html</loc>
+    <lastmod>2025-07-29</lastmod>
     <priority>0.8</priority>
 </url>
 <url>
     <loc>https://anantvijay.com/templates/essay-template.html</loc>
-    <lastmod>2024-12-29</lastmod>
+    <lastmod>2025-07-29</lastmod>
     <priority>0.8</priority>
 </url>
 <url>
     <loc>https://anantvijay.com/templates/index-template.html</loc>
-    <lastmod>2024-12-29</lastmod>
+    <lastmod>2025-07-29</lastmod>
     <priority>0.8</priority>
 </url>
 </urlset>

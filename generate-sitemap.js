@@ -5,8 +5,21 @@ const path = require('path');
 const publicDir = './';
 const baseUrl = 'https://anantvijay.com';
 
+// Directories to exclude from sitemap
+const excludeDirs = ['node_modules', '.git'];
+
 // Helper function to get today's date in YYYY-MM-DD format
 const getCurrentDate = () => new Date().toISOString().split('T')[0];
+
+// Helper function to encode URL for XML sitemap
+function encodeUrl(url) {
+    return url
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
 
 // Collect all HTML files in the public directory
 function generateSitemap() {
@@ -15,12 +28,19 @@ function generateSitemap() {
     function traverseDirectory(directory) {
         fs.readdirSync(directory).forEach((file) => {
             const fullPath = path.join(directory, file);
+            const relativePath = path.relative(publicDir, fullPath);
+            
+            // Skip excluded directories
+            if (excludeDirs.some(dir => relativePath.startsWith(dir))) {
+                return;
+            }
+            
             if (fs.statSync(fullPath).isDirectory()) {
                 traverseDirectory(fullPath);
             } else if (file.endsWith('.html')) {
-                const relativePath = path.relative(publicDir, fullPath);
+                const url = `${baseUrl}/${relativePath.replace(/\\/g, '/')}`;
                 urls.push(`<url>
-    <loc>${baseUrl}/${relativePath.replace(/\\/g, '/')}</loc>
+    <loc>${encodeUrl(url)}</loc>
     <lastmod>${getCurrentDate()}</lastmod>
     <priority>0.8</priority>
 </url>`);
