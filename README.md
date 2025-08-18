@@ -24,6 +24,42 @@ MyWebsite/
 
 ---
 
+## **Typical Workflow**
+
+Here's the recommended workflow for different development scenarios:
+
+### **For Development with Live Reload:**
+```bash
+npm start
+```
+This starts the Vite dev server with hot module replacement and fast refresh.
+
+### **For Building the Project:**
+```bash
+npm run build
+```
+This runs the full build process: TypeScript compilation + page generation.
+
+### **For Continuous TypeScript Compilation During Development:**
+```bash
+npm run build:watch
+```
+This continuously compiles TypeScript files as you make changes.
+
+### **For Building Essays Only (without TypeScript compilation):**
+```bash
+npm run build:essays
+```
+This generates essay pages without recompiling TypeScript.
+
+### **For Building Essays in Watch Mode:**
+```bash
+npm run build:essays:watch
+```
+This restarts the essay generation script when files change.
+
+---
+
 ## **Steps to Generate Static Pages**
 
 1. **Ensure Prerequisites**:
@@ -111,8 +147,6 @@ MyWebsite/
 
 4. **Access the Website**:
    Open the provided local URL (e.g., `http://localhost:5173`) in your browser to view the website.
-
----
 
 ## **Additional Notes**
 
