@@ -6,7 +6,7 @@ const publicDir = './';
 const baseUrl = 'https://anantvijay.com';
 
 // Directories to exclude from sitemap
-const excludeDirs = ['node_modules', '.git'];
+const excludeDirs = ['node_modules', '.git', 'templates'];
 
 // Helper function to get today's date in YYYY-MM-DD format
 const getCurrentDate = () => new Date().toISOString().split('T')[0];
@@ -39,9 +39,11 @@ function generateSitemap() {
                 traverseDirectory(fullPath);
             } else if (file.endsWith('.html')) {
                 const url = `${baseUrl}/${relativePath.replace(/\\/g, '/')}`;
+                const stats = fs.statSync(fullPath);
+                const lastModified = new Date(stats.mtime).toISOString().split('T')[0];
                 urls.push(`<url>
     <loc>${encodeUrl(url)}</loc>
-    <lastmod>${getCurrentDate()}</lastmod>
+    <lastmod>${lastModified}</lastmod>
     <priority>0.8</priority>
 </url>`);
             }
