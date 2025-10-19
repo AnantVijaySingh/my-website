@@ -124,6 +124,7 @@
     "wrap-ansi": "^7.0.0",
     "ws": "^8.17.1",
     "xmlhttprequest-ssl": "^2.1.2",
+    "y-indexeddb": "^9.0.12",
     "y18n": "^5.0.8",
     "yargs": "^17.7.2",
     "yargs-parser": "^21.1.1"
