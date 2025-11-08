@@ -805,157 +805,36 @@ body.dark-mode #policy-section a {
 }
 
 /* TIME PAGE */
-.visualization-container {
-    margin: 2rem 0;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+#activity-list-container {
+    margin-top: 2rem;
 }
 
-.controls {
+#activity-list-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+#activity-list-container li {
+    margin-bottom: 1rem;
     display: flex;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
 }
 
-.controls label {
-    font-weight: 500;
+#activity-list-container .emoji {
+    font-size: 1.5rem;
+    margin-right: 1rem;
 }
 
-.controls input {
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-    width: 80px;
-}
-
-.controls button {
-    padding: 0.5rem 1rem;
-    background-color: #000;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.2s;
-}
-
-.controls button:hover {
-    background-color: #333;
-}
-
-#treemap-container {
-    width: 100%;
-    height: 600px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    position: relative;
-    overflow: hidden;
-}
-
-.treemap-rect {
-    position: absolute;
-    border: 1px solid #000;
-    background-color: transparent;
-    cursor: pointer;
-    transition: opacity 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    font-weight: 500;
-    text-align: center;
-    padding: 4px;
-    box-sizing: border-box;
-}
-
-.treemap-rect:hover {
-    opacity: 0.8;
-}
-
-.treemap-text {
-    color: #000;
-    word-wrap: break-word;
-    line-height: 1.2;
-}
-
-.treemap-text.emoji {
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.tooltip {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 4px;
-    font-size: 14px;
-    pointer-events: none;
-    z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.2s;
-    max-width: 300px;
-}
-
-.tooltip.show {
-    opacity: 1;
-}
-
-.tooltip-title {
+#activity-list-container .activity-name {
     font-weight: bold;
-    margin-bottom: 4px;
 }
 
-.tooltip-hours {
-    font-size: 12px;
-    opacity: 0.8;
+#activity-list-container .activity-hours {
+    margin-left: auto;
+    font-size: 1rem;
+    color: #555;
 }
 
-/* Dark mode styles for Time page */
-.dark-mode .controls input {
-    background-color: #333;
-    border-color: #555;
-    color: white;
-}
-
-.dark-mode .controls button {
-    background-color: #fff;
-    color: #000;
-}
-
-.dark-mode .controls button:hover {
-    background-color: #e0e0e0;
-}
-
-.dark-mode #treemap-container {
-    border-color: #555;
-}
-
-.dark-mode .treemap-rect {
-    border-color: #fff;
-}
-
-.dark-mode .treemap-text {
-    color: #fff;
-}
-
-@media (max-width: 768px) {
-    .controls {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .controls input {
-        width: 100px;
-    }
-    
-    #treemap-container {
-        height: 500px;
-    }
+body.dark-mode #activity-list-container .activity-hours {
+    color: #aaa;
 }
