@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time - Anant Vijay</title>
+    <meta name="description" content="Explore thoughts and insights about time, productivity, and temporal awareness by Anant Vijay.">
+    <meta name="author" content="Anant Vijay">
+    <link rel="canonical" href="https://anantvijay.com/time.html">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        (function() {
+            try {
+                var savedTheme = localStorage.getItem('theme');
+                if (savedTheme === 'dark') {
+                    document.documentElement.classList.add('dark-mode');
+                }
+            } catch(e) {
+                // localStorage is unavailable or throws an error (private mode, etc.)
+            }
+        })();
+    </script>
+
+    <!-- Add structured data for rich snippets -->
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "WebPage",
+            "name": "Time - Anant Vijay",
+            "description": "Explore thoughts about time and its fleeting nature.",
+            "url": "https://anantvijay.com/time.html"
+        }
+    </script>
+</head>
+<body>
+<header>
+    <nav>
+        <a href="index.html">Essays</a>
+        <a href="quotes.html">Quotes</a>
+        <a href="software.html">Software</a>
+        <a href="time.html" class="active">Time</a>
+        <a href="about.html">Anant Vijay</a>
+    </nav>
+</header>
+<main>
+    <section id="time-section">
+        <p class="time-intro">
+            The exhibit “NOWISHWHENWEARE” inspired me to reflect on how I spend my time and to better cherish the things that will happen for the first time, and those that will happen for the last.
+        </p>
+
+        <div class="time-content">
+            <p>
+                Below is a sample of life’s activities, along with an approximation of how much time the average person my age living in a metropolitan city might spend on them.
+            </p>
+
+            <p>
+                I hope it helps you pause, reflect, and take it all in.
+            </p>
+
+            <p>
+                The list changes every thirty seconds.
+            </p>
+        </div>
+
+
+        <div id="activity-list-container"></div>
+    </section>
+</main>
+<!-- Dark mode toggle -->
+<div class="toggle-container">
+    <label class="toggle" for="switch">
+        <input id="switch" class="input" type="checkbox">
+        <div class="icon icon--moon">
+            <svg height="16" width="16" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path clip-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" fill-rule="evenodd"></path>
+            </svg>
+        </div>
+        <div class="icon icon--sun">
+            <svg height="16" width="16" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 001.06 1.061l1.591-1.59z"></path>
+            </svg>
+        </div>
+    </label>
+</div>
+<script src="js/toggle.js"></script>
+<script>
+    // Activities data will be loaded from external JSON file
+    let activitiesData = [];
+
+    // Load activities data from JSON file
+    async function loadActivitiesData() {
+        try {
+            const response = await fetch('data/activities.json');
+            if (!response.ok) {
+                throw new Error('Failed to load activities data');
+            }
+            activitiesData = await response.json();
+            return true;
+        } catch (error) {
+            console.error('Error loading activities data:', error);
+            return false;
+        }
+    }
+
+    function formatHours(hours) {
+            const years = Math.floor(hours / 8760);
+            const months = Math.floor((hours % 8760) / 730);
+            const days = Math.floor(hours / 24);
+
+            if (years > 0) {
+                const remainingMonths = Math.floor((hours - years * 8760) / 730);
+                if (remainingMonths > 0) {
+                    return `${years} year${years > 1 ? 's' : ''}, ${remainingMonths} month${remainingMonths > 1 ? 's' : ''}`;
+                }
+                return `${years} year${years > 1 ? 's' : ''}`;
+            } else if (months > 0) {
+                const remainingDays = Math.floor((hours - months * 730) / 24);
+                if (remainingDays > 0) {
+                    return `${months} month${months > 1 ? 's' : ''}, ${remainingDays} day${remainingDays > 1 ? 's' : ''}`;
+                }
+                return `${months} month${months > 1 ? 's' : ''}`;
+            } else if (days > 0) {
+                return `${days} day${days > 1 ? 's' : ''}`;
+            } else {
+                return `${Math.round(hours)} hour${Math.round(hours) !== 1 ? 's' : ''}`;
+            }
+        }
+
+    // Initialize the visualization
+    async function initializeVisualization() {
+        const listContainer = document.getElementById('activity-list-container');
+        
+        const dataLoaded = await loadActivitiesData();
+        if (!dataLoaded) {
+            listContainer.innerHTML = '<p>Unable to load activities data.</p>';
+            return;
+        }
+        
+        function getRandomActivities() {
+            const numActivities = 10;
+            const shuffled = [...activitiesData].sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, numActivities);
+        }
+        
+        function renderActivityList() {
+            const activities = getRandomActivities();
+            
+            const age = 30;
+            const baseAge = 30;
+            const scaleFactor = age / baseAge;
+
+            const scaledActivities = activities.map(activity => ({
+                ...activity,
+                hours: Math.round(activity.hours * scaleFactor)
+            }));
+
+            let listHtml = '<ul>';
+            scaledActivities.forEach(activity => {
+                listHtml += `<li><span class="emoji">${activity.emoji}</span> <span>${activity.activity}</span>: <span class="activity-hours">${formatHours(activity.hours)}</span></li>`;
+            });
+            listHtml += '</ul>';
+            
+            listContainer.innerHTML = listHtml;
+        }
+        
+        renderActivityList();
+        setInterval(renderActivityList, 30000); // Refresh every 30 seconds
+    }
+
+    // Initialize when DOM is loaded
+    document.addEventListener('DOMContentLoaded', initializeVisualization);
+</script>
+</body>
+</html>

@@ -1,0 +1,392 @@
+[
+  {
+    "activity": "Spent in meetings",
+    "hours": 14400,
+    "emoji": "💬"
+  },
+  {
+    "activity": "Writing emails",
+    "hours": 2600,
+    "emoji": "📧"
+  },
+  {
+    "activity": "Giving presentations",
+    "hours": 8800,
+    "emoji": "📊"
+  },
+  {
+    "activity": "Sleeping",
+    "hours": 84400,
+    "emoji": "😴"
+  },
+  {
+    "activity": "Cooking",
+    "hours": 12000,
+    "emoji": "🍳"
+  },
+  {
+    "activity": "Eating dinner",
+    "hours": 8000,
+    "emoji": "🍽️"
+  },
+  {
+    "activity": "Eating lunch",
+    "hours": 6000,
+    "emoji": "🥪"
+  },
+  {
+    "activity": "Eating breakfast",
+    "hours": 4000,
+    "emoji": "🥣"
+  },
+  {
+    "activity": "Tidying up",
+    "hours": 4500,
+    "emoji": "🧹"
+  },
+  {
+    "activity": "Washing dishes",
+    "hours": 4000,
+    "emoji": "🧼"
+  },
+  {
+    "activity": "Doing laundry",
+    "hours": 3000,
+    "emoji": "🧺"
+  },
+  {
+    "activity": "Grocery shopping",
+    "hours": 2400,
+    "emoji": "🛒"
+  },
+  {
+    "activity": "Showering",
+    "hours": 3000,
+    "emoji": "🚿"
+  },
+  {
+    "activity": "Getting dressed",
+    "hours": 2000,
+    "emoji": "👕"
+  },
+  {
+    "activity": "Pooping",
+    "hours": 2000,
+    "emoji": "💩"
+  },
+  {
+    "activity": "Making coffee",
+    "hours": 2000,
+    "emoji": "☕"
+  },
+  {
+    "activity": "Managing finances",
+    "hours": 1500,
+    "emoji": "💰"
+  },
+  {
+    "activity": "Brushing teeth",
+    "hours": 800,
+    "emoji": "🦷"
+  },
+  {
+    "activity": "Waiting for kettle",
+    "hours": 400,
+    "emoji": "🔥"
+  },
+  {
+    "activity": "Doing taxes",
+    "hours": 120,
+    "emoji": "🧾"
+  },
+  {
+    "activity": "Taking out bins",
+    "hours": 80,
+    "emoji": "🗑️"
+  },
+  {
+    "activity": "Texting friends",
+    "hours": 3000,
+    "emoji": "📱"
+  },
+  {
+    "activity": "Pub with friends",
+    "hours": 3100,
+    "emoji": "🍻"
+  },
+  {
+    "activity": "Dinner with friends",
+    "hours": 2300,
+    "emoji": "🥂"
+  },
+  {
+    "activity": "Calling family",
+    "hours": 1700,
+    "emoji": "📞"
+  },
+  {
+    "activity": "Cuddling",
+    "hours": 1500,
+    "emoji": "🤗"
+  },
+  {
+    "activity": "Dates",
+    "hours": 1300,
+    "emoji": "❤️"
+  },
+  {
+    "activity": "Parties & weddings",
+    "hours": 900,
+    "emoji": "🎉"
+  },
+  {
+    "activity": "Kissing",
+    "hours": 300,
+    "emoji": "😘"
+  },
+  {
+    "activity": "Hugging",
+    "hours": 100,
+    "emoji": "🥰"
+  },
+  {
+    "activity": "Serious talks",
+    "hours": 500,
+    "emoji": "🗣️"
+  },
+  {
+    "activity": "Netflix",
+    "hours": 10000,
+    "emoji": "📺"
+  },
+  {
+    "activity": "Playing video games",
+    "hours": 9000,
+    "emoji": "🎮"
+  },
+  {
+    "activity": "Watching YouTube",
+    "hours": 8000,
+    "emoji": "▶️"
+  },
+  {
+    "activity": "Listening to music",
+    "hours": 12000,
+    "emoji": "🎧"
+  },
+  {
+    "activity": "Reading for pleasure",
+    "hours": 5100,
+    "emoji": "📚"
+  },
+  {
+    "activity": "Watching films",
+    "hours": 3500,
+    "emoji": "🎬"
+  },
+  {
+    "activity": "Watching movies at cinema",
+    "hours": 1000,
+    "emoji": "🍿"
+  },
+  {
+    "activity": "Museums & galleries",
+    "hours": 800,
+    "emoji": "🖼️"
+  },
+  {
+    "activity": "Ordering takeaway",
+    "hours": 450,
+    "emoji": "🥡"
+  },
+  {
+    "activity": "Feeling anxious/stressed",
+    "hours": 6000,
+    "emoji": "😰"
+  },
+  {
+    "activity": "Daydreaming",
+    "hours": 4000,
+    "emoji": "💭"
+  },
+  {
+    "activity": "Exercising",
+    "hours": 3100,
+    "emoji": "💪"
+  },
+  {
+    "activity": "Laughing",
+    "hours": 1000,
+    "emoji": "😄"
+  },
+  {
+    "activity": "Running",
+    "hours": 1500,
+    "emoji": "🏃‍♀️"
+  },
+  {
+    "activity": "Stretching",
+    "hours": 500,
+    "emoji": "🤸‍♀️"
+  },
+  {
+    "activity": "Crying",
+    "hours": 70,
+    "emoji": "😢"
+  },
+  {
+    "activity": "Taking medication",
+    "hours": 50,
+    "emoji": "💊"
+  },
+  {
+    "activity": "Commuting",
+    "hours": 4000,
+    "emoji": "🚇"
+  },
+  {
+    "activity": "Waiting in queues",
+    "hours": 2000,
+    "emoji": "🚶‍♂️🚶‍♀️"
+  },
+  {
+    "activity": "Flying on planes",
+    "hours": 1650,
+    "emoji": "✈️"
+  },
+  {
+    "activity": "Walking commute",
+    "hours": 1500,
+    "emoji": "🚶"
+  },
+  {
+    "activity": "Enjoying the park",
+    "hours": 800,
+    "emoji": "🌳"
+  },
+  {
+    "activity": "Riding in taxi",
+    "hours": 600,
+    "emoji": "🚕"
+  },
+  {
+    "activity": "Riding the bus",
+    "hours": 500,
+    "emoji": "🚌"
+  },
+  {
+    "activity": "Waiting for train",
+    "hours": 450,
+    "emoji": "⏳"
+  },
+  {
+    "activity": "In an elevator",
+    "hours": 400,
+    "emoji": "↕️"
+  },
+  {
+    "activity": "Walking in rain",
+    "hours": 300,
+    "emoji": "🌧️"
+  },
+  {
+    "activity": "Cycling",
+    "hours": 250,
+    "emoji": "🚲"
+  },
+  {
+    "activity": "Doomscrolling",
+    "hours": 5500,
+    "emoji": "📱"
+  },
+  {
+    "activity": "Googling",
+    "hours": 2000,
+    "emoji": "❓"
+  },
+  {
+    "activity": "Online shopping",
+    "hours": 1700,
+    "emoji": "🛍️"
+  },
+  {
+    "activity": "Listening to podcasts",
+    "hours": 1500,
+    "emoji": "🎙️"
+  },
+  {
+    "activity": "Browsing LinkedIn",
+    "hours": 1000,
+    "emoji": "🔗"
+  },
+  {
+    "activity": "Unlocking phone",
+    "hours": 700,
+    "emoji": "🔓"
+  },
+  {
+    "activity": "Personal emails",
+    "hours": 600,
+    "emoji": "📥"
+  },
+  {
+    "activity": "Planning holidays",
+    "hours": 500,
+    "emoji": "🗺️"
+  },
+  {
+    "activity": "Taking photos",
+    "hours": 400,
+    "emoji": "📸"
+  },
+  {
+    "activity": "Deciding what to eat",
+    "hours": 3000,
+    "emoji": "🤔"
+  },
+  {
+    "activity": "Contemplating life",
+    "hours": 2500,
+    "emoji": "🧐"
+  },
+  {
+    "activity": "Deciding what to wear",
+    "hours": 1000,
+    "emoji": "👚"
+  },
+  {
+    "activity": "People-watching",
+    "hours": 800,
+    "emoji": "👀"
+  },
+  {
+    "activity": "Waiting rooms",
+    "hours": 500,
+    "emoji": "🛋️"
+  },
+  {
+    "activity": "Packing/Unpacking",
+    "hours": 300,
+    "emoji": "🧳"
+  },
+  {
+    "activity": "Putting on shoes",
+    "hours": 200,
+    "emoji": "👟"
+  },
+  {
+    "activity": "Unlocking doors",
+    "hours": 150,
+    "emoji": "🔑"
+  },
+  {
+    "activity": "Looking for lost items",
+    "hours": 150,
+    "emoji": "🔎"
+  },
+  {
+    "activity": "Waiting for pages to load",
+    "hours": 100,
+    "emoji": "⏳"
+  }
+]
