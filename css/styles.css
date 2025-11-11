@@ -649,9 +649,6 @@ body.dark-mode a {
 body.dark-mode #software-section p {
     color: #ccc;
 }
-body.dark-mode .software-item {
-    /* no background change in dark mode for this item specifically, but good to have the class */
-}
 
 body.dark-mode .software-title {
     color: #f1f1f1;
