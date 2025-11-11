@@ -1,10 +1,10 @@
 The world has started to sound like a stopwatch.
 
-Everywhere I look, the same idea takes hold — that we can do more, faster, and reach success in ever-shorter spans of time. Speed has become a virtue. Being “hardcore” a badge of honour. Working ourselves to the bone, a form of proof.
+Everywhere I look, the same idea takes hold — that we can do more, faster, and reach success in ever-shorter spans of time. Speed has become a virtue. Being “hardcore” a badge of honour. Working ourselves to the bone, a form of proof. Podcasts at 2x speed. Powder stirred in water as food, because it’s faster.
 
 I am definitely in this bubble. And if you’re reading this, it’s likely you’re in that bubble with me.
 
-We treat everything like a race, as if victory on quantifiable measures such as follower counts, valuations, or market capitalisation were all that mattered, and that at their altar, everything else must be sacrificed.
+We treat everything like a race, as if victory on quantifiable measures such as follower counts, valuations, or market capitalisation were all that mattered, and at their altar, everything else is sacrificed.
 
 I want to challenge this notion, not to deny that hard work, sense of urgency, and rigour are key ingredients, but to suggest that they aren’t the whole story.
 
@@ -17,7 +17,7 @@ Most people who are grinding away are doing so because they can’t focus. When 
 
 The impatience trap. Everything takes longer than planned (Given you don’t change scope), and impatience tempts us to change direction — especially when we see others sprinting in a marathon. To make matters worse, some people create only the appearance of effort, which makes us question our own pace. Combined with the seductive pull of “trying something new” over slogging through the current plan, this is almost impossible to resist.
 
-The first mile is generally fun. The last one is brutal.
+The first mile is generally fun, the last one is brutal.
 
 99% of all strategy changes — in companies and in life — happen without any new data to justify them. They’re born of impatience, not insight. Strategy A should only be abandoned after it is tried out, or when new data increases its odds of failure.
 
