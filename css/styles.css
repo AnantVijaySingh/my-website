@@ -16,6 +16,11 @@ header {
     background-color: white;
     padding: 20px 0; /* Increased padding for more spacing */
     border-bottom: 1px solid transparent; /* Placeholder for the thin line */
+    transition: transform 0.3s ease-out; /* Add this line for smooth animation */
+}
+
+.header-hidden {
+    transform: translateY(-100%);
 }
 
 header::after {
@@ -38,11 +43,28 @@ header a {
     font-size: 18px; /* Slightly larger font size */
     color: black;
     font-weight: 500;
+    display: flex; /* Enable flex for icon/text alignment */
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-icon {
+    display: none;
+}
+
+.nav-text {
+    display: inline;
 }
 
 header a:hover,
 header a.active {
     color: #1877F2; /* Blue for active or hovered links */
+}
+
+header a.active .nav-icon,
+header a:hover .nav-icon {
+    /* Filter to turn black into #1877F2 (Blue) */
+    filter: invert(31%) sepia(95%) saturate(2185%) hue-rotate(202deg) brightness(100%) contrast(93%);
 }
 
 @media (max-width: 600px) {
@@ -64,6 +86,34 @@ header a.active {
     flex: 0 0 auto;
     font-size: 16px;
     padding: 0.25rem 0;
+  }
+  
+  header a.active {
+    flex-direction: row-reverse;
+    gap: 8px;
+  }
+  
+  /* Default state for nav-text on mobile (hidden but animatable) */
+  .nav-text {
+    visibility: hidden;
+    opacity: 0;
+    max-width: 0;
+    overflow: hidden;
+    transition: max-width 0.5s ease, visibility 0s 0.5s; /* Removed opacity from transition */
+  }
+  
+  /* Active state for nav-text on mobile (visible and animatable) */
+  header a.active .nav-text {
+    visibility: visible;
+    opacity: 1;
+    max-width: 100px; /* A reasonable max-width, adjust as needed */
+    transition: max-width 0.5s ease, visibility 0s; /* Removed opacity from transition */
+  }
+  
+  .nav-icon {
+    display: block;
+    width: 24px;
+    height: 24px;
   }
 }
 
@@ -552,6 +602,10 @@ body.dark-mode #about-section a {
 /* Dark Mode Icon Styles */
 body.dark-mode #social-icons img {
     filter: invert(100%) sepia(0%) saturate(1996%) hue-rotate(109deg) brightness(108%) contrast(76%);; /* Dim and desaturate icons */
+}
+
+body.dark-mode .nav-icon {
+    filter: invert(100%) sepia(0%) saturate(1996%) hue-rotate(109deg) brightness(108%) contrast(76%);
 }
 
 body.dark-mode .quote-icons img {
