@@ -1,9 +1,15 @@
 [
   {
+    "filename": "Lossy-Compression.md",
+    "title": "Wisdom, A Lossy Compression",
+    "date": "2026-02-02",
+    "snippet": "Smart, experienced people can compress decades of lessons into a few sentences. Wisdom isn’t in the quotes—it’s in the fear, the stumbles, and the stories we skip over."
+  },
+  {
     "filename": "Discounting-Reality.md",
     "title": "Discounting Reality",
     "date": "2025-11-11",
-    "snippet": "We might be losing the race by running faster. Focus, creativity, and courage have become bystanders as we hurtle toward a world increasingly built by people who’ve stopped taking time to dream."
+    "snippet": "We might be losing the race by running faster. Focus, creativity, and courage have become bystanders as we hurtle toward a world increasingly built by people who've stopped taking time to dream."
   },
   {
     "filename": "Focus-Progress-Success.md",
@@ -15,13 +21,13 @@
     "filename": "Momentum->-Motivation.md",
     "title": "Momentum > Motivation",
     "date": "2025-07-27",
-    "snippet": "There’s a reason why videos of successful people saying inspiring things get so many views, and why so much effort goes into setting up the interviews that capture them. These are all extrinsic motivators, icing on the cake that gives us sugar rush. But I’ve never heard of anyone watching the commencement address delivered by Steve Jobs at Stanford in 2005, getting motivated and then spending the next year building something great. "
+    "snippet": "There's a reason why videos of successful people saying inspiring things get so many views, and why so much effort goes into setting up the interviews that capture them. These are all extrinsic motivators, icing on the cake that gives us sugar rush. But I've never heard of anyone watching the commencement address delivered by Steve Jobs at Stanford in 2005, getting motivated and then spending the next year building something great. "
   },
   {
     "filename": "Everything-Is-a-To-Do-List.md",
     "title": "Everything Is a To-Do List",
     "date": "2025-02-16",
-    "snippet": "Just when I thought I had seen it all, I’d discover yet another novel way people were repurposing decades-old products to fit their needs."
+    "snippet": "Just when I thought I had seen it all, I'd discover yet another novel way people were repurposing decades-old products to fit their needs."
   },
   {
     "filename": "In-The-Age-Of-Abundance.md",
@@ -30,10 +36,10 @@
     "snippet": "'I wondered if the motto of our era should be: \"I tried to live, but I got distracted.\" — Johann Hari.'"
   },
   {
-  "filename": "Consumption-Perception-Of-Learning-And-Production.md",
-  "title": "Consumption, Perception Of Learning And Production",
-  "date": "2024-03-16",
-  "snippet": "A few weeks ago, I had an engrossing conversation with a friend regarding their consumption habits. They detailed how they had painstakingly optimized their consumption for learning and how it played a role in their professional and personal life. Intrigued, I raised the question of what they were producing with all the knowledge they were absorbing. We had to cut our discussion short due to time zone difference and we concluded with me suggesting they sell their TV."
+    "filename": "Consumption-Perception-Of-Learning-And-Production.md",
+    "title": "Consumption, Perception Of Learning And Production",
+    "date": "2024-03-16",
+    "snippet": "A few weeks ago, I had an engrossing conversation with a friend regarding their consumption habits. They detailed how they had painstakingly optimized their consumption for learning and how it played a role in their professional and personal life. Intrigued, I raised the question of what they were producing with all the knowledge they were absorbing. We had to cut our discussion short due to time zone difference and we concluded with me suggesting they sell their TV."
   },
   {
     "filename": "Tale-Of-A-Croissant.md",
@@ -90,5 +96,3 @@
     "snippet": "Quick wins seem to be a common way of thinking in the tech industry. The fact that a transaction has occurred has become more important than whether the transaction yields a positive impact for the user or the business in the long run is not questioned. Obsession with moving metrics NOW versus prioritizing the long term solution got on my nerves, which is reflected in the tone of this email. I apologize for that in advance. \"The choice between what is right and what is easy\" - Dumbledore. '"
   }
 ]
-
-
