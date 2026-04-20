@@ -4,9 +4,7 @@ As I delved into the research, one aspect struck me. While a lot of emphasis is 
 
 My hypothesis is that the individual's 'Conviction' is the decisive factor in determining the quality of the end result. In the presence of conviction, while any single decision in itself might be suboptimal, the average is great and leads to achieving hard objectives.
 
-Life consists of a series of decisions, from choosing Tiramisu gelato to selecting a life partner. We all grapple with this fundamental aspect of life, often succumbing to procrastination, falling into choice paralysis, or getting stuck in an endless loop of data collection, choosing comfort over the right path.
-
-Life is a series of decisions, from choosing Tiramisu gelato to selecting a life partner. We all grapple with this fundamental aspect of life, often succumbing to procrastination, falling into choice paralysis, or getting stuck in an endless loop of data collection, choosing comfort over the right path.
+Life is a series of decisions, from choosing tiramisu gelato to selecting a life partner. We all grapple with the fallibilities life, often succumbing to procrastination, falling into choice  paralysis, or getting stuck in an endless loop of data collection,  choosing comfort over the right path.
 
 Conviction appears to be a rare trait, primarily observed in visionary leaders and change-makers. Everyone has dreams and visions, but what sets an inspiring visionary leader apart is the unwavering conviction they hold in their vision.
 
