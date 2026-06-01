@@ -1,4 +1,4 @@
-__|__ to Quick Wins
+__ | __ to Quick Wins
 
 Quick wins seem to be a common way of thinking in the tech industry. The fact that a transaction has occurred has become more important than whether the transaction yields a positive impact for the user or the business in the long run is not questioned. "The choice between what is right and what is easy" - Dumbledore.
 
