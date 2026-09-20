@@ -201,8 +201,9 @@ The essays are a single-column, reverse-chronological list — one row per essay
 
 - **Row anatomy:** a fixed date gutter on the left, then title and snippet stacked on the right.
   Rows are separated by `--space-lg` of white space; no rules between them.
-- **Date:** Display, `1rem`, uppercase, `--accent-ink`, right-aligned in a `9rem` gutter so
-  the titles form a clean left edge (e.g. "JUN 02, 2026").
+- **Date:** Display, `1rem`, uppercase, `--accent-ink`, **left-aligned** in a fixed `9rem`
+  gutter (e.g. "JUN 02, 2026"). Left, not right, so the date text sits on the same left edge
+  as the nav and the intro; the fixed gutter still keeps every title on one column.
 - **Title:** Display, `1.25rem`, bold, `--ink`; `--accent-ink` on hover.
 - **Snippet:** Georgia, `1rem`, `--ink-muted`. The text column is capped at the reading measure
   so snippets never stretch across the 1200px container.

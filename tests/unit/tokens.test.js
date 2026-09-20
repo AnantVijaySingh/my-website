@@ -215,7 +215,7 @@ test('essay list is a single column with a fixed date gutter', () => {
 
     const date = css.declarationsFor('.essay-list__date', rules);
     assert.match(date.flex || '', /\b\d+(\.\d+)?rem\b/, 'date gutter needs a fixed rem width');
-    assert.equal(date['text-align'], 'right', 'dates are right-aligned against the title edge');
+    assert.equal(date['text-align'], 'left', 'dates share the page left edge with the nav and intro');
     assert.equal(date.color, 'var(--accent-ink)');
 
     const body = css.declarationsFor('.essay-list__body', rules);

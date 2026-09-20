@@ -363,10 +363,11 @@ main {
     gap: var(--space-md);
 }
 
-/* The gutter is wide enough for "JUN 02, 2026" in tracked uppercase at 1rem. */
+/* Left-aligned so the date text shares the page's left edge with the nav and
+   intro; the fixed gutter keeps every title on one column regardless. */
 .essay-list__date {
     flex: 0 0 9rem;
-    text-align: right;
+    text-align: left;
     font-family: var(--font-display);
     font-size: 1rem;
     font-weight: 500;
@@ -412,7 +413,6 @@ main {
     }
     .essay-list__date {
         flex: none;
-        text-align: left;
     }
 }
 

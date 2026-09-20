@@ -553,3 +553,4 @@ worse than no log.
 | 2026-09-20 | 6‴ | Essay H1 `1.2rem` → `1.25rem` (matches the list title size) | **147/147** | |
 | 2026-09-20 | 6⁗ | Essay H1 back to half size `clamp(1.25rem, 3.5vw, 2.5rem)`, line-height 1.1 — **settled** | **147/147** | Tried fixed 1.2rem and 1.25rem in between. |
 | 2026-09-20 | 3′ | **Header redone:** five left-aligned links, Anant Vijay as the fifth; `.site-brand` retired; active link in `--accent` + underline | **146 pass / 0 fail** | Documented AA exception (2.86:1) on the active label — non-colour indicator required by test. |
+| 2026-09-20 | 5⁗ | List dates left-aligned in the gutter so nav, intro and list share one left edge | **147/147** | Right-aligned dates had started ~2rem in. |
