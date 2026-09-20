@@ -54,7 +54,7 @@ declared dependency, so it only ever worked by accident.
 │   ├── quotes.json        Rendered by js/quotes.js on quotes.html
 │   └── activities.json    Rendered by an inline script on time.html
 ├── css/styles.css         The whole stylesheet — tokens first, then components
-├── ts/                    TypeScript sources; compiled to js/ by `tsc`
+├── ts/                    TypeScript sources (quotes, theme toggle); compiled to js/ by `tsc`
 ├── js/                    Compiled output — do not edit by hand
 ├── quotes.html, software.html, time.html, about.html
 │                          Hand-maintained pages
@@ -210,7 +210,6 @@ One runtime dependency (`marked`, zero transitive deps) and two dev dependencies
 ## Known debt
 
 - `finds.html` is an unstyled 10-line stub, unlinked from the nav but present in the sitemap.
-- `js/essays.js` / `ts/essays.ts` are loaded by no page — the homepage is generated statically.
 - `icons/{book,clock,pen-tool,terminal,user}.svg` and `icons/favicon.svg` are unreferenced
   since the icon nav was retired.
 - `For_AI.md` describes the previous design.

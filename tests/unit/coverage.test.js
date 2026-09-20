@@ -9,7 +9,7 @@
  * Sources scanned for emitted classes:
  *   - every page in tests/lib/pages.js (raw HTML, so inline scripts count)
  *   - both templates
- *   - only the JS files a page actually loads (js/essays.js is loaded by nothing)
+ *   - only the JS files a page actually loads
  */
 
 const test = require('node:test');
@@ -116,6 +116,6 @@ test('only scripts that pages actually load are considered', () => {
     const scripts = loadedScripts();
     assert.ok(scripts.includes('js/toggle.js'), 'toggle.js should be loaded');
     assert.ok(scripts.includes('js/quotes.js'), 'quotes.js should be loaded');
-    // Documented dead code: nothing loads it, so it is deliberately not scanned.
-    assert.ok(!scripts.includes('js/essays.js'), 'js/essays.js is loaded by no page');
+    // The homepage is generated at build time, so no script builds it in the browser.
+    assert.ok(!scripts.some((s) => /essays\.js$/.test(s)), 'no page should load a client-side essay list');
 });
