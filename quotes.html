@@ -11,7 +11,7 @@
             try {
                 var savedTheme = localStorage.getItem('theme');
                 if (savedTheme === 'dark') {
-                    document.documentElement.classList.add('dark-mode');
+                    document.documentElement.setAttribute('data-theme', 'dark');
                 }
             } catch(e) {
                 // localStorage is unavailable or throws an error (private mode, etc.)

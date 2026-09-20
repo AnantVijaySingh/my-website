@@ -1,23 +1,49 @@
-function initializeDarkMode() {
-    const toggleSwitch = document.getElementById('switch') as HTMLInputElement;
-    const body = document.body;
+/**
+ * Theme toggle.
+ *
+ * The theme lives on <html data-theme="dark">, which the tokens in
+ * css/styles.css respond to. An inline script in each page's <head> applies the
+ * saved theme before first paint so there is no flash; this file only wires the
+ * switch and persists the choice.
+ */
 
-    // Load the saved theme from localStorage
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        body.classList.add('dark-mode');
-        if (toggleSwitch) {
-            toggleSwitch.checked = true;
-        }
+const THEME_KEY = 'theme';
+const root = document.documentElement;
+
+function readSavedTheme(): string | null {
+    try {
+        return localStorage.getItem(THEME_KEY);
+    } catch {
+        return null; // private mode, blocked storage, etc.
+    }
+}
+
+function applyTheme(dark: boolean): void {
+    if (dark) {
+        root.setAttribute('data-theme', 'dark');
+    } else {
+        root.removeAttribute('data-theme');
+    }
+}
+
+function initializeThemeToggle(): void {
+    const toggleSwitch = document.getElementById('switch') as HTMLInputElement | null;
+    const isDark = readSavedTheme() === 'dark';
+
+    applyTheme(isDark);
+    if (toggleSwitch) {
+        toggleSwitch.checked = isDark;
     }
 
-    // Add event listener to toggle
     toggleSwitch?.addEventListener('change', () => {
-        const isDark = toggleSwitch?.checked;
-        body.classList.toggle('dark-mode', isDark);
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        const dark = toggleSwitch.checked;
+        applyTheme(dark);
+        try {
+            localStorage.setItem(THEME_KEY, dark ? 'dark' : 'light');
+        } catch {
+            // Storage unavailable: the theme still applies for this page view.
+        }
     });
 }
 
-// Initialize on DOMContentLoaded
-document.addEventListener('DOMContentLoaded', initializeDarkMode);
+document.addEventListener('DOMContentLoaded', initializeThemeToggle);

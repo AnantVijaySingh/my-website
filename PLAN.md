@@ -21,13 +21,13 @@ Status key: `[ ]` not started · `[~]` in progress · `[x]` done · `[!]` blocke
 | 0 | Safety net + baseline capture | `[x]` | No | Yes (records "before") |
 | 0b | Pre-existing bug fixes (§3) | `[x]` | Homepage order only | No |
 | 1 | Failing design tests (red) | `[x]` | No | No |
-| 2 | Token layer + base styles | `[ ]` | Yes | No |
+| 2 | Token layer + base styles + theme mechanism | `[x]` | Yes | You confirm |
 | 3 | Split header | `[ ]` | Yes | Yes |
 | 4 | Breadcrumbs | `[ ]` | Yes | Yes |
 | 5 | Index hero + 3-column grid | `[ ]` | Yes | Yes |
 | 6 | Essay reading page | `[ ]` | Yes | **Yes — all 17 essays** |
 | 7 | Remaining pages | `[ ]` | Yes | Yes |
-| 8 | Dark palette | `[ ]` | Yes | Yes |
+| 8 | Dark palette — verification + polish only (mechanism landed in Phase 2) | `[ ]` | Yes | Yes |
 | 9 | Verify & document | `[ ]` | No | **Yes — all 23 pages** |
 | 10 | Socket re-verification (quota permitting) | `[ ]` | No | No |
 
@@ -290,12 +290,22 @@ names the missing thing (`:root is missing --canvas`, `missing <header class="si
 `.time-content` have **no CSS at all** (browser-default paragraphs) → Phase 7. Dead selectors
 `.header-hidden`, `.activity-name` → Phase 9. `js/essays.js` is loaded by no page → flagged.
 
-### Phase 2 — Token layer + base styles `[ ]`
-- [ ] `:root` light tokens + `[data-theme="dark"]` dark tokens (`design.md` §1.2–1.3)
-- [ ] Canvas, ink, two font stacks, container, spacing scale
-- [ ] Replace blue accent throughout
+### Phase 2 — Token layer + base styles + theme mechanism `[x]`
+- [x] `:root` light tokens + `[data-theme="dark"]` dark tokens (`design.md` §1.2–1.3)
+- [x] Canvas, ink, two font stacks, container, spacing scale, `clamp()` H1
+- [x] Blue accent replaced throughout; every existing component re-pointed to tokens so the
+      live site stays coherent between phases (transitional sections marked in the CSS)
+- [x] **Theme mechanism pulled forward from Phase 8:** `data-theme` on `<html>`, `toggle.ts`
+      rewritten, all ~40 `body.dark-mode` override rules deleted — tokens make them redundant
+- [x] Anti-flash script switched to `data-theme` in both templates; **added to `software.html`,
+      `about.html` and the privacy policy, which never had one**
+- [x] Stylesheet 890 → 752 lines with the duplicated software block removed
 
-**Gate:** `tokens.test.js` green.
+**Gate:** `tokens.test.js` green. ✅ **13/16** — the 3 red are Phase 5/6 components (grid,
+octagon, article measure). Theme test also green. Guard 0 failures.
+
+**Re-scope note:** tokens are defined per theme, so dark mode became nearly free the moment
+they existed. Phase 8 is now verification and polish, not implementation.
 
 ### Phase 3 — Split header `[ ]`
 - [ ] Brand-left / links-right markup
@@ -482,3 +492,4 @@ worse than no log.
 | 2026-09-20 | 0b | TDD: `dates.test.js` + `order.test.js` written first — **4 failed for the right reasons**. Fixed `2024-02-1`→`2024-02-01`; both generators now format dates in UTC; homepage sorted newest-first | **59 pass / 0 fail** (1 skip: reproducibility test stands down while generated files are uncommitted) | TZ bug was **17 of 18 pages**, worse than estimated. The one immune page was the malformed date — it parsed as *local* midnight. `essays/` byte-identical after fix (no visible change in BST). Only `index.html` changed: card order. |
 | 2026-09-20 | 0/0b | **Committed** `618fe60` on branch `redesign` (branched from `main`) | **60 pass / 0 fail / 0 skip** | Clean tree un-skipped the reproducibility test: a true 60/60. |
 | 2026-09-20 | 1 | `tokens.test.js` (18), `markup.test.js` (61), `coverage.test.js` (3) written; `test:guard` / `test:design` scripts added | **Guard 60/60. Design 3/82 (79 red, by design)** | Red for the right reasons — every message names the missing thing. Coverage test already surfaced 3 unstyled intro paragraphs on the live site and 2 dead selectors. |
+| 2026-09-20 | 2 | Tokenised stylesheet (752 lines), `data-theme` mechanism, `toggle.ts` rewrite, anti-flash on all 6 static pages (3 never had it) | **Guard 0 fail. Design 26/82** (tokens 13/16) | First pixel change. Theme mechanism pulled forward — Phase 8 is now polish only. Chrome automation unavailable: visual verification is the user's tab, not my screenshots. |

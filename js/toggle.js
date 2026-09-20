@@ -1,21 +1,46 @@
 "use strict";
-function initializeDarkMode() {
-    const toggleSwitch = document.getElementById('switch');
-    const body = document.body;
-    // Load the saved theme from localStorage
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        body.classList.add('dark-mode');
-        if (toggleSwitch) {
-            toggleSwitch.checked = true;
-        }
+/**
+ * Theme toggle.
+ *
+ * The theme lives on <html data-theme="dark">, which the tokens in
+ * css/styles.css respond to. An inline script in each page's <head> applies the
+ * saved theme before first paint so there is no flash; this file only wires the
+ * switch and persists the choice.
+ */
+const THEME_KEY = 'theme';
+const root = document.documentElement;
+function readSavedTheme() {
+    try {
+        return localStorage.getItem(THEME_KEY);
     }
-    // Add event listener to toggle
+    catch (_a) {
+        return null; // private mode, blocked storage, etc.
+    }
+}
+function applyTheme(dark) {
+    if (dark) {
+        root.setAttribute('data-theme', 'dark');
+    }
+    else {
+        root.removeAttribute('data-theme');
+    }
+}
+function initializeThemeToggle() {
+    const toggleSwitch = document.getElementById('switch');
+    const isDark = readSavedTheme() === 'dark';
+    applyTheme(isDark);
+    if (toggleSwitch) {
+        toggleSwitch.checked = isDark;
+    }
     toggleSwitch === null || toggleSwitch === void 0 ? void 0 : toggleSwitch.addEventListener('change', () => {
-        const isDark = toggleSwitch === null || toggleSwitch === void 0 ? void 0 : toggleSwitch.checked;
-        body.classList.toggle('dark-mode', isDark);
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        const dark = toggleSwitch.checked;
+        applyTheme(dark);
+        try {
+            localStorage.setItem(THEME_KEY, dark ? 'dark' : 'light');
+        }
+        catch (_a) {
+            // Storage unavailable: the theme still applies for this page view.
+        }
     });
 }
-// Initialize on DOMContentLoaded
-document.addEventListener('DOMContentLoaded', initializeDarkMode);
+document.addEventListener('DOMContentLoaded', initializeThemeToggle);

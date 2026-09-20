@@ -76,16 +76,21 @@ function declarations(body) {
     return out;
 }
 
-/** Merged declarations of every rule whose selector matches `selector` exactly. */
-function declarationsFor(selector, allRules = rules()) {
+/**
+ * Merged declarations of every rule whose selector matches `selector` exactly.
+ * Only base rules (no media query) are considered unless `media` is given;
+ * pass `null` to merge across every media query.
+ */
+function declarationsFor(selector, allRules = rules(), media = '') {
     return allRules
+        .filter((rule) => media === null || (rule.media || '') === media)
         .filter((rule) => rule.selector.split(',').some((s) => s.trim() === selector))
         .reduce((acc, rule) => Object.assign(acc, declarations(rule.body)), {});
 }
 
-/** Custom properties declared in a given selector, e.g. ':root'. */
-function customProperties(selector, allRules = rules()) {
-    const declared = declarationsFor(selector, allRules);
+/** Custom properties declared in a given selector, e.g. ':root' (base rules only). */
+function customProperties(selector, allRules = rules(), media = '') {
+    const declared = declarationsFor(selector, allRules, media);
     return Object.fromEntries(
         Object.entries(declared).filter(([property]) => property.startsWith('--'))
     );

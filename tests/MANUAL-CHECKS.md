@@ -19,6 +19,9 @@ automated will catch a mobile-layout regression for you.
 
 ## Setup
 
+> **Who runs this:** you. Chrome automation is not available to Claude in this session, so
+> these checks are prompted by Claude and performed in your own browser.
+
 ```bash
 npm start           # vite, http://localhost:5173
 ```
