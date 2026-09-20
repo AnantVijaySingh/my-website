@@ -326,6 +326,12 @@ main {
     padding: var(--space-md) 0 var(--space-xl);
 }
 
+/* A hero that carries only the hidden heading: continuous prose follows
+   directly, so no section gap beneath it. */
+.hero--label {
+    padding-bottom: 0;
+}
+
 /* Present for the document outline, not for the eye. */
 .hero__title {
     position: absolute;
