@@ -13,10 +13,13 @@ if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true });
 }
 
-// Helper function to format the date
+// Helper function to format the date.
+// Dates in essays.json are calendar dates, not instants: an ISO date string parses
+// as UTC midnight, so it must be formatted in UTC too. Formatting in local time
+// bakes in the previous day whenever the build machine sits behind UTC.
 function formatDate(dateString) {
     const date = new Date(dateString);
-    const options = { day: '2-digit', month: 'long', year: 'numeric' };
+    const options = { day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC' };
     return date.toLocaleDateString('en-US', options);
 }
 
