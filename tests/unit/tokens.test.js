@@ -227,3 +227,38 @@ test('macro spacing scales down on small viewports', () => {
     assert.ok(overridden['--space-2xl'], '--space-2xl must shrink on phones (design.md §3)');
     assert.notEqual(overridden['--space-2xl'], EXPECTED_SPACING['--space-2xl']);
 });
+
+// ─── Theme mechanism (design.md §1.3, Phase 8) ─────────────────────────────
+
+test('color-scheme is declared for both themes so native controls follow', () => {
+    assert.equal(css.declarationsFor(LIGHT, rules)['color-scheme'], 'light');
+    assert.equal(css.declarationsFor(DARK, rules)['color-scheme'], 'dark');
+});
+
+test('dark-scoped rules only invert line icons — every colour difference is a token', () => {
+    // If dark mode needs a colour that light mode does not, that is a new token,
+    // not a [data-theme="dark"] override. The only legitimate dark-only rules
+    // are filters on black SVG line icons.
+    const darkScoped = rules.filter((rule) => rule.selector.startsWith(DARK) && rule.selector !== DARK);
+    const offenders = darkScoped
+        .filter((rule) => !/\bimg\b/.test(rule.selector) || !/^\s*filter\s*:/m.test(rule.body.trim()))
+        .map((rule) => rule.selector);
+    assert.deepEqual(offenders, [], `Dark-only overrides that should be tokens:\n  ${offenders.join('\n  ')}`);
+    assert.ok(darkScoped.length >= 3, 'expected icon inversions for essay actions, quote buttons and social links');
+});
+
+test('artwork and author images are never inverted in dark mode', () => {
+    const inverted = rules
+        .filter((rule) => rule.selector.startsWith(DARK) && /filter/.test(rule.body))
+        .map((rule) => rule.selector)
+        .join('\n');
+    assert.doesNotMatch(inverted, /software-icon|essay-article__body/,
+        'the Focus app icon and essay images are real artwork and must not be inverted');
+});
+
+test('no colour keywords bypass the tokens', () => {
+    const offenders = rules
+        .filter((rule) => /(^|[\s:;])(black|white|gr[ae]y|silver|red|blue|orange)\s*(;|$|!)/m.test(rule.body))
+        .map((rule) => rule.selector);
+    assert.deepEqual(offenders, [], `Colour keywords in: ${offenders.join(', ')}`);
+});

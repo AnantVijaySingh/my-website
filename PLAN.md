@@ -27,7 +27,7 @@ Status key: `[ ]` not started · `[~]` in progress · `[x]` done · `[!]` blocke
 | 5 | Index hero + 3-column grid | `[x]` | Yes | **You confirm at 3 widths** |
 | 6 | Essay reading page | `[x]` | Yes | **You — all 17 essays** |
 | 7 | Remaining pages | `[x]` | Yes | You confirm |
-| 8 | Dark palette — verification + polish only (mechanism landed in Phase 2) | `[ ]` | Yes | Yes |
+| 8 | Dark palette — verification + polish only (mechanism landed in Phase 2) | `[x]` | No new | **You — toggle through pages** |
 | 9 | Verify & document | `[ ]` | No | **Yes — all 23 pages** |
 | 10 | Socket re-verification (quota permitting) | `[ ]` | No | No |
 
@@ -147,7 +147,7 @@ Found by surveying the code. Each is addressed in a specific phase.
 |---|---|---|---|
 | R1 | **Class collisions.** `.essay-date` styles both the index date and the article date. `.essay-content` is both the index snippet wrapper (`index-generator.js:29`) and the essay body `<section>` (`essay-template.html:41`). Restyling a card silently restyles all 17 essay bodies. → namespace `.essay-card__*` / `.essay-article__*`. | 5, 6 | `[x]` |
 | R2 | **Essay body elements are unstyled.** Markdown uses `###` (26×), `####` (4×), blockquotes (2×), lists (9×). No CSS rules exist for these inside articles — they render as browser defaults. | 6 | `[x]` |
-| R3 | **Anti-flash script is a no-op.** Inline script sets `.dark-mode` on `documentElement`; CSS only matches `body.dark-mode`. Never suppressed the flash. → `data-theme` on `<html>`. | 8 | `[ ]` |
+| R3 | **Anti-flash script is a no-op.** Inline script sets `.dark-mode` on `documentElement`; CSS only matches `body.dark-mode`. Never suppressed the flash. → `data-theme` on `<html>`. | 8 | `[x]` |
 | R4 | **`Momentum->-Motivation.html` has a literal `>` in its filename**, emitted unencoded into hrefs. Works in browsers. **Do not rename** — breaks live URLs + sitemap. Pin with a test. Its title also contains `>`, so breadcrumbs must HTML-escape. | 4 | `[x]` |
 | R5 | **Two essays embed images** (`Linear-Compound-Exponential`, `Ahhhhhh-When-I-hear-Quick-Wins`) via `../images/…`. Path changes break them. | 6 | `[x]` |
 | R6 | **`index.html` is rebuilt wholesale** from its template. Hand-edits are lost on next build — all homepage changes go in the template. | 5 | `[x]` |
@@ -377,11 +377,22 @@ fail, baseline byte-identical across all 17 bodies.
 
 **Gate:** ✅ automated green; visual confirm pending.
 
-### Phase 8 — Dark palette `[ ]`
-- [ ] Implement `design.md` §1.3 tokens
-- [ ] Rewrite `ts/toggle.ts` for `data-theme`; recompile with `tsc`
-- [ ] Fix anti-flash script in both templates + all 5 static pages (R3)
-- [ ] Manual pass: flip + persist across navigation + no flash on reload
+### Phase 8 — Dark palette `[x]`
+- [x] `design.md` §1.3 tokens — landed in Phase 2
+- [x] `ts/toggle.ts` rewritten for `data-theme`; recompiled — landed in Phase 2
+- [x] Anti-flash script fixed on all pages (R3) — landed in Phase 2
+- [x] **Audit:** zero colour keywords, zero `rgba()` outside token blocks, exactly 3 dark-scoped
+      rules and all are line-icon inversions; app artwork and essay images untouched;
+      `color-scheme` set for both themes
+- [x] **Guards added** (4 tests): `color-scheme` both themes; dark-scoped rules may only be
+      `img` + `filter` (a dark-only colour is a missing token, not an override); artwork never
+      inverted; no colour keywords
+- [ ] Manual pass — **you**: toggle on index, an essay, quotes, about; navigate (persists);
+      reload (no flash); icons visible; app icon and essay images NOT inverted
+
+**Gate:** ✅ automated 86/86; visual confirm pending.
+**Not done, offered:** respecting `prefers-color-scheme` when no choice is saved. The original
+site did not; the spec does not ask; it is a 3-line change if wanted.
 
 ### Phase 9 — Verify & document `[ ]`
 - [ ] Full build; full suite; **content baseline diff zero**
@@ -526,3 +537,4 @@ worse than no log.
 | 2026-09-20 | 5 | Hero + 17-card grid, octagon via clip-path, `<time datetime>`, escaped title/snippet | **Guard 0 fail. Design 63/82** | Dead-CSS test green: no unused selectors remain. R6 closed. |
 | 2026-09-20 | 6 | Reading page: namespaced article, 68ch measure, every markdown element styled, nested-div template bug fixed | **Guard 0 fail. Design 82/82 ✅** | R1, R2, R5 closed. Design suite fully green two phases early; 7 and 8 are visual refinement the automated layer already covers structurally. |
 | 2026-09-20 | 7 | Heroes on quotes/software/time/about; breadcrumbs on privacy; content columns left-aligned site-wide; dead comment block removed from about | **Guard 60/60. Design 82/82** | The 3 intro paragraphs that had no CSS are now styled. Reproducibility test ran clean. |
+| 2026-09-20 | 8 | Dark-mode audit clean; 4 guard tests added | **Guard 60/60. Design 86/86** | R3 closed. Nothing to fix — tokens did the work. `prefers-color-scheme` offered, not done. |
