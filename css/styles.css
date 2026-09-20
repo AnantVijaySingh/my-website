@@ -385,13 +385,12 @@ main {
     gap: var(--space-md);
 }
 
-/* Date sits at the same size as the title; the gutter is wide enough for
-   "JUN 02, 2026" in tracked uppercase at that size. */
+/* The gutter is wide enough for "JUN 02, 2026" in tracked uppercase at 1rem. */
 .essay-list__date {
-    flex: 0 0 11rem;
+    flex: 0 0 9rem;
     text-align: right;
     font-family: var(--font-display);
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 500;
     letter-spacing: var(--tracking-caps);
     text-transform: uppercase;

@@ -117,7 +117,7 @@ and a classic serif.
 | Breadcrumb | Display | `0.75rem` | 500 | uppercase, `0.05em` |
 | Date / meta | Display | `0.75rem` | 500 | uppercase, `0.05em` |
 | List title | Display | `1.25rem` | 700 | none |
-| List date | Display | `1.25rem` | 500 | uppercase, `0.05em` |
+| List date | Display | `1rem` | 500 | uppercase, `0.05em` |
 | Essay body | Body | `1.125rem` | 400 | none, `line-height: 1.75` |
 | List snippet | Body | `1rem` | 400 | none, `line-height: 1.7` |
 
@@ -197,8 +197,8 @@ The essays are a single-column, reverse-chronological list — one row per essay
 
 - **Row anatomy:** a fixed date gutter on the left, then title and snippet stacked on the right.
   Rows are separated by `--space-lg` of white space; no rules between them.
-- **Date:** Display, `1.25rem` — the same size as the title — uppercase, `--accent-ink`,
-  right-aligned in an `11rem` gutter so the titles form a clean left edge (e.g. "JUN 02, 2026").
+- **Date:** Display, `1rem`, uppercase, `--accent-ink`, right-aligned in a `9rem` gutter so
+  the titles form a clean left edge (e.g. "JUN 02, 2026").
 - **Title:** Display, `1.25rem`, bold, `--ink`; `--accent-ink` on hover.
 - **Snippet:** Georgia, `1rem`, `--ink-muted`. The text column is capped at the reading measure
   so snippets never stretch across the 1200px container.

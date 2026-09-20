@@ -547,3 +547,4 @@ worse than no log.
 | 2026-09-20 | 9+ | Removed dead client-side essay list (`ts/essays.ts`, `js/essays.js`) and two stale compiled files left inside `ts/` | — | The homepage has been build-time generated all along; the browser script was a superseded duplicate carrying the timezone bug. |
 | 2026-09-20 | 5′ | **Grid reverted to a single-column list** by author preference. Spec (`design.md` §4), tests and code updated in that order; `.essay-card*` retired for `.essay-list*` | **145 pass / 0 fail** | Date gutter left, title + snippet right, hairlines; stacks below 768px. Octagon bullet retired with the grid. |
 | 2026-09-20 | 5″ | Author feedback: no rules between essays; date at title size (gutter 8→11rem); section-page H1s hidden (kept in DOM, hidden via `.hero__title` for outline/SEO); `.hero--compact` dropped | **147/147** | Spec, tests and docs updated alongside. |
+| 2026-09-20 | 5‴ | List date 1.25rem → 1rem; gutter 11 → 9rem | **147/147** | |
