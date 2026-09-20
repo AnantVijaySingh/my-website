@@ -205,98 +205,84 @@ main {
 
 
 /* --------------------------------------------------------------------------
-   3. Header  (transitional — replaced by the split header in Phase 3)
+   3. Header — brand left, section links right (design.md §4)
    -------------------------------------------------------------------------- */
 
-header {
+.site-header {
     position: sticky;
     top: 0;
     z-index: 1000;
     background-color: var(--canvas);
-    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--rule);
 }
 
-header::after {
-    content: '';
-    display: block;
-    width: 60%;
-    height: 1px;
-    background-color: var(--rule);
-    margin: var(--space-sm) auto 0;
-}
-
-header nav {
+.site-header__inner {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: var(--space-sm) var(--container-pad);
     display: flex;
-    justify-content: center;
-    gap: var(--space-md);
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-2xs) var(--space-md);
 }
 
-header a {
+/* The wordmark is the one place --accent is used as text: WCAG exempts logotypes. */
+.site-brand {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    white-space: nowrap;
+}
+
+.site-brand:hover {
+    color: var(--accent);
+    text-decoration: none;
+    opacity: 0.85;
+}
+
+.site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs) var(--space-md);
+}
+
+.site-nav a {
     font-family: var(--font-display);
     font-size: 0.875rem;
     font-weight: 500;
     letter-spacing: var(--tracking-caps);
     text-transform: uppercase;
     color: var(--ink);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 0.25rem 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-header a:hover,
-header a.active {
+.site-nav a:hover,
+.site-nav a.active {
     color: var(--accent-ink);
     text-decoration: none;
 }
 
-.nav-icon {
-    display: none;
+.site-nav a.active {
+    border-bottom-color: var(--accent-ink);
 }
 
-.nav-text {
-    display: inline;
-}
-
-@media (max-width: 600px) {
-    header nav {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        white-space: nowrap;
-        gap: var(--space-sm);
-        padding: 0 var(--space-xs) 4px;
-        scrollbar-width: none;
+/* Below 600px the brand keeps the left edge and the links wrap beneath it. */
+@media (max-width: 599px) {
+    .site-header__inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-2xs);
+        padding-top: var(--space-xs);
+        padding-bottom: var(--space-xs);
     }
-    header nav::-webkit-scrollbar {
-        display: none;
-    }
-    header a {
-        flex: 0 0 auto;
-        padding: 0.25rem 0;
-    }
-    header a.active {
-        flex-direction: row-reverse;
-        gap: var(--space-3xs);
-    }
-    .nav-text {
-        visibility: hidden;
-        opacity: 0;
-        max-width: 0;
-        overflow: hidden;
-        transition: max-width 0.5s ease, visibility 0s 0.5s;
-    }
-    header a.active .nav-text {
-        visibility: visible;
-        opacity: 1;
-        max-width: 100px;
-        transition: max-width 0.5s ease, visibility 0s;
-    }
-    .nav-icon {
-        display: block;
-        width: 24px;
-        height: 24px;
-    }
-    header a.active .nav-icon {
-        opacity: 0.85;
+    .site-nav {
+        gap: var(--space-3xs) var(--space-sm);
     }
 }
 

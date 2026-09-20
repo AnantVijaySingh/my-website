@@ -22,7 +22,7 @@ Status key: `[ ]` not started · `[~]` in progress · `[x]` done · `[!]` blocke
 | 0b | Pre-existing bug fixes (§3) | `[x]` | Homepage order only | No |
 | 1 | Failing design tests (red) | `[x]` | No | No |
 | 2 | Token layer + base styles + theme mechanism | `[x]` | Yes | You confirm |
-| 3 | Split header | `[ ]` | Yes | Yes |
+| 3 | Split header | `[x]` | Yes | You confirm |
 | 4 | Breadcrumbs | `[ ]` | Yes | Yes |
 | 5 | Index hero + 3-column grid | `[ ]` | Yes | Yes |
 | 6 | Essay reading page | `[ ]` | Yes | **Yes — all 17 essays** |
@@ -307,15 +307,19 @@ octagon, article measure). Theme test also green. Guard 0 failures.
 **Re-scope note:** tokens are defined per theme, so dark mode became nearly free the moment
 they existed. Phase 8 is now verification and polish, not implementation.
 
-### Phase 3 — Split header `[ ]`
-- [ ] Brand-left / links-right markup
-- [ ] Apply to `index-template.html` + `essay-template.html`
-- [ ] Apply to `quotes.html`, `about.html`, `software.html`, `time.html`, privacy policy
-- [ ] Brand → `about.html` in `--accent`; nav active state `--accent-ink`
-- [ ] Retire mobile icon-nav
-- [ ] Manual pass
+### Phase 3 — Split header `[x]`
+- [x] Brand-left / links-right markup, generated from one function for all 7 sources
+- [x] Applied to `index-template.html` + `essay-template.html`
+- [x] Applied to `quotes.html`, `about.html`, `software.html`, `time.html`, privacy policy
+- [x] Brand → `about.html` in `--accent`; nav active state `--accent-ink` with underline
+- [x] `aria-current="page"` on the active link; on `about.html` the **brand** carries it and
+      no section link is active (test corrected — About is not in the nav)
+- [x] Mobile icon-nav retired; links wrap under the brand below 600px
+- [ ] Manual pass — **you**: header on index, an essay, and about; resize below 600px
 
 **Gate:** header identical on all 23 pages; no page left on the old nav.
+✅ **23/23 header tests green.** Unreferenced now: `icons/{book,clock,pen-tool,terminal,user}.svg`
+(+ `favicon.svg`, never referenced) → Phase 9 decision.
 
 ### Phase 4 — Breadcrumbs `[ ]`
 - [ ] Add `{{breadcrumb-title}}` to `essay-template.html`
@@ -493,3 +497,4 @@ worse than no log.
 | 2026-09-20 | 0/0b | **Committed** `618fe60` on branch `redesign` (branched from `main`) | **60 pass / 0 fail / 0 skip** | Clean tree un-skipped the reproducibility test: a true 60/60. |
 | 2026-09-20 | 1 | `tokens.test.js` (18), `markup.test.js` (61), `coverage.test.js` (3) written; `test:guard` / `test:design` scripts added | **Guard 60/60. Design 3/82 (79 red, by design)** | Red for the right reasons — every message names the missing thing. Coverage test already surfaced 3 unstyled intro paragraphs on the live site and 2 dead selectors. |
 | 2026-09-20 | 2 | Tokenised stylesheet (752 lines), `data-theme` mechanism, `toggle.ts` rewrite, anti-flash on all 6 static pages (3 never had it) | **Guard 0 fail. Design 26/82** (tokens 13/16) | First pixel change. Theme mechanism pulled forward — Phase 8 is now polish only. Chrome automation unavailable: visual verification is the user's tab, not my screenshots. |
+| 2026-09-20 | 3 | Split header on all 23 pages; icon-nav retired; test corrected for `about.html` (brand is current, no section active) | **Guard 0 fail. Design 41/82** | 5 nav icons + favicon.svg now unreferenced → Phase 9. |

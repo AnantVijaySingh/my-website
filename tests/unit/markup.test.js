@@ -26,9 +26,11 @@ function prefixFor(relativePath) {
     return relativePath.includes('/') ? '../' : '';
 }
 
+/** Which nav link is current; null when the page is the brand's own (about.html). */
 function activeFileFor(page) {
     if (page.essay) return 'index.html'; // essays belong to the Essays section
     if (page.relativePath.startsWith('software/')) return 'software.html';
+    if (page.relativePath === 'about.html') return null;
     return page.relativePath;
 }
 
@@ -65,11 +67,20 @@ for (const page of allPages()) {
                 `${expected.text} must link to ${prefix}${expected.file}`);
         });
 
-        // Exactly one active link, and it is the right one.
+        // Exactly one active link, and it is the right one — except on about.html,
+        // which is the brand's own page: no section is active and the brand
+        // carries aria-current instead.
         const active = links.filter((l) => /\bclass="[^"]*\bactive\b/.test(l.attrs));
-        assert.equal(active.length, 1, `expected exactly one active nav link, got ${active.length}`);
-        assert.ok(active[0].attrs.includes(`href="${prefix}${activeFileFor(page)}"`),
-            `active link should be ${activeFileFor(page)}`);
+        const expectedActive = activeFileFor(page);
+        if (expectedActive === null) {
+            assert.equal(active.length, 0, 'about.html must have no active section link');
+            const brandTag = /<a\b[^>]*\bsite-brand\b[^>]*>/.exec(header)[0];
+            assert.ok(/aria-current="page"/.test(brandTag), 'brand needs aria-current="page" on about.html');
+        } else {
+            assert.equal(active.length, 1, `expected exactly one active nav link, got ${active.length}`);
+            assert.ok(active[0].attrs.includes(`href="${prefix}${expectedActive}"`),
+                `active link should be ${expectedActive}`);
+        }
 
         // The icon-swap mobile nav is retired.
         assert.equal(html.countTags(header, 'img'), 0, 'no <img> in the header — icon nav is retired');
