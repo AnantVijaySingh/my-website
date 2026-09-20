@@ -28,7 +28,7 @@ Status key: `[ ]` not started · `[~]` in progress · `[x]` done · `[!]` blocke
 | 6 | Essay reading page | `[x]` | Yes | **You — all 17 essays** |
 | 7 | Remaining pages | `[x]` | Yes | You confirm |
 | 8 | Dark palette — verification + polish only (mechanism landed in Phase 2) | `[x]` | No new | **You — toggle through pages** |
-| 9 | Verify & document | `[ ]` | No | **Yes — all 23 pages** |
+| 9 | Verify & document | `[x]` | No | **You — all 23 pages** |
 | 10 | Socket re-verification (quota permitting) | `[ ]` | No | No |
 
 **Approach:** test-driven with **zero new dependencies**. Automated suite runs on Node's
@@ -394,12 +394,17 @@ fail, baseline byte-identical across all 17 bodies.
 **Not done, offered:** respecting `prefers-color-scheme` when no choice is saved. The original
 site did not; the spec does not ask; it is a 3-line change if wanted.
 
-### Phase 9 — Verify & document `[ ]`
-- [ ] Full build; full suite; **content baseline diff zero**
-- [ ] **Full manual pass over all 23 pages**, recorded in `MANUAL-CHECKS.md`
-- [ ] Regenerate `sitemap.xml`
-- [ ] **Rewrite README** — §10
-- [ ] Delete dead CSS (`coverage.test.js` identifies it); confirm no `#1877F2` remains
+### Phase 9 — Verify & document `[x]`
+- [x] Full `npm run build` (tsc + generators) is a **no-op against HEAD**
+- [x] Full suite **146/146**; baseline recaptured — every content field (text hash, words,
+      paragraphs, images) unchanged for all 17 essays; only markup metadata moved
+- [ ] **Full manual pass over all 23 pages — you**, recorded in `MANUAL-CHECKS.md`
+- [x] `sitemap.xml` regenerated: **it was stale** — missing *Good Friction*, *Lossy Compression*
+      and `time.html`. 21 → 24 URLs. (Still lists `finds.html`, R7.)
+- [x] **README rewritten** — §10 fully covered: setup, real script table, run, test, manual
+      checklist + its limits, baseline policy, design rules, dependency/Socket/audit routine,
+      known debt
+- [x] Dead CSS: none (test-enforced). `#1877F2`: none shipped (test-enforced).
 
 ### Phase 10 — Socket supply-chain re-verification (once quota resets) `[ ]`
 
@@ -487,13 +492,13 @@ headings/lists/quotes styled · **no 375px overflow** · dark mode OK · screens
 The README is stale — it documents `npm install marked` only and lists a `scripts` block that
 no longer matches `package.json`. To be corrected and extended with:
 
-- [ ] Accurate prerequisites and one-time setup
-- [ ] Real script table: `start`, `build`, `build:essays`, `build:watch`, plus new `test`, `test:baseline`
-- [ ] How to run the site locally, and on which port
-- [ ] **How to run the tests** and how to read a failure
-- [ ] **The manual browser checklist**: what it covers, when to re-run (after *any* CSS change), and the §6 warning that layout regressions are not caught automatically
-- [ ] How to re-capture the content baseline — legitimate when adding an essay, masking a regression otherwise
-- [ ] Design-system section pointing at `design.md` as spec of record; new CSS uses tokens, not raw hex
+- [x] Accurate prerequisites and one-time setup
+- [x] Real script table incl. `test`, `test:guard`, `test:design`, `test:baseline`, `build:sitemap`
+- [x] How to run the site locally, and on which port
+- [x] **How to run the tests** and how to read a failure
+- [x] **The manual browser checklist**: what it covers, when to re-run, and the §6 warning
+- [x] How to re-capture the content baseline — legitimate when adding an essay, masking a regression otherwise
+- [x] Design-system section pointing at `design.md` as spec of record; new CSS uses tokens, not raw hex
 
 ---
 
@@ -538,3 +543,4 @@ worse than no log.
 | 2026-09-20 | 6 | Reading page: namespaced article, 68ch measure, every markdown element styled, nested-div template bug fixed | **Guard 0 fail. Design 82/82 ✅** | R1, R2, R5 closed. Design suite fully green two phases early; 7 and 8 are visual refinement the automated layer already covers structurally. |
 | 2026-09-20 | 7 | Heroes on quotes/software/time/about; breadcrumbs on privacy; content columns left-aligned site-wide; dead comment block removed from about | **Guard 60/60. Design 82/82** | The 3 intro paragraphs that had no CSS are now styled. Reproducibility test ran clean. |
 | 2026-09-20 | 8 | Dark-mode audit clean; 4 guard tests added | **Guard 60/60. Design 86/86** | R3 closed. Nothing to fix — tokens did the work. `prefers-color-scheme` offered, not done. |
+| 2026-09-20 | 9 | Full build no-op; sitemap regenerated (**was stale: 3 URLs missing**); README rewritten; baseline recaptured with content fields unchanged | **146/146** | Remaining: your 23-page visual pass, Phase 10 Socket scan after token rotation, and the debt decisions (§Known debt in README). |

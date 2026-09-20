@@ -91,3 +91,14 @@ Notes:
 - Skipped: the golden content baseline (`tests/baseline/content.json`) covers content
   regressions far more strongly than a visual pass, and the visuals are being replaced wholesale,
   so a record of the old appearance had little value. The first real pass is Phase 3.
+
+### 2026-09-20 — Phase 9 final pass (post-redesign)
+
+| | |
+|---|---|
+| Status | ⏳ **Awaiting your pass** — all automated checks green (146/146) |
+| Design state | Complete: tokens, split header, breadcrumbs, hero + grid, reading page, all section pages, dark mode |
+| Run | `npm start`, then the per-essay checklist for all 17 and the per-page checklist for all 6, at 1440 / 768 / 375, light and dark |
+
+Record results here — including anything that is off.
+
