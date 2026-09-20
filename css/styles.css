@@ -204,7 +204,7 @@ main {
 
 
 /* --------------------------------------------------------------------------
-   3. Header — brand left, section links right (design.md §4)
+   3. Header — one left-aligned row of section links (design.md §4)
    -------------------------------------------------------------------------- */
 
 .site-header {
@@ -219,28 +219,6 @@ main {
     max-width: var(--container-max);
     margin: 0 auto;
     padding: var(--space-sm) var(--container-pad);
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: var(--space-2xs) var(--space-md);
-}
-
-/* The wordmark is the one place --accent is used as text: WCAG exempts logotypes. */
-.site-brand {
-    font-family: var(--font-display);
-    font-size: 1.125rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--accent);
-    white-space: nowrap;
-}
-
-.site-brand:hover {
-    color: var(--accent);
-    text-decoration: none;
-    opacity: 0.85;
 }
 
 .site-nav {
@@ -261,22 +239,22 @@ main {
     transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-.site-nav a:hover,
-.site-nav a.active {
+.site-nav a:hover {
     color: var(--accent-ink);
     text-decoration: none;
 }
 
+/* The active link takes the brand orange by author decision. At 2.86:1 on
+   cream it is below AA for text, so it never relies on colour alone: the
+   underline marks it too. design.md §1.1. */
 .site-nav a.active {
-    border-bottom-color: var(--accent-ink);
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+    text-decoration: none;
 }
 
-/* Below 600px the brand keeps the left edge and the links wrap beneath it. */
 @media (max-width: 599px) {
     .site-header__inner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--space-2xs);
         padding-top: var(--space-xs);
         padding-bottom: var(--space-xs);
     }

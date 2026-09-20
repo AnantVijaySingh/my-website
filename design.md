@@ -38,7 +38,7 @@ The accent is therefore split into two tokens:
 
 | Token | Hex | On cream | Permitted usage |
 |---|---|---|---|
-| `--accent` | `#F05C22` | 2.86:1 | Brand wordmark only (WCAG exempts logotypes), and purely decorative marks such as the blockquote rule. Never functional text. |
+| `--accent` | `#F05C22` | 2.86:1 | Decorative marks (blockquote rule), and **one documented text exception: the active nav link**, by author decision (2026-09-20). It is always underlined as well, so it never relies on colour alone. No other text. |
 | `--accent-ink` | `#B8431A` | **4.64:1** | All functional accent text: dates, breadcrumb current-page, active/hover nav, inline links. |
 
 The two hues are close enough to read as one industrial orange; the distinction is legibility,
@@ -112,7 +112,6 @@ and a classic serif.
 | H1 (essay title; hidden on section pages) | Display | `clamp(1.25rem, 3.5vw, 2.5rem)` | 700 | uppercase |
 | H2 (in-essay) | Display | `clamp(1.5rem, 3vw, 2rem)` | 700 | none |
 | H3 (in-essay) | Display | `1.25rem` | 700 | none |
-| Brand wordmark | Display | `1.125rem` | 700 | uppercase, `0.08em` |
 | Nav link | Display | `0.875rem` | 500 | uppercase, `0.05em` |
 | Breadcrumb | Display | `0.75rem` | 500 | uppercase, `0.05em` |
 | Date / meta | Display | `0.75rem` | 500 | uppercase, `0.05em` |
@@ -162,13 +161,17 @@ dead space on a phone reads as a broken page, not a premium one.
 
 ### Navigation & Header
 
-- **Layout:** split. Brand name far left, links far right.
-- **Brand:** "ANANT VIJAY" in Space Grotesk, bold, uppercase, `--accent`. Links to
-  `about.html`.
-- **Links:** "ESSAYS", "QUOTES", "SOFTWARE", "TIME". Space Grotesk, uppercase. Inactive is
-  `--ink`; active/hover is `--accent-ink`.
-- **Mobile:** below 600px the brand stays left and the links wrap to a second row, remaining
-  text labels (the previous icon-swap behaviour is retired — see Migration Notes).
+- **Layout:** one left-aligned row. No separate brand slot.
+- **Links, in order:** "ESSAYS", "QUOTES", "SOFTWARE", "TIME", "ANANT VIJAY" (→ `about.html`).
+  Space Grotesk, `0.875rem`, uppercase, `0.05em` tracking.
+- **States:** inactive `--ink`; hover `--accent-ink`; **active `--accent` with a 2px underline**
+  and `aria-current="page"`. The underline is not decoration — it is the non-colour indicator
+  that makes the below-AA accent acceptable on the active label.
+- **Mobile:** the five links wrap naturally; no icon substitution.
+
+> The header was first built as brand-left / links-right with "ANANT VIJAY" as an
+> always-orange wordmark (2026-09-20), then changed the same day by the author to a single row
+> with Anant Vijay as the fifth link and the brand orange moved to the active state.
 
 ### Breadcrumbs
 
@@ -236,9 +239,9 @@ governs the header and index grid; the article column is narrower and sits withi
 
 Decisions made while applying this system to the existing codebase:
 
-1. **Brand replaces the "Anant Vijay" nav link.** The old header had five centred links, one
-   of which was "Anant Vijay" → `about.html`. The brand wordmark now occupies that role and
-   links to `about.html`; the right-hand nav carries the four remaining sections.
+1. **Header.** The old header had five centred links including "Anant Vijay" → `about.html`.
+   It is now five left-aligned links with the same destinations; the brand orange marks the
+   active one. (A brand-left / links-right variant existed briefly on 2026-09-20.)
 2. **Class namespacing.** The old CSS overloaded `.essay-date` and `.essay-content` for both
    the index list and the article body. These are split into `.essay-list__*` and
    `.essay-article__*` so restyling a card cannot silently restyle 17 essay bodies.

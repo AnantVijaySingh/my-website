@@ -43,7 +43,7 @@ opening every essay in a real browser.
 |---|---|
 | Accent contrast | Two-tier orange. `#F05C22` for brand wordmark + decorative bullets only; `#B8431A` (4.64:1) for all functional accent text. |
 | Dark mode | Keep it; new dark palette authored into `design.md` §1.3. |
-| Brand / About | Brand "ANANT VIJAY" links to `about.html`. Nav is ESSAYS / QUOTES / SOFTWARE / TIME. |
+| Header | **Revised 2026-09-20:** one left-aligned row — ESSAYS / QUOTES / SOFTWARE / TIME / ANANT VIJAY (→ about). Active link in `--accent` + underline (documented AA exception). |
 | Rollout | All pages in one pass. |
 | Dependencies | **Zero new packages.** No Playwright, no cheerio, no jsdom. |
 | Package installs | Go through the **Socket CLI** (`socket npm …`) for supply-chain scanning. |
@@ -203,7 +203,7 @@ only — the nav is *supposed* to change, and gets its own expectations in `mark
 
 | Component | Classes |
 |---|---|
-| Header | `.site-header` › `.site-brand` (→ about.html), `.site-nav` › `a.active` |
+| Header | `.site-header` › `.site-header__inner` › `.site-nav` › `a` ×5, `a.active[aria-current=page]` |
 | Breadcrumbs | `nav.breadcrumbs[aria-label=Breadcrumb]` › `ol` › `li` ×3, last `[aria-current=page]` |
 | Index hero | `section.hero` › `h1.hero__title` (visually hidden), `p.hero__intro` |
 | Index list | `ul.essay-list` › `li.essay-list__item` › `time.essay-list__date`, `.essay-list__body` › `a.essay-list__title`, `p.essay-list__snippet` |
@@ -552,3 +552,4 @@ worse than no log.
 | 2026-09-20 | 6″ | Essay H1 → fixed `1.2rem`, line-height 1.3; clamp() test relaxed to “clamp or fixed ≤ 2rem” (intent preserved) | **147/147** | |
 | 2026-09-20 | 6‴ | Essay H1 `1.2rem` → `1.25rem` (matches the list title size) | **147/147** | |
 | 2026-09-20 | 6⁗ | Essay H1 back to half size `clamp(1.25rem, 3.5vw, 2.5rem)`, line-height 1.1 — **settled** | **147/147** | Tried fixed 1.2rem and 1.25rem in between. |
+| 2026-09-20 | 3′ | **Header redone:** five left-aligned links, Anant Vijay as the fifth; `.site-brand` retired; active link in `--accent` + underline | **146 pass / 0 fail** | Documented AA exception (2.86:1) on the active label — non-colour indicator required by test. |

@@ -132,7 +132,7 @@ Must be green at every commit. It proves the site still *says* what it said:
 - **Token discipline** — no raw hex outside `:root` / `[data-theme="dark"]`, no colour
   keywords, no legacy blue. A dark-mode rule may only invert a line icon; a colour that dark
   needs and light does not is a missing token, not an override.
-- **Markup contracts** — the split header on all 23 pages, breadcrumbs on all 17 essays,
+- **Markup contracts** — the header on all 23 pages, breadcrumbs on all 17 essays,
   namespaced article classes, the hero and 17-row essay list, `data-theme` set before first paint.
 - **Coverage** — every class the pages emit has a CSS rule, and every class selector matches
   something emitted. This is what catches "renamed the class in the generator, forgot the
@@ -184,9 +184,9 @@ orange, Space Grotesk for display and Georgia for reading. Two rules keep it coh
 
 1. **Colours are tokens.** New CSS uses `var(--canvas)`, `var(--ink)`, `var(--accent-ink)`,
    … never a hex value. The tests enforce this.
-2. **`--accent` (`#F05C22`) is never text.** It measures 2.86:1 on the cream and is reserved
-   for the brand wordmark and decorative marks. Functional accent text — dates, links, active
-   nav — uses `--accent-ink` (`#B8431A`, 4.64:1). See `design.md` §1.1 for why.
+2. **`--accent` (`#F05C22`) is not for text.** It measures 2.86:1 on the cream. Functional
+   accent text — dates, links — uses `--accent-ink` (`#B8431A`, 4.64:1). The one documented
+   exception is the active nav link, which is also underlined. See `design.md` §1.1.
 
 Theme is `data-theme="dark"` on `<html>`, applied by an inline script in each page's `<head>`
 before first paint and persisted in `localStorage`. Because every colour is a token, dark mode

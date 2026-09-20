@@ -113,7 +113,9 @@ test('light --accent is documented as failing AA — it must never be used for t
     const r = ratio(light['--accent'], light['--canvas']);
     assert.ok(r < AA_NORMAL_TEXT, `light --accent now passes AA (${r}:1); update design.md §1.1`);
 
-    const allowed = (selector) => /\.site-brand\b/.test(selector);
+    // One documented exception: the active nav link, by author decision. It is
+    // also underlined, so it never relies on colour alone (design.md §1.1).
+    const allowed = (selector) => selector.trim() === '.site-nav a.active';
     const offenders = rules
         .filter((rule) => /(^|;|\s)color\s*:\s*var\(--accent\)\s*(;|$)/.test(rule.body))
         .filter((rule) => !allowed(rule.selector))
@@ -121,9 +123,12 @@ test('light --accent is documented as failing AA — it must never be used for t
     assert.deepEqual(
         offenders,
         [],
-        '`color: var(--accent)` is only permitted on the brand wordmark (WCAG logotype ' +
-        `exemption). Use var(--accent-ink) for text:\n  ${offenders.join('\n  ')}`
+        '`color: var(--accent)` is only permitted on .site-nav a.active. ' +
+        `Use var(--accent-ink) for text:\n  ${offenders.join('\n  ')}`
     );
+    const active = css.declarationsFor('.site-nav a.active', rules);
+    assert.ok(active['border-bottom-color'] && active['border-bottom-color'] !== 'transparent',
+        'the active link must carry a non-colour indicator (underline) since --accent is below AA');
 });
 
 // ─── Token discipline ───────────────────────────────────────────────────────

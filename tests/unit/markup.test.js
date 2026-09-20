@@ -19,6 +19,7 @@ const NAV_LINKS = [
     { text: 'Quotes', file: 'quotes.html' },
     { text: 'Software', file: 'software.html' },
     { text: 'Time', file: 'time.html' },
+    { text: 'Anant Vijay', file: 'about.html' },
 ];
 
 /** "../" for pages one directory down (essays/, software/). */
@@ -26,15 +27,14 @@ function prefixFor(relativePath) {
     return relativePath.includes('/') ? '../' : '';
 }
 
-/** Which nav link is current; null when the page is the brand's own (about.html). */
+/** Which nav link is current for a page. */
 function activeFileFor(page) {
     if (page.essay) return 'index.html'; // essays belong to the Essays section
     if (page.relativePath.startsWith('software/')) return 'software.html';
-    if (page.relativePath === 'about.html') return null;
     return page.relativePath;
 }
 
-// ─── Header: brand left, four links right ───────────────────────────────────
+// ─── Header: one left-aligned row of five links ─────────────────────────────
 
 for (const page of allPages()) {
     test(`header: ${page.relativePath}`, () => {
@@ -44,15 +44,7 @@ for (const page of allPages()) {
 
         const prefix = prefixFor(page.relativePath);
 
-        // Brand → about.html, per the locked decision (PLAN.md §2).
-        const brand = html.extractElement(header, 'a', 'site-brand');
-        assert.ok(brand !== null, 'missing <a class="site-brand">');
-        assert.equal(html.text(brand), 'Anant Vijay', 'brand text');
-        const brandHref = new RegExp(`<a\\b[^>]*class="[^"]*\\bsite-brand\\b[^"]*"[^>]*href="${prefix}about\\.html"`);
-        const brandHrefAlt = new RegExp(`<a\\b[^>]*href="${prefix}about\\.html"[^>]*class="[^"]*\\bsite-brand\\b`);
-        assert.ok(brandHref.test(header) || brandHrefAlt.test(header), `brand must link to ${prefix}about.html`);
-
-        // Exactly the four section links, in order.
+        // Exactly the five links, in order.
         const nav = html.extractElement(header, 'nav', 'site-nav');
         assert.ok(nav !== null, 'missing <nav class="site-nav">');
         const links = [...nav.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/gi)]
@@ -67,20 +59,13 @@ for (const page of allPages()) {
                 `${expected.text} must link to ${prefix}${expected.file}`);
         });
 
-        // Exactly one active link, and it is the right one — except on about.html,
-        // which is the brand's own page: no section is active and the brand
-        // carries aria-current instead.
+        // Exactly one active link, and it is the right one.
         const active = links.filter((l) => /\bclass="[^"]*\bactive\b/.test(l.attrs));
         const expectedActive = activeFileFor(page);
-        if (expectedActive === null) {
-            assert.equal(active.length, 0, 'about.html must have no active section link');
-            const brandTag = /<a\b[^>]*\bsite-brand\b[^>]*>/.exec(header)[0];
-            assert.ok(/aria-current="page"/.test(brandTag), 'brand needs aria-current="page" on about.html');
-        } else {
-            assert.equal(active.length, 1, `expected exactly one active nav link, got ${active.length}`);
-            assert.ok(active[0].attrs.includes(`href="${prefix}${expectedActive}"`),
-                `active link should be ${expectedActive}`);
-        }
+        assert.equal(active.length, 1, `expected exactly one active nav link, got ${active.length}`);
+        assert.ok(active[0].attrs.includes(`href="${prefix}${expectedActive}"`),
+            `active link should be ${expectedActive}`);
+        assert.ok(/aria-current="page"/.test(active[0].attrs), 'active link needs aria-current="page"');
 
         // The icon-swap mobile nav is retired.
         assert.equal(html.countTags(header, 'img'), 0, 'no <img> in the header — icon nav is retired');
@@ -218,7 +203,6 @@ test('templates carry the same header contract as the generated output', () => {
     for (const rel of ['templates/index-template.html', 'templates/essay-template.html']) {
         const tpl = fs.readFileSync(path.join(ROOT, rel), 'utf-8');
         assert.ok(/class="site-header"/.test(tpl), `${rel}: site-header`);
-        assert.ok(/class="site-brand"/.test(tpl), `${rel}: site-brand`);
         assert.ok(/class="site-nav"/.test(tpl), `${rel}: site-nav`);
     }
     const essayTpl = fs.readFileSync(path.join(ROOT, 'templates/essay-template.html'), 'utf-8');
