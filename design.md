@@ -130,7 +130,7 @@ keeps it from overflowing a 375px phone while still reading as a headline on des
 
 White space is a structural element, not an afterthought.
 
-- **Container width:** one column, **`74ch` wide (`--container-max: var(--measure)`)**,
+- **Container width:** one column, **`84ch` wide (`--container-max: var(--measure)`)**,
   centred, with `5vw` side padding on small screens. Header, hero, list and article all share
   it and sit flush-left inside it.
 
@@ -234,7 +234,8 @@ editorial" experience.
 - Body in Georgia. Because the canvas is cream rather than stark white, reading 1,500+ words
   feels like reading a printed journal, enhancing the philosophical tone.
 
-**Reading measure:** `74ch` (68ch until the author asked for a little more width) — and since 2026-09-20 the container itself is that width, so the
+**Reading measure:** `84ch` — widened from 68 → 74 → 84 by the author on 2026-09-20; above the
+textbook 45–75ch but a deliberate choice — and since 2026-09-20 the container itself is that width, so the
 header, the intro, the list and the article all share one column and one left edge.
 
 ---

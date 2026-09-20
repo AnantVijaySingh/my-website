@@ -43,7 +43,7 @@
 
     /* Layout: one reading column. The container IS the measure, so content is
        flush-left inside it and the margins either side are equal. */
-    --measure: 74ch;
+    --measure: 84ch;
     --container-max: var(--measure);
     --container-pad: 5vw;
 

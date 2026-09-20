@@ -200,7 +200,9 @@ test('essay body has a ch-based reading measure, not the 1200px container', () =
     assert.equal(body['max-width'], 'var(--measure)', '.essay-article__body must use the shared measure');
     assert.match(light['--measure'] || '', /^\d+ch$/, `--measure is "${light['--measure']}" — expected e.g. 74ch`);
     const measure = parseInt(light['--measure'], 10);
-    assert.ok(measure >= 60 && measure <= 75, `${measure}ch is outside the 60–75ch reading range`);
+    // 45–75ch is the textbook range; the author chose wider. The ceiling still
+    // exists to stop a 150-character line ever coming back.
+    assert.ok(measure >= 60 && measure <= 90, `${measure}ch is outside the 60–90ch range`);
     assert.equal(body['font-family'], 'var(--font-body)', 'essay body must be Georgia');
 });
 
