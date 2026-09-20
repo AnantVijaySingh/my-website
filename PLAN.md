@@ -26,7 +26,7 @@ Status key: `[ ]` not started · `[~]` in progress · `[x]` done · `[!]` blocke
 | 4 | Breadcrumbs | `[x]` | Yes | You confirm |
 | 5 | Index hero + 3-column grid | `[x]` | Yes | **You confirm at 3 widths** |
 | 6 | Essay reading page | `[x]` | Yes | **You — all 17 essays** |
-| 7 | Remaining pages | `[ ]` | Yes | Yes |
+| 7 | Remaining pages | `[x]` | Yes | You confirm |
 | 8 | Dark palette — verification + polish only (mechanism landed in Phase 2) | `[ ]` | Yes | Yes |
 | 9 | Verify & document | `[ ]` | No | **Yes — all 23 pages** |
 | 10 | Socket re-verification (quota permitting) | `[ ]` | No | No |
@@ -360,10 +360,22 @@ test now green — zero unused selectors.**
 **Gate:** §8 matrix fully ticked; baseline diff zero. ✅ Automated: **design 82/82**, guard 0
 fail, baseline byte-identical across all 17 bodies.
 
-### Phase 7 — Remaining pages `[ ]`
-- [ ] `quotes.html` — move quote rule off blue onto `--rule` / `--accent`
-- [ ] `software.html`, `time.html`, `about.html`, privacy policy
-- [ ] Manual pass — §9
+### Phase 7 — Remaining pages `[x]`
+- [x] Every section page gets the index's hero: H1 + 60ch intro (`quotes`, `software` compact,
+      `time`, `about`). The three intro paragraphs that had **no CSS at all** are now `.hero__intro`.
+- [x] `quotes.html` — quote rule on `--accent`, text 1.25rem Georgia, author in small caps
+- [x] `about.html` — hero "About", 👋 merged into the first paragraph, social icons follow the
+      column above a hairline, **dead commented-out social block removed** (referenced icons
+      that do not exist)
+- [x] `software.html` — principles labels in display face, app card above a hairline
+- [x] `time.html` — hairlines between activity rows
+- [x] Privacy policy — **breadcrumbs added** (`ANANT VIJAY > SOFTWARE > PRIVACY POLICY`)
+- [x] **Judgment call:** all reading columns (incl. the essay article and its breadcrumbs) are
+      now **left-aligned to the hero's edge** rather than centred, so every page shares one
+      alignment. One line each to revert (`margin: 0` → `margin: 0 auto`).
+- [ ] Manual pass — **you** (§9): all five pages, plus quotes actually load (JS-rendered)
+
+**Gate:** ✅ automated green; visual confirm pending.
 
 ### Phase 8 — Dark palette `[ ]`
 - [ ] Implement `design.md` §1.3 tokens
@@ -513,3 +525,4 @@ worse than no log.
 | 2026-09-20 | 4 | Breadcrumbs on all 17 essays; title escaping fixed in `<h1>`/`<title>` too; function-form replacements | **Guard 0 fail. Design 59/82** | R4 closed. Canonical URL keeps the literal `>` — it is the live filename. |
 | 2026-09-20 | 5 | Hero + 17-card grid, octagon via clip-path, `<time datetime>`, escaped title/snippet | **Guard 0 fail. Design 63/82** | Dead-CSS test green: no unused selectors remain. R6 closed. |
 | 2026-09-20 | 6 | Reading page: namespaced article, 68ch measure, every markdown element styled, nested-div template bug fixed | **Guard 0 fail. Design 82/82 ✅** | R1, R2, R5 closed. Design suite fully green two phases early; 7 and 8 are visual refinement the automated layer already covers structurally. |
+| 2026-09-20 | 7 | Heroes on quotes/software/time/about; breadcrumbs on privacy; content columns left-aligned site-wide; dead comment block removed from about | **Guard 60/60. Design 82/82** | The 3 intro paragraphs that had no CSS are now styled. Reproducibility test ran clean. |

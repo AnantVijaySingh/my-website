@@ -292,7 +292,7 @@ main {
 
 .breadcrumbs {
     max-width: var(--measure);
-    margin: 0 auto var(--space-lg);
+    margin: 0 0 var(--space-lg);
     font-family: var(--font-display);
     font-size: 0.75rem;
     font-weight: 500;
@@ -346,6 +346,10 @@ main {
    design calls for between the hero and the list (120px, 64px on phones). */
 .hero {
     padding: var(--space-lg) 0 var(--space-2xl);
+}
+
+.hero--compact {
+    padding-bottom: var(--space-xl);
 }
 
 .hero__title {
@@ -442,7 +446,7 @@ main {
 
 .essay-article {
     max-width: var(--measure);
-    margin: 0 auto;
+    margin: 0;
     padding-bottom: var(--space-2xl);
 }
 
@@ -588,20 +592,15 @@ main {
 
 
 /* --------------------------------------------------------------------------
-   6. Quotes  (refined in Phase 7)
+   6. Quotes
    -------------------------------------------------------------------------- */
-
-.quotes-intro {
-    max-width: 60ch;
-    margin-bottom: var(--space-2xl);
-}
 
 #quotes-container {
     display: flex;
     flex-direction: column;
     gap: var(--space-lg);
     max-width: var(--measure);
-    margin: 0 auto;
+    margin: 0;
 }
 
 .quote-item {
@@ -613,7 +612,7 @@ main {
 
 .quote-text {
     font-family: var(--font-body);
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     color: var(--ink);
     margin: 0 0 var(--space-2xs);
     line-height: 1.6;
@@ -701,12 +700,12 @@ main {
 
 
 /* --------------------------------------------------------------------------
-   7. About  (refined in Phase 7)
+   7. About
    -------------------------------------------------------------------------- */
 
 #about-section {
     max-width: var(--measure);
-    margin: var(--space-md) auto;
+    margin: 0;
 }
 
 #about-section p {
@@ -715,9 +714,11 @@ main {
 
 #social-icons {
     display: flex;
-    justify-content: center;
-    gap: var(--space-xs);
+    justify-content: flex-start;
+    gap: var(--space-sm);
     margin-top: var(--space-xl);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--rule);
 }
 
 #social-icons a img {
@@ -738,12 +739,12 @@ main {
 
 
 /* --------------------------------------------------------------------------
-   8. Software  (refined in Phase 7)
+   8. Software
    -------------------------------------------------------------------------- */
 
 #software-section {
     max-width: var(--measure);
-    margin: 0 auto;
+    margin: 0;
 }
 
 #software-section p,
@@ -751,11 +752,18 @@ main {
     margin-bottom: var(--space-sm);
 }
 
+.principles b {
+    font-family: var(--font-display);
+    font-weight: 700;
+}
+
 .software-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: var(--space-sm);
     margin-top: var(--space-xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--rule);
 }
 
 .software-icon img {
@@ -786,12 +794,12 @@ main {
 
 
 /* --------------------------------------------------------------------------
-   9. Privacy policy  (refined in Phase 7)
+   9. Privacy policy
    -------------------------------------------------------------------------- */
 
 #policy-section {
     max-width: var(--measure);
-    margin: 0 auto;
+    margin: 0;
 }
 
 #policy-section h1 {
@@ -813,17 +821,12 @@ main {
 
 
 /* --------------------------------------------------------------------------
-   10. Time  (refined in Phase 7)
+   10. Time
    -------------------------------------------------------------------------- */
 
 #time-section {
     max-width: var(--measure);
-    margin: 0 auto;
-}
-
-.time-intro {
-    max-width: 60ch;
-    margin-bottom: var(--space-lg);
+    margin: 0;
 }
 
 .time-content {
@@ -840,9 +843,11 @@ main {
 }
 
 #activity-list-container li {
-    margin-bottom: var(--space-xs);
+    margin: 0;
+    padding: var(--space-2xs) 0;
     display: flex;
     align-items: center;
+    border-bottom: 1px solid var(--rule);
 }
 
 #activity-list-container .emoji {
