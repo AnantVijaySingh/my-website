@@ -20,7 +20,7 @@ Status key: `[ ]` not started · `[~]` in progress · `[x]` done · `[!]` blocke
 |---|---|---|---|---|
 | 0 | Safety net + baseline capture | `[x]` | No | Yes (records "before") |
 | 0b | Pre-existing bug fixes (§3) | `[x]` | Homepage order only | No |
-| 1 | Failing design tests (red) | `[ ]` | No | No |
+| 1 | Failing design tests (red) | `[x]` | No | No |
 | 2 | Token layer + base styles | `[ ]` | Yes | No |
 | 3 | Split header | `[ ]` | Yes | Yes |
 | 4 | Breadcrumbs | `[ ]` | Yes | Yes |
@@ -199,6 +199,20 @@ only — the nav is *supposed* to change, and gets its own expectations in `mark
 
 ---
 
+## 5.2 Class vocabulary (fixed by the Phase 1 tests)
+
+| Component | Classes |
+|---|---|
+| Header | `.site-header` › `.site-brand` (→ about.html), `.site-nav` › `a.active` |
+| Breadcrumbs | `nav.breadcrumbs[aria-label=Breadcrumb]` › `ol` › `li` ×3, last `[aria-current=page]` |
+| Index hero | `section.hero` › `h1.hero__title`, `p.hero__intro` |
+| Index grid | `.essay-grid` › `.essay-card` › `a.essay-card__title` (octagon via `::before`), `.essay-card__date`, `.essay-card__snippet` |
+| Essay page | `article.essay-article` › `.essay-article__date`, `section.essay-article__body`, `.essay-article__actions` |
+| Theme | `<html data-theme="dark">`; toggle keeps `.toggle-container .toggle .input .icon .icon--moon .icon--sun` |
+| Retired | `.essay-item .essay-content .essay-date .essay-title .essay-snippet .essay-intro .essay-container .essay-actions .nav-icon .nav-text .dark-mode` |
+
+---
+
 ## 6. What automation does NOT cover — read before approving
 
 Zero deps means these are **one-time manual observations, not a regression net.** After any
@@ -259,12 +273,22 @@ change is a deliberate, recorded diff rather than an untraceable one.
 
 **Gate:** date tests green; baseline diff limited to homepage card order. ✅ **60 tests, 0 fail.**
 
-### Phase 1 — Failing design tests (red) `[ ]`
-- [ ] `tokens.test.js` — token set, exact hex, contrast thresholds, no legacy blue, no white canvas
-- [ ] `markup.test.js` — breadcrumb structure, single h1, 17 cards, brand/nav shape
-- [ ] `coverage.test.js` — class ↔ CSS cross-reference
+### Phase 1 — Failing design tests (red) `[x]`
+- [x] `tokens.test.js` — token set, exact hex, contrast computed from the CSS, no legacy colors,
+      no white canvas, token discipline, `clamp()` H1, `ch` measure, 1/2/3 grid, clip-path octagon
+- [x] `markup.test.js` — split header on all 23 pages, breadcrumbs on all 17 essays, namespaced
+      article, hero + 17-card grid, `data-theme` mechanism, template contract
+- [x] `coverage.test.js` — class ↔ CSS cross-reference (both directions)
+- [x] Split scripts: `test:guard` (never red) vs `test:design` (red until Phase 8)
 
 **Gate:** new tests fail *for the right reasons*; Phase 0 tests stay green.
+✅ **Design: 82 tests, 79 red, 3 legitimately green. Guard: 60/60.** Every failure message
+names the missing thing (`:root is missing --canvas`, `missing <header class="site-header">`,
+`no .essay-grid rule`) — none are test bugs.
+
+**Already found by `coverage.test.js` on the current site:** `.quotes-intro`, `.time-intro`,
+`.time-content` have **no CSS at all** (browser-default paragraphs) → Phase 7. Dead selectors
+`.header-hidden`, `.activity-name` → Phase 9. `js/essays.js` is loaded by no page → flagged.
 
 ### Phase 2 — Token layer + base styles `[ ]`
 - [ ] `:root` light tokens + `[data-theme="dark"]` dark tokens (`design.md` §1.2–1.3)
@@ -457,3 +481,4 @@ worse than no log.
 | 2026-09-20 | 0 | Test scaffolding + golden baseline: 17 essays, 22,281 words captured | **54 pass / 0 fail / 0 skip** | Build verified deterministic AND committed output current. Extractor cross-validated against an independent markdown grep (26 h3, 2 blockquotes — exact match). |
 | 2026-09-20 | 0b | TDD: `dates.test.js` + `order.test.js` written first — **4 failed for the right reasons**. Fixed `2024-02-1`→`2024-02-01`; both generators now format dates in UTC; homepage sorted newest-first | **59 pass / 0 fail** (1 skip: reproducibility test stands down while generated files are uncommitted) | TZ bug was **17 of 18 pages**, worse than estimated. The one immune page was the malformed date — it parsed as *local* midnight. `essays/` byte-identical after fix (no visible change in BST). Only `index.html` changed: card order. |
 | 2026-09-20 | 0/0b | **Committed** `618fe60` on branch `redesign` (branched from `main`) | **60 pass / 0 fail / 0 skip** | Clean tree un-skipped the reproducibility test: a true 60/60. |
+| 2026-09-20 | 1 | `tokens.test.js` (18), `markup.test.js` (61), `coverage.test.js` (3) written; `test:guard` / `test:design` scripts added | **Guard 60/60. Design 3/82 (79 red, by design)** | Red for the right reasons — every message names the missing thing. Coverage test already surfaced 3 unstyled intro paragraphs on the live site and 2 dead selectors. |
