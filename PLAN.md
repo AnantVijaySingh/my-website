@@ -205,7 +205,7 @@ only — the nav is *supposed* to change, and gets its own expectations in `mark
 |---|---|
 | Header | `.site-header` › `.site-brand` (→ about.html), `.site-nav` › `a.active` |
 | Breadcrumbs | `nav.breadcrumbs[aria-label=Breadcrumb]` › `ol` › `li` ×3, last `[aria-current=page]` |
-| Index hero | `section.hero` › `h1.hero__title`, `p.hero__intro` |
+| Index hero | `section.hero` › `h1.hero__title` (visually hidden), `p.hero__intro` |
 | Index list | `ul.essay-list` › `li.essay-list__item` › `time.essay-list__date`, `.essay-list__body` › `a.essay-list__title`, `p.essay-list__snippet` |
 | Essay page | `article.essay-article` › `.essay-article__date`, `section.essay-article__body`, `.essay-article__actions` |
 | Theme | `<html data-theme="dark">`; toggle keeps `.toggle-container .toggle .input .icon .icon--moon .icon--sun` |
@@ -546,3 +546,4 @@ worse than no log.
 | 2026-09-20 | 9 | Full build no-op; sitemap regenerated (**was stale: 3 URLs missing**); README rewritten; baseline recaptured with content fields unchanged | **146/146** | Remaining: your 23-page visual pass, Phase 10 Socket scan after token rotation, and the debt decisions (§Known debt in README). |
 | 2026-09-20 | 9+ | Removed dead client-side essay list (`ts/essays.ts`, `js/essays.js`) and two stale compiled files left inside `ts/` | — | The homepage has been build-time generated all along; the browser script was a superseded duplicate carrying the timezone bug. |
 | 2026-09-20 | 5′ | **Grid reverted to a single-column list** by author preference. Spec (`design.md` §4), tests and code updated in that order; `.essay-card*` retired for `.essay-list*` | **145 pass / 0 fail** | Date gutter left, title + snippet right, hairlines; stacks below 768px. Octagon bullet retired with the grid. |
+| 2026-09-20 | 5″ | Author feedback: no rules between essays; date at title size (gutter 8→11rem); section-page H1s hidden (kept in DOM, hidden via `.hero__title` for outline/SEO); `.hero--compact` dropped | **147/147** | Spec, tests and docs updated alongside. |

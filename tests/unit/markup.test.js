@@ -139,13 +139,13 @@ for (const essay of essays()) {
 
 // ─── Index: hero + grid ─────────────────────────────────────────────────────
 
-test('index: hero has the massive H1 "Essays" and a constrained intro', () => {
+test('index: hero intro leads, with the H1 present but visually hidden', () => {
     const doc = read(path.join(ROOT, 'index.html'));
     const hero = html.extractElement(doc, 'section', 'hero');
     assert.ok(hero !== null, 'missing <section class="hero">');
-    const h1 = /<h1\b[^>]*class="[^"]*\bhero__title\b[^"]*"[^>]*>([\s\S]*?)<\/h1>/i.exec(hero);
+    const h1 = /<h1\b[^>]*class="([^"]*\bhero__title\b[^"]*)"[^>]*>([\s\S]*?)<\/h1>/i.exec(hero);
     assert.ok(h1, 'missing <h1 class="hero__title">');
-    assert.equal(html.text(h1[1]).toLowerCase(), 'essays');
+    assert.equal(html.text(h1[2]).toLowerCase(), 'essays');
     const intro = html.extractElement(hero, 'p', 'hero__intro');
     assert.ok(intro !== null, 'missing <p class="hero__intro">');
     assert.match(html.text(intro), /^I write about what I've learned/, 'intro copy must be preserved');

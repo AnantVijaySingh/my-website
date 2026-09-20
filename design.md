@@ -109,7 +109,7 @@ and a classic serif.
 
 | Role | Face | Size | Weight | Transform |
 |---|---|---|---|---|
-| H1 (page/essay title) | Display | `clamp(2.5rem, 7vw, 5rem)` | 700 | uppercase |
+| H1 (essay title; hidden on section pages) | Display | `clamp(2.5rem, 7vw, 5rem)` | 700 | uppercase |
 | H2 (in-essay) | Display | `clamp(1.5rem, 3vw, 2rem)` | 700 | none |
 | H3 (in-essay) | Display | `1.25rem` | 700 | none |
 | Brand wordmark | Display | `1.125rem` | 700 | uppercase, `0.08em` |
@@ -117,6 +117,7 @@ and a classic serif.
 | Breadcrumb | Display | `0.75rem` | 500 | uppercase, `0.05em` |
 | Date / meta | Display | `0.75rem` | 500 | uppercase, `0.05em` |
 | List title | Display | `1.25rem` | 700 | none |
+| List date | Display | `1.25rem` | 500 | uppercase, `0.05em` |
 | Essay body | Body | `1.125rem` | 400 | none, `line-height: 1.75` |
 | List snippet | Body | `1rem` | 400 | none, `line-height: 1.7` |
 
@@ -178,8 +179,14 @@ dead space on a phone reads as a broken page, not a premium one.
 
 ### Typography Hierarchy (the "Hero" section)
 
-- **H1 (page title):** massive, Space Grotesk, bold, uppercase, left-aligned.
-- **Hero subtext:** brief intro constrained to `60ch` directly below the H1, in Georgia.
+- **Section pages (Essays, Quotes, Software, Time, About) have no visible page title.** The
+  60ch intro paragraph in Georgia leads the page. An `<h1>` remains in the markup, visually
+  hidden, so the document outline is intact for screen readers and search.
+- **Essay pages** keep the massive H1: Space Grotesk, bold, uppercase, left-aligned — it is
+  the essay's title, not a section label.
+
+> Visible section titles were implemented first and removed the same day by the author's
+> preference (2026-09-20); the nav already names the section.
 
 ### Essay list
 
@@ -189,9 +196,9 @@ The essays are a single-column, reverse-chronological list — one row per essay
 > author's preference: for a small number of long-form essays, a list reads better than cards.
 
 - **Row anatomy:** a fixed date gutter on the left, then title and snippet stacked on the right.
-  Rows are separated by hairlines (`--rule`) with `--space-md` of padding.
-- **Date:** Display, `0.75rem`, uppercase, `--accent-ink`, right-aligned in an `8rem` gutter so
-  the titles form a clean left edge (e.g. "JUN 02, 2026").
+  Rows are separated by `--space-lg` of white space; no rules between them.
+- **Date:** Display, `1.25rem` — the same size as the title — uppercase, `--accent-ink`,
+  right-aligned in an `11rem` gutter so the titles form a clean left edge (e.g. "JUN 02, 2026").
 - **Title:** Display, `1.25rem`, bold, `--ink`; `--accent-ink` on hover.
 - **Snippet:** Georgia, `1rem`, `--ink-muted`. The text column is capped at the reading measure
   so snippets never stretch across the 1200px container.
@@ -207,8 +214,7 @@ editorial" experience.
 
 ### The Index Page
 
-- Massive H1 for the word "ESSAYS".
-- Hero subtext (the existing intro paragraph) at `60ch` below it.
+- No visible title (hidden H1 "Essays" for outline); the intro paragraph at `60ch` leads.
 - Essays as the single-column list: date gutter, title, snippet, hairlines between rows.
 
 ### The Essay Reading Page

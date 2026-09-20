@@ -261,3 +261,13 @@ test('no colour keywords bypass the tokens', () => {
         .map((rule) => rule.selector);
     assert.deepEqual(offenders, [], `Colour keywords in: ${offenders.join(', ')}`);
 });
+
+test('section-page hero titles are visually hidden but remain in the accessibility tree', () => {
+    const title = css.declarationsFor('.hero__title', rules);
+    assert.equal(title.position, 'absolute');
+    assert.equal(title['clip-path'], 'inset(50%)');
+    assert.equal(title.width, '1px');
+    assert.notEqual(title.display, 'none', 'display:none would remove it from the accessibility tree');
+    assert.notEqual(title.visibility, 'hidden', 'visibility:hidden would remove it from the accessibility tree');
+});
+
