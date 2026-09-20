@@ -555,3 +555,4 @@ worse than no log.
 | 2026-09-20 | 3′ | **Header redone:** five left-aligned links, Anant Vijay as the fifth; `.site-brand` retired; active link in `--accent` + underline | **146 pass / 0 fail** | Documented AA exception (2.86:1) on the active label — non-colour indicator required by test. |
 | 2026-09-20 | 5⁗ | List dates left-aligned in the gutter so nav, intro and list share one left edge | **147/147** | Right-aligned dates had started ~2rem in. |
 | 2026-09-20 | L | `--container-max` 1200px → `var(--measure)` (68ch): one centred column, equal margins; list gutter 9→8rem | **148/148** | Author: whitespace left ≠ right. Test added pinning container = measure. |
+| 2026-09-20 | L′ | `--measure` 68ch → 74ch (column + article); article body now `var(--measure)` | **148/148** | Still inside the 60–75ch reading range the test enforces. |

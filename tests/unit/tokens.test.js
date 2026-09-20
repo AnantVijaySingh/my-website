@@ -197,9 +197,9 @@ test('h1 cannot be a fixed size large enough to overflow a phone', () => {
 
 test('essay body has a ch-based reading measure, not the 1200px container', () => {
     const body = css.declarationsFor('.essay-article__body', rules);
-    assert.match(body['max-width'] || '', /^\d+ch$/,
-        `.essay-article__body max-width is "${body['max-width']}" — expected e.g. 68ch`);
-    const measure = parseInt(body['max-width'], 10);
+    assert.equal(body['max-width'], 'var(--measure)', '.essay-article__body must use the shared measure');
+    assert.match(light['--measure'] || '', /^\d+ch$/, `--measure is "${light['--measure']}" — expected e.g. 74ch`);
+    const measure = parseInt(light['--measure'], 10);
     assert.ok(measure >= 60 && measure <= 75, `${measure}ch is outside the 60–75ch reading range`);
     assert.equal(body['font-family'], 'var(--font-body)', 'essay body must be Georgia');
 });

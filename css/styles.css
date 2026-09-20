@@ -43,7 +43,7 @@
 
     /* Layout: one reading column. The container IS the measure, so content is
        flush-left inside it and the margins either side are equal. */
-    --measure: 68ch;
+    --measure: 74ch;
     --container-max: var(--measure);
     --container-pad: 5vw;
 
@@ -448,7 +448,7 @@ main {
 /* Body copy. Everything markdown can emit is styled here explicitly — these
    elements rendered as browser defaults before (PLAN.md R2). */
 .essay-article__body {
-    max-width: 68ch;
+    max-width: var(--measure);
     font-family: var(--font-body);
     font-size: 1.125rem;
     line-height: 1.75;
