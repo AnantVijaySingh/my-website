@@ -47,14 +47,15 @@
     </div>
 </header>
 <main>
-    <section id="essays-list-section">
-        <p class="essay-intro">
+    <section class="hero">
+        <h1 class="hero__title">Essays</h1>
+        <p class="hero__intro">
             I write about what I've learned, the mistakes I've made, and how I hope to do better in the future. I share in the hope of getting feedback to find gaps in my thinking.
         </p>
-        <div id="essays-container">
-            {{essays}}
-        </div>
     </section>
+    <ul class="essay-grid">
+        {{essays}}
+    </ul>
 </main>
 <!-- Dark mode toggle -->
 <div class="toggle-container">

@@ -340,76 +340,98 @@ main {
 
 
 /* --------------------------------------------------------------------------
-   4. Index list  (transitional — replaced by the essay grid in Phase 5)
+   4. Index — hero + essay grid (design.md §4–§5)
    -------------------------------------------------------------------------- */
 
-.essay-intro {
+/* Hero: massive H1, then a 60ch intro. The gap below is the macro spacing the
+   design calls for between the hero and the list (120px, 64px on phones). */
+.hero {
+    padding: var(--space-lg) 0 var(--space-2xl);
+}
+
+.hero__title {
+    margin-bottom: var(--space-md);
+}
+
+.hero__intro {
     max-width: 60ch;
-    margin-bottom: var(--space-2xl);
-    color: var(--ink);
+    margin: 0;
+    font-size: 1.125rem;
 }
 
-#essays-list-section {
-    margin-top: var(--space-md);
+/* Grid: 1 / 2 / 3 columns, mobile-first, 3rem gaps. */
+.essay-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
 }
 
-#essays-container {
+@media (min-width: 768px) {
+    .essay-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .essay-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.essay-card {
+    margin: 0;
     display: flex;
     flex-direction: column;
-    gap: var(--space-md);
+    gap: var(--space-2xs);
+    min-width: 0; /* let long titles wrap instead of widening the column */
 }
 
-.essay-item {
+/* Icon + title. The octagon is a ::before, so it scales with the type and
+   inherits the accent token. Decorative, hence --accent is permitted here. */
+.essay-card__title {
     display: flex;
     align-items: flex-start;
-    gap: var(--space-xs);
-}
-
-#essays-container .essay-date {
-    flex-shrink: 0;
-    width: 7rem;
-    padding-top: 0.35rem;
-    color: var(--accent-ink);
-    text-align: right;
-    white-space: nowrap;
-    line-height: 1.4;
-}
-
-.essay-content {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-}
-
-.essay-title {
+    gap: var(--space-2xs);
     font-family: var(--font-display);
     font-size: 1.125rem;
     font-weight: 700;
+    line-height: 1.3;
     color: var(--ink);
+    overflow-wrap: anywhere;
 }
 
-.essay-title:hover {
+.essay-card__title::before {
+    content: "";
+    flex: 0 0 auto;
+    width: 0.7em;
+    height: 0.7em;
+    margin-top: 0.3em;
+    background: var(--accent);
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+
+.essay-card__title:hover {
     color: var(--accent-ink);
     text-decoration: none;
 }
 
-.essay-snippet {
+.essay-card__date {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: var(--tracking-caps);
+    text-transform: uppercase;
+    color: var(--accent-ink);
+}
+
+.essay-card__snippet {
+    margin: 0;
     font-size: 0.9375rem;
     line-height: 1.7;
     color: var(--ink-muted);
-    margin-top: var(--space-3xs);
-}
-
-@media (max-width: 768px) {
-    .essay-item {
-        flex-direction: column;
-        gap: var(--space-3xs);
-    }
-    #essays-container .essay-date {
-        width: auto;
-        text-align: left;
-        padding-top: 0;
-    }
 }
 
 

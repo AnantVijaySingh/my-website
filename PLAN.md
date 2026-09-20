@@ -24,7 +24,7 @@ Status key: `[ ]` not started · `[~]` in progress · `[x]` done · `[!]` blocke
 | 2 | Token layer + base styles + theme mechanism | `[x]` | Yes | You confirm |
 | 3 | Split header | `[x]` | Yes | You confirm |
 | 4 | Breadcrumbs | `[x]` | Yes | You confirm |
-| 5 | Index hero + 3-column grid | `[ ]` | Yes | Yes |
+| 5 | Index hero + 3-column grid | `[x]` | Yes | **You confirm at 3 widths** |
 | 6 | Essay reading page | `[ ]` | Yes | **Yes — all 17 essays** |
 | 7 | Remaining pages | `[ ]` | Yes | Yes |
 | 8 | Dark palette — verification + polish only (mechanism landed in Phase 2) | `[ ]` | Yes | Yes |
@@ -150,7 +150,7 @@ Found by surveying the code. Each is addressed in a specific phase.
 | R3 | **Anti-flash script is a no-op.** Inline script sets `.dark-mode` on `documentElement`; CSS only matches `body.dark-mode`. Never suppressed the flash. → `data-theme` on `<html>`. | 8 | `[ ]` |
 | R4 | **`Momentum->-Motivation.html` has a literal `>` in its filename**, emitted unencoded into hrefs. Works in browsers. **Do not rename** — breaks live URLs + sitemap. Pin with a test. Its title also contains `>`, so breadcrumbs must HTML-escape. | 4 | `[x]` |
 | R5 | **Two essays embed images** (`Linear-Compound-Exponential`, `Ahhhhhh-When-I-hear-Quick-Wins`) via `../images/…`. Path changes break them. | 6 | `[ ]` |
-| R6 | **`index.html` is rebuilt wholesale** from its template. Hand-edits are lost on next build — all homepage changes go in the template. | 5 | `[ ]` |
+| R6 | **`index.html` is rebuilt wholesale** from its template. Hand-edits are lost on next build — all homepage changes go in the template. | 5 | `[x]` |
 | R7 | **`finds.html`** is an unstyled stub in `sitemap.xml` but not in the nav. Out of scope; excluded from checks. Pre-existing debt. | — | `[ ]` |
 
 ---
@@ -334,14 +334,16 @@ they existed. Phase 8 is now verification and polish, not implementation.
 
 **Gate:** all 17 essays show 3 correct crumbs; R4 test green. ✅ **17/17.** R4 closed.
 
-### Phase 5 — Index hero + 3-column grid `[ ]`
-- [ ] Hero in `index-template.html`: H1 "ESSAYS" + 60ch subtext
-- [ ] Namespaced card markup in `index-generator.js` (R1, R6)
-- [ ] Octagon bullet via CSS `clip-path` on `::before` — no new asset
-- [ ] Responsive 3 / 2 / 1 columns
-- [ ] Manual pass **at 1440 / 768 / 375**
+### Phase 5 — Index hero + 3-column grid `[x]`
+- [x] Hero in `index-template.html`: H1 "ESSAYS" + 60ch subtext, 120px macro gap below
+- [x] Namespaced card markup in `index-generator.js` (R1 index side, R6): semantic `<ul>/<li>`,
+      `<time datetime>` for dates, title and snippet HTML-escaped (`&` in one title was raw)
+- [x] Octagon bullet via CSS `clip-path` on `::before` — no new asset, scales with type
+- [x] Responsive 1 / 2 / 3 columns, mobile-first, `gap: var(--space-lg)`
+- [ ] Manual pass — **you, at 1440 / 768 / 375**: column count, octagons, no sideways scroll
 
-**Gate:** 17 cards; grid confirmed by eye at three widths.
+**Gate:** 17 cards; grid confirmed by eye at three widths. ✅ Automated side green; **dead-CSS
+test now green — zero unused selectors.**
 
 ### Phase 6 — Essay reading page `[ ]`
 - [ ] 68ch measure; Georgia 1.125rem / 1.75
@@ -503,3 +505,4 @@ worse than no log.
 | 2026-09-20 | 2 | Tokenised stylesheet (752 lines), `data-theme` mechanism, `toggle.ts` rewrite, anti-flash on all 6 static pages (3 never had it) | **Guard 0 fail. Design 26/82** (tokens 13/16) | First pixel change. Theme mechanism pulled forward — Phase 8 is now polish only. Chrome automation unavailable: visual verification is the user's tab, not my screenshots. |
 | 2026-09-20 | 3 | Split header on all 23 pages; icon-nav retired; test corrected for `about.html` (brand is current, no section active) | **Guard 0 fail. Design 41/82** | 5 nav icons + favicon.svg now unreferenced → Phase 9. |
 | 2026-09-20 | 4 | Breadcrumbs on all 17 essays; title escaping fixed in `<h1>`/`<title>` too; function-form replacements | **Guard 0 fail. Design 59/82** | R4 closed. Canonical URL keeps the literal `>` — it is the live filename. |
+| 2026-09-20 | 5 | Hero + 17-card grid, octagon via clip-path, `<time datetime>`, escaped title/snippet | **Guard 0 fail. Design 63/82** | Dead-CSS test green: no unused selectors remain. R6 closed. |

@@ -27,23 +27,32 @@ function formatDate(dateString) {
 // right place without hand-sorting the file.
 const orderedEssays = [...essays].sort((a, b) => new Date(b.date) - new Date(a.date));
 
-// Generate the list of essays
+// Helper function to escape HTML characters
+function escapeHtml(unsafe) {
+    return unsafe
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
+
+// Generate the essay cards (design.md §4: octagon + title, date, snippet).
+// The octagon is drawn by CSS on .essay-card__title::before — no markup needed.
 let essaysHTML = '';
 orderedEssays.forEach((essay) => {
-    const formattedDate = formatDate(essay.date);
+    const href = `essays/${essay.filename.replace('.md', '.html')}`;
     essaysHTML += `
-        <div class="essay-item">
-            <div class="essay-date">${formattedDate}</div>
-            <div class="essay-content">
-                <a href="essays/${essay.filename.replace('.md', '.html')}" class="essay-title">${essay.title}</a>
-                <p class="essay-snippet">${essay.snippet}</p>
-            </div>
-        </div>
-    `;
+        <li class="essay-card">
+            <a href="${href}" class="essay-card__title">${escapeHtml(essay.title)}</a>
+            <time class="essay-card__date" datetime="${essay.date}">${formatDate(essay.date)}</time>
+            <p class="essay-card__snippet">${escapeHtml(essay.snippet)}</p>
+        </li>`;
 });
 
-// Replace the placeholder in the template
-const outputHTML = template.replace('{{essays}}', essaysHTML);
+// Replace the placeholder in the template. Function form, so that essay content
+// containing "$&" or "$1" is inserted verbatim rather than as a replacement pattern.
+const outputHTML = template.replace('{{essays}}', () => essaysHTML);
 
 // Write the generated HTML to the output file
 fs.writeFileSync(outputPath, outputHTML);
