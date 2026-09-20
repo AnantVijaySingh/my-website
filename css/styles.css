@@ -339,7 +339,7 @@ main {
 
 
 /* --------------------------------------------------------------------------
-   4. Index — hero + essay grid (design.md §4–§5)
+   4. Index — hero + essay list (design.md §4–§5)
    -------------------------------------------------------------------------- */
 
 /* Hero: massive H1, then a 60ch intro. The gap below is the macro spacing the
@@ -362,79 +362,73 @@ main {
     font-size: 1.125rem;
 }
 
-/* Grid: 1 / 2 / 3 columns, mobile-first, 3rem gaps. */
-.essay-grid {
+/* List: one row per essay — date gutter | title + snippet — hairlines between. */
+.essay-list {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-lg);
+    border-top: 1px solid var(--rule);
 }
 
-@media (min-width: 768px) {
-    .essay-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 1024px) {
-    .essay-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-.essay-card {
+.essay-list__item {
     margin: 0;
     display: flex;
-    flex-direction: column;
-    gap: var(--space-2xs);
-    min-width: 0; /* let long titles wrap instead of widening the column */
+    align-items: baseline;
+    gap: var(--space-md);
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--rule);
 }
 
-/* Icon + title. The octagon is a ::before, so it scales with the type and
-   inherits the accent token. Decorative, hence --accent is permitted here. */
-.essay-card__title {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--space-2xs);
-    font-family: var(--font-display);
-    font-size: 1.125rem;
-    font-weight: 700;
-    line-height: 1.3;
-    color: var(--ink);
-    overflow-wrap: anywhere;
-}
-
-.essay-card__title::before {
-    content: "";
-    flex: 0 0 auto;
-    width: 0.7em;
-    height: 0.7em;
-    margin-top: 0.3em;
-    background: var(--accent);
-    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-}
-
-.essay-card__title:hover {
-    color: var(--accent-ink);
-    text-decoration: none;
-}
-
-.essay-card__date {
+.essay-list__date {
+    flex: 0 0 8rem;
+    text-align: right;
     font-family: var(--font-display);
     font-size: 0.75rem;
     font-weight: 500;
     letter-spacing: var(--tracking-caps);
     text-transform: uppercase;
     color: var(--accent-ink);
+    white-space: nowrap;
 }
 
-.essay-card__snippet {
-    margin: 0;
-    font-size: 0.9375rem;
+.essay-list__body {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: var(--measure);
+}
+
+.essay-list__title {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink);
+    overflow-wrap: anywhere;
+}
+
+.essay-list__title:hover {
+    color: var(--accent-ink);
+    text-decoration: none;
+}
+
+.essay-list__snippet {
+    margin: var(--space-3xs) 0 0;
+    font-size: 1rem;
     line-height: 1.7;
     color: var(--ink-muted);
+}
+
+/* Phones: date above title, both flush left. */
+@media (max-width: 767px) {
+    .essay-list__item {
+        flex-direction: column;
+        gap: var(--space-3xs);
+    }
+    .essay-list__date {
+        flex: none;
+        text-align: left;
+    }
 }
 
 

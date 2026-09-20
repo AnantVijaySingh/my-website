@@ -192,31 +192,30 @@ test('essay body has a ch-based reading measure, not the 1200px container', () =
     assert.equal(body['font-family'], 'var(--font-body)', 'essay body must be Georgia');
 });
 
-test('essay grid declares 1 / 2 / 3 columns mobile-first', () => {
-    const grid = rules.filter((rule) => rule.selector.split(',').some((s) => s.trim() === '.essay-grid'));
-    const at = (predicate) => grid.filter((rule) => predicate(rule.media || ''))
-        .map((rule) => css.declarations(rule.body)['grid-template-columns'])
-        .filter(Boolean);
+test('essay list is a single column with a fixed date gutter', () => {
+    const list = css.declarationsFor('.essay-list', rules);
+    assert.ok(Object.keys(list).length, 'no .essay-list rule');
+    assert.ok(!/grid/.test(list.display || ''), 'the essay list is a list, not a grid');
 
-    assert.ok(grid.length, 'no .essay-grid rule found');
-    assert.deepEqual(at((m) => m === ''), ['1fr'], 'base (mobile) must be a single column');
-    assert.deepEqual(at((m) => /min-width:\s*768px/.test(m)), ['repeat(2, 1fr)'],
-        'expected 2 columns at min-width: 768px');
-    assert.deepEqual(at((m) => /min-width:\s*1024px/.test(m)), ['repeat(3, 1fr)'],
-        'expected 3 columns at min-width: 1024px');
-    assert.equal(css.declarationsFor('.essay-grid', rules).gap, 'var(--space-lg)',
-        'grid gap must be the 3rem token');
+    const item = css.declarationsFor('.essay-list__item', rules);
+    assert.equal(item.display, 'flex', 'each row lays out date | body with flex');
+    assert.equal(item['align-items'], 'baseline', 'date and title must share a baseline');
+
+    const date = css.declarationsFor('.essay-list__date', rules);
+    assert.match(date.flex || '', /\b\d+(\.\d+)?rem\b/, 'date gutter needs a fixed rem width');
+    assert.equal(date['text-align'], 'right', 'dates are right-aligned against the title edge');
+    assert.equal(date.color, 'var(--accent-ink)');
+
+    const body = css.declarationsFor('.essay-list__body', rules);
+    assert.equal(body['max-width'], 'var(--measure)', 'row text must respect the reading measure');
 });
 
-test('octagon bullet is a CSS clip-path on the card title, not an image asset', () => {
-    const bullet = rules.find((rule) => /\.essay-card__title::before/.test(rule.selector));
-    assert.ok(bullet, 'no .essay-card__title::before rule');
-    const decl = css.declarations(bullet.body);
-    assert.match(decl['clip-path'] || '', /^polygon\(/, 'bullet must be a clip-path polygon');
-    assert.equal(decl.background || decl['background-color'], 'var(--accent)',
-        'bullet colour must be var(--accent) — decorative, so the display orange is permitted');
-    const points = (decl['clip-path'].match(/%/g) || []).length / 2;
-    assert.equal(points, 8, `expected an 8-point octagon, got ${points} points`);
+test('essay list stacks date above title on small screens', () => {
+    const stacked = rules.filter((rule) =>
+        rule.selector.split(',').some((s) => s.trim() === '.essay-list__item') &&
+        /max-width:\s*767px/.test(rule.media || ''));
+    assert.ok(stacked.length, 'no .essay-list__item override under max-width: 767px');
+    assert.equal(css.declarations(stacked[0].body)['flex-direction'], 'column');
 });
 
 test('macro spacing scales down on small viewports', () => {

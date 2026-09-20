@@ -152,33 +152,35 @@ test('index: hero has the massive H1 "Essays" and a constrained intro', () => {
     assert.equal(html.countTags(doc, 'h1'), 1, 'index must have exactly one <h1>');
 });
 
-test('index: grid of 17 cards with title, date and snippet', () => {
+test('index: list of 17 essays with date, title and snippet', () => {
     const doc = read(path.join(ROOT, 'index.html'));
-    const grid = html.extractElement(doc, 'div', 'essay-grid') ?? html.extractElement(doc, 'ul', 'essay-grid');
-    assert.ok(grid !== null, 'missing .essay-grid');
+    const list = html.extractElement(doc, 'ul', 'essay-list') ?? html.extractElement(doc, 'ol', 'essay-list');
+    assert.ok(list !== null, 'missing .essay-list');
 
-    const cards = [...grid.matchAll(/<(article|li)\b[^>]*class="[^"]*\bessay-card\b[^"]*"[^>]*>/gi)];
-    assert.equal(cards.length, essays().length, `expected ${essays().length} .essay-card, got ${cards.length}`);
+    const items = [...list.matchAll(/<li\b[^>]*class="[^"]*\bessay-list__item\b[^"]*"[^>]*>/gi)];
+    assert.equal(items.length, essays().length, `expected ${essays().length} .essay-list__item, got ${items.length}`);
 
-    const count = (cls) => (grid.match(new RegExp(`class="[^"]*\\b${cls}\\b`, 'g')) || []).length;
-    assert.equal(count('essay-card__title'), essays().length, '.essay-card__title per card');
-    assert.equal(count('essay-card__date'), essays().length, '.essay-card__date per card');
-    assert.equal(count('essay-card__snippet'), essays().length, '.essay-card__snippet per card');
+    const count = (cls) => (list.match(new RegExp(`class="[^"]*\\b${cls}\\b`, 'g')) || []).length;
+    assert.equal(count('essay-list__date'), essays().length, '.essay-list__date per row');
+    assert.equal(count('essay-list__body'), essays().length, '.essay-list__body per row');
+    assert.equal(count('essay-list__title'), essays().length, '.essay-list__title per row');
+    assert.equal(count('essay-list__snippet'), essays().length, '.essay-list__snippet per row');
 
-    // Title is the link, and every essay title appears.
+    const esc = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     for (const essay of essays()) {
-        const re = new RegExp(`<a\\b[^>]*href="${essay.relativePath.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"[^>]*class="[^"]*\\bessay-card__title\\b`);
-        const reAlt = new RegExp(`<a\\b[^>]*class="[^"]*\\bessay-card__title\\b[^"]*"[^>]*href="${essay.relativePath.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"`);
-        assert.ok(re.test(grid) || reAlt.test(grid), `no .essay-card__title link to ${essay.relativePath}`);
+        const re = new RegExp(`<a\\b[^>]*href="${esc(essay.relativePath)}"[^>]*class="[^"]*\\bessay-list__title\\b`);
+        const reAlt = new RegExp(`<a\\b[^>]*class="[^"]*\\bessay-list__title\\b[^"]*"[^>]*href="${esc(essay.relativePath)}"`);
+        assert.ok(re.test(list) || reAlt.test(list), `no .essay-list__title link to ${essay.relativePath}`);
     }
 
-    // Dates are the uppercase short form the design calls for, e.g. JUN 02, 2026.
-    const dates = [...grid.matchAll(/class="[^"]*\bessay-card__date\b[^"]*"[^>]*>([\s\S]*?)</g)].map((m) => m[1].trim());
+    // Dates come before the title in source order, in the uppercase short form.
+    const dates = [...list.matchAll(/class="[^"]*\bessay-list__date\b[^"]*"[^>]*>([\s\S]*?)</g)].map((m) => m[1].trim());
     for (const d of dates) assert.match(d, /^[A-Z]{3} \d{2}, \d{4}$/, `date "${d}" not in MMM DD, YYYY form`);
 
     const classes = html.classNames(doc);
-    for (const legacy of ['essay-item', 'essay-content', 'essay-title', 'essay-snippet', 'essay-intro']) {
-        assert.ok(!classes.has(legacy), `legacy class .${legacy} still on index`);
+    for (const legacy of ['essay-item', 'essay-content', 'essay-title', 'essay-snippet', 'essay-intro',
+        'essay-grid', 'essay-card', 'essay-card__title', 'essay-card__date', 'essay-card__snippet']) {
+        assert.ok(!classes.has(legacy), `retired class .${legacy} still on index`);
     }
 });
 

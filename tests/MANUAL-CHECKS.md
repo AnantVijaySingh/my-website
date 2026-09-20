@@ -60,7 +60,7 @@ Checks 1–4, 9, 11, 12 above, plus:
 
 | Page | Additional |
 |---|---|
-| `index.html` | Hero H1 "ESSAYS"; subtext constrained (~60ch); **grid is 3 columns at 1440, 2 at 768, 1 at 375**; 17 cards; orange octagon bullet on each; dates readable. |
+| `index.html` | Hero H1 "ESSAYS"; subtext constrained (~60ch); **single-column list of 17 rows**, date gutter right-aligned against the titles at ≥768px, **stacked date-above-title at 375px**; hairlines between rows; snippets never wider than the reading measure. |
 | `quotes.html` | Quotes render (loaded by JS — an empty list means `js/quotes.js` failed); left rule is no longer blue; copy and share buttons still work. |
 | `software.html` | Focus app icon loads; links to the App Store and privacy policy work. |
 | `time.html` | Activity list renders (JS-driven). |

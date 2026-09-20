@@ -37,16 +37,18 @@ function escapeHtml(unsafe) {
         .replace(/'/g, '&#039;');
 }
 
-// Generate the essay cards (design.md §4: octagon + title, date, snippet).
-// The octagon is drawn by CSS on .essay-card__title::before — no markup needed.
+// Generate the essay list (design.md §4): date gutter on the left, title and
+// snippet stacked on the right, one row per essay.
 let essaysHTML = '';
 orderedEssays.forEach((essay) => {
     const href = `essays/${essay.filename.replace('.md', '.html')}`;
     essaysHTML += `
-        <li class="essay-card">
-            <a href="${href}" class="essay-card__title">${escapeHtml(essay.title)}</a>
-            <time class="essay-card__date" datetime="${essay.date}">${formatDate(essay.date)}</time>
-            <p class="essay-card__snippet">${escapeHtml(essay.snippet)}</p>
+        <li class="essay-list__item">
+            <time class="essay-list__date" datetime="${essay.date}">${formatDate(essay.date)}</time>
+            <div class="essay-list__body">
+                <a href="${href}" class="essay-list__title">${escapeHtml(essay.title)}</a>
+                <p class="essay-list__snippet">${escapeHtml(essay.snippet)}</p>
+            </div>
         </li>`;
 });
 

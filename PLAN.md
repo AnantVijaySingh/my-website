@@ -24,7 +24,7 @@ Status key: `[ ]` not started · `[~]` in progress · `[x]` done · `[!]` blocke
 | 2 | Token layer + base styles + theme mechanism | `[x]` | Yes | You confirm |
 | 3 | Split header | `[x]` | Yes | You confirm |
 | 4 | Breadcrumbs | `[x]` | Yes | You confirm |
-| 5 | Index hero + 3-column grid | `[x]` | Yes | **You confirm at 3 widths** |
+| 5 | Index hero + essay list (grid built, then reverted to a list on 2026-09-20) | `[x]` | Yes | You confirm |
 | 6 | Essay reading page | `[x]` | Yes | **You — all 17 essays** |
 | 7 | Remaining pages | `[x]` | Yes | You confirm |
 | 8 | Dark palette — verification + polish only (mechanism landed in Phase 2) | `[x]` | No new | **You — toggle through pages** |
@@ -206,10 +206,10 @@ only — the nav is *supposed* to change, and gets its own expectations in `mark
 | Header | `.site-header` › `.site-brand` (→ about.html), `.site-nav` › `a.active` |
 | Breadcrumbs | `nav.breadcrumbs[aria-label=Breadcrumb]` › `ol` › `li` ×3, last `[aria-current=page]` |
 | Index hero | `section.hero` › `h1.hero__title`, `p.hero__intro` |
-| Index grid | `.essay-grid` › `.essay-card` › `a.essay-card__title` (octagon via `::before`), `.essay-card__date`, `.essay-card__snippet` |
+| Index list | `ul.essay-list` › `li.essay-list__item` › `time.essay-list__date`, `.essay-list__body` › `a.essay-list__title`, `p.essay-list__snippet` |
 | Essay page | `article.essay-article` › `.essay-article__date`, `section.essay-article__body`, `.essay-article__actions` |
 | Theme | `<html data-theme="dark">`; toggle keeps `.toggle-container .toggle .input .icon .icon--moon .icon--sun` |
-| Retired | `.essay-item .essay-content .essay-date .essay-title .essay-snippet .essay-intro .essay-container .essay-actions .nav-icon .nav-text .dark-mode` |
+| Retired | `.essay-item .essay-content .essay-date .essay-title .essay-snippet .essay-intro .essay-container .essay-actions .nav-icon .nav-text .dark-mode` — and the grid: `.essay-grid .essay-card .essay-card__*` |
 
 ---
 
@@ -545,3 +545,4 @@ worse than no log.
 | 2026-09-20 | 8 | Dark-mode audit clean; 4 guard tests added | **Guard 60/60. Design 86/86** | R3 closed. Nothing to fix — tokens did the work. `prefers-color-scheme` offered, not done. |
 | 2026-09-20 | 9 | Full build no-op; sitemap regenerated (**was stale: 3 URLs missing**); README rewritten; baseline recaptured with content fields unchanged | **146/146** | Remaining: your 23-page visual pass, Phase 10 Socket scan after token rotation, and the debt decisions (§Known debt in README). |
 | 2026-09-20 | 9+ | Removed dead client-side essay list (`ts/essays.ts`, `js/essays.js`) and two stale compiled files left inside `ts/` | — | The homepage has been build-time generated all along; the browser script was a superseded duplicate carrying the timezone bug. |
+| 2026-09-20 | 5′ | **Grid reverted to a single-column list** by author preference. Spec (`design.md` §4), tests and code updated in that order; `.essay-card*` retired for `.essay-list*` | **145 pass / 0 fail** | Date gutter left, title + snippet right, hairlines; stacks below 768px. Octagon bullet retired with the grid. |

@@ -84,7 +84,7 @@ shipping stale pages.
      "filename": "My-Essay.md",
      "title": "My Essay",
      "date": "2026-09-20",
-     "snippet": "One or two sentences shown on the homepage card."
+     "snippet": "One or two sentences shown in the homepage list."
    }
    ```
    - `date` must be strict `YYYY-MM-DD`. The tests reject anything else.
@@ -133,7 +133,7 @@ Must be green at every commit. It proves the site still *says* what it said:
   keywords, no legacy blue. A dark-mode rule may only invert a line icon; a colour that dark
   needs and light does not is a missing token, not an override.
 - **Markup contracts** — the split header on all 23 pages, breadcrumbs on all 17 essays,
-  namespaced article classes, the hero and 17-card grid, `data-theme` set before first paint.
+  namespaced article classes, the hero and 17-row essay list, `data-theme` set before first paint.
 - **Coverage** — every class the pages emit has a CSS rule, and every class selector matches
   something emitted. This is what catches "renamed the class in the generator, forgot the
   CSS" without a browser.
@@ -161,7 +161,7 @@ automated will catch:
 
 - horizontal overflow at phone width
 - an element left on the wrong background by a cascade mistake
-- the grid not actually rendering 3 / 2 / 1 columns
+- the essay list not stacking date-above-title on phones
 - a webfont or icon that 404s
 - a broken image inside an essay
 

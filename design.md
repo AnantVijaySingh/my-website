@@ -38,7 +38,7 @@ The accent is therefore split into two tokens:
 
 | Token | Hex | On cream | Permitted usage |
 |---|---|---|---|
-| `--accent` | `#F05C22` | 2.86:1 | Brand wordmark only (WCAG exempts logotypes), and purely decorative geometric bullets. Never functional text. |
+| `--accent` | `#F05C22` | 2.86:1 | Brand wordmark only (WCAG exempts logotypes), and purely decorative marks such as the blockquote rule. Never functional text. |
 | `--accent-ink` | `#B8431A` | **4.64:1** | All functional accent text: dates, breadcrumb current-page, active/hover nav, inline links. |
 
 The two hues are close enough to read as one industrial orange; the distinction is legibility,
@@ -53,7 +53,7 @@ not branding. `tests/unit/tokens.test.js` asserts these ratios so the palette ca
 | `--ink-muted` | `#57534E` | Snippets, captions, secondary meta | 6.50:1 |
 | `--accent` | `#F05C22` | Brand wordmark, decorative marks | 2.86:1 (non-text only) |
 | `--accent-ink` | `#B8431A` | Dates, breadcrumbs, links, active nav | 4.64:1 |
-| `--rule` | `#DCCFC2` | Hairlines, dividers, card separators | — |
+| `--rule` | `#DCCFC2` | Hairlines, dividers, list-row separators | — |
 
 ### 1.3 Full token set — Dark
 
@@ -116,9 +116,9 @@ and a classic serif.
 | Nav link | Display | `0.875rem` | 500 | uppercase, `0.05em` |
 | Breadcrumb | Display | `0.75rem` | 500 | uppercase, `0.05em` |
 | Date / meta | Display | `0.75rem` | 500 | uppercase, `0.05em` |
-| Card title | Display | `1.125rem` | 700 | none |
+| List title | Display | `1.25rem` | 700 | none |
 | Essay body | Body | `1.125rem` | 400 | none, `line-height: 1.75` |
-| Card snippet | Body | `0.9375rem` | 400 | none, `line-height: 1.7` |
+| List snippet | Body | `1rem` | 400 | none, `line-height: 1.7` |
 
 `clamp()` is used on H1 so the "massive" 4–5rem display size is honoured on desktop without
 overflowing a 375px phone — a fixed `5rem` uppercase title breaks small viewports.
@@ -146,7 +146,7 @@ White space is a structural element, not an afterthought.
 | `--space-xs` | `1rem` | Within-component |
 | `--space-sm` | `1.5rem` | Paragraph rhythm |
 | `--space-md` | `2rem` | Header → body (§3 micro spacing) |
-| `--space-lg` | `3rem` | Grid gap |
+| `--space-lg` | `3rem` | Large component gaps |
 | `--space-xl` | `5rem` | Sub-section breaks |
 | `--space-2xl` | `7.5rem` | Macro section breaks (120px) |
 | `--space-3xl` | `10rem` | Macro section breaks (160px) |
@@ -181,19 +181,22 @@ dead space on a phone reads as a broken page, not a premium one.
 - **H1 (page title):** massive, Space Grotesk, bold, uppercase, left-aligned.
 - **Hero subtext:** brief intro constrained to `60ch` directly below the H1, in Georgia.
 
-### Lists & Essay Grid (the 3-column layout)
+### Essay list
 
-The reference's 3-column services grid is repurposed for essay snippets.
+The essays are a single-column, reverse-chronological list — one row per essay.
 
-- **The grid:** `grid-template-columns: repeat(3, 1fr)` with `gap: 3rem`.
-  Responsive: 3 columns ≥1024px, 2 columns 768–1023px, 1 column <768px.
-- **The bullet/icon:** orange geometric octagon to the left of the essay title. Implemented as
-  a CSS `clip-path` polygon on a `::before` pseudo-element — no image asset, scales with type,
-  inherits the accent token. Marked `aria-hidden` in effect since it is decorative.
-- **Card structure:**
-  - *Icon + title:* orange octagon alongside the essay title (Display, bold).
-  - *Date:* Display, small, uppercase, `--accent-ink` (e.g. "JUN 02, 2026").
-  - *Snippet:* Georgia, body size, first few lines of the essay.
+> A 3-column card grid was implemented first (2026-09-20) and reverted the same day by the
+> author's preference: for a small number of long-form essays, a list reads better than cards.
+
+- **Row anatomy:** a fixed date gutter on the left, then title and snippet stacked on the right.
+  Rows are separated by hairlines (`--rule`) with `--space-md` of padding.
+- **Date:** Display, `0.75rem`, uppercase, `--accent-ink`, right-aligned in an `8rem` gutter so
+  the titles form a clean left edge (e.g. "JUN 02, 2026").
+- **Title:** Display, `1.25rem`, bold, `--ink`; `--accent-ink` on hover.
+- **Snippet:** Georgia, `1rem`, `--ink-muted`. The text column is capped at the reading measure
+  so snippets never stretch across the 1200px container.
+- **Below 768px** the row stacks: date above title, both left-aligned.
+- **Alignment:** the date and title share a baseline, so the two type sizes sit on one line.
 
 ---
 
@@ -206,7 +209,7 @@ editorial" experience.
 
 - Massive H1 for the word "ESSAYS".
 - Hero subtext (the existing intro paragraph) at `60ch` below it.
-- Essays in the 3-column grid: orange octagon bullet, title, date, snippet.
+- Essays as the single-column list: date gutter, title, snippet, hairlines between rows.
 
 ### The Essay Reading Page
 
@@ -230,7 +233,7 @@ Decisions made while applying this system to the existing codebase:
    of which was "Anant Vijay" → `about.html`. The brand wordmark now occupies that role and
    links to `about.html`; the right-hand nav carries the four remaining sections.
 2. **Class namespacing.** The old CSS overloaded `.essay-date` and `.essay-content` for both
-   the index list and the article body. These are split into `.essay-card__*` and
+   the index list and the article body. These are split into `.essay-list__*` and
    `.essay-article__*` so restyling a card cannot silently restyle 17 essay bodies.
 3. **Mobile icon-nav retired.** The old stylesheet hid nav text below 600px and showed
    `icons/*.svg` glyphs, animating the label of the active item. The split header with
