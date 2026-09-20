@@ -557,3 +557,4 @@ worse than no log.
 | 2026-09-20 | L | `--container-max` 1200px → `var(--measure)` (68ch): one centred column, equal margins; list gutter 9→8rem | **148/148** | Author: whitespace left ≠ right. Test added pinning container = measure. |
 | 2026-09-20 | L′ | `--measure` 68ch → 74ch (column + article); article body now `var(--measure)` | **148/148** | Still inside the 60–75ch reading range the test enforces. |
 | 2026-09-20 | L″ | `--measure` 74ch → 84ch; test ceiling 75 → 90ch (author preference; still blocks 150-char lines) | **148/148** | |
+| 2026-09-20 | 3″ | Header hairline removed | **148/148** | |

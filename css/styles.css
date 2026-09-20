@@ -213,7 +213,6 @@ main {
     top: 0;
     z-index: 1000;
     background-color: var(--canvas);
-    border-bottom: 1px solid var(--rule);
 }
 
 .site-header__inner {
