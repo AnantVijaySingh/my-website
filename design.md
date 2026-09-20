@@ -109,7 +109,7 @@ and a classic serif.
 
 | Role | Face | Size | Weight | Transform |
 |---|---|---|---|---|
-| H1 (essay title; hidden on section pages) | Display | `clamp(1.25rem, 3.5vw, 2.5rem)` | 700 | uppercase |
+| H1 (essay title; hidden on section pages) | Display | `1.2rem` | 700 | uppercase |
 | H2 (in-essay) | Display | `clamp(1.5rem, 3vw, 2rem)` | 700 | none |
 | H3 (in-essay) | Display | `1.25rem` | 700 | none |
 | Brand wordmark | Display | `1.125rem` | 700 | uppercase, `0.08em` |
@@ -121,9 +121,10 @@ and a classic serif.
 | Essay body | Body | `1.125rem` | 400 | none, `line-height: 1.75` |
 | List snippet | Body | `1rem` | 400 | none, `line-height: 1.7` |
 
-`clamp()` is used on H1 so the display size scales with the viewport without overflowing a
-375px phone. It was halved from `clamp(2.5rem, 7vw, 5rem)` on 2026-09-20 by the author's
-preference — the essay title should sit above the text, not dominate it.
+The essay H1 is a fixed `1.2rem` — a label above the text, not a display headline. It began
+as `clamp(2.5rem, 7vw, 5rem)` and was reduced in steps on 2026-09-20 by the author's
+preference. At this size a fixed value cannot overflow a phone, which is what the original
+`clamp()` guarded against.
 
 ---
 
@@ -184,7 +185,7 @@ dead space on a phone reads as a broken page, not a premium one.
   60ch intro paragraph in Georgia leads the page. An `<h1>` remains in the markup, visually
   hidden, so the document outline is intact for screen readers and search.
 - **Essay pages** keep a visible H1: Space Grotesk, bold, uppercase, left-aligned, at
-  `clamp(1.25rem, 3.5vw, 2.5rem)` — it is the essay's title, not a section label.
+  `1.2rem` — it is the essay's title, not a section label.
 
 > Visible section titles were implemented first and removed the same day by the author's
 > preference (2026-09-20); the nav already names the section.

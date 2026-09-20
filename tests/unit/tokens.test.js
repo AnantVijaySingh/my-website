@@ -176,9 +176,16 @@ test('no body.dark-mode selectors remain — theme is data-theme on <html>', () 
 
 // ─── Layout intent pinned at the source (PLAN.md §5) ───────────────────────
 
-test('h1 uses clamp() so a 5rem uppercase title cannot overflow a phone', () => {
+test('h1 cannot be a fixed size large enough to overflow a phone', () => {
+    // Either fluid (clamp) or a fixed size no larger than 2rem. A fixed 5rem
+    // uppercase title is what breaks 375px viewports.
     const h1 = css.declarationsFor('h1', rules);
-    assert.match(h1['font-size'] || '', /^clamp\(/, `h1 font-size is "${h1['font-size']}"`);
+    const size = h1['font-size'] || '';
+    const fixed = /^(\d+(\.\d+)?)rem$/.exec(size);
+    assert.ok(
+        /^clamp\(/.test(size) || (fixed && parseFloat(fixed[1]) <= 2),
+        `h1 font-size is "${size}" — use clamp() or a fixed size ≤ 2rem`
+    );
     assert.equal(h1['font-family'], 'var(--font-display)');
     assert.equal(h1['text-transform'], 'uppercase');
 });
