@@ -56,15 +56,20 @@ essays.forEach((essay) => {
     const canonicalLink = `https://anantvijay.com/essays/${path.basename(essay.filename, '.md')}.html`;
     const emailLink = `mailto:anantvijayessays@proton.me?subject=Feedback%20for%20${encodeURIComponent(essay.title)}`;
 
-    // Replace placeholders
+    // Replace placeholders. Anything that lands inside markup is HTML-escaped —
+    // one title contains a literal ">" — and replacements are functions so that
+    // content containing "$&" or "$1" is inserted verbatim rather than being
+    // interpreted as a replacement pattern.
     const descriptionContent = essay.snippet || ('Read this essay on ' + essay.title);
+    const safeTitle = escapeHtml(essay.title);
     const outputHTML = template
-        .replace(/{{title}}/g, essay.title)
-        .replace(/{{date}}/g, formattedDate)
-        .replace(/{{content}}/g, htmlContent)
-        .replace(/{{canonical-link}}/g, canonicalLink)
-        .replace(/{{email-link}}/g, emailLink)
-        .replace(/{{description}}/g, escapeHtml(descriptionContent));
+        .replace(/{{title}}/g, () => safeTitle)
+        .replace(/{{breadcrumb-title}}/g, () => safeTitle)
+        .replace(/{{date}}/g, () => formattedDate)
+        .replace(/{{content}}/g, () => htmlContent)
+        .replace(/{{canonical-link}}/g, () => canonicalLink)
+        .replace(/{{email-link}}/g, () => emailLink)
+        .replace(/{{description}}/g, () => escapeHtml(descriptionContent));
 
     // Save the generated HTML file
     const outputPath = path.join(outputDir, `${path.basename(essay.filename, '.md')}.html`);

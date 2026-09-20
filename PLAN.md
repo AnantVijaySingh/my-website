@@ -23,7 +23,7 @@ Status key: `[ ]` not started · `[~]` in progress · `[x]` done · `[!]` blocke
 | 1 | Failing design tests (red) | `[x]` | No | No |
 | 2 | Token layer + base styles + theme mechanism | `[x]` | Yes | You confirm |
 | 3 | Split header | `[x]` | Yes | You confirm |
-| 4 | Breadcrumbs | `[ ]` | Yes | Yes |
+| 4 | Breadcrumbs | `[x]` | Yes | You confirm |
 | 5 | Index hero + 3-column grid | `[ ]` | Yes | Yes |
 | 6 | Essay reading page | `[ ]` | Yes | **Yes — all 17 essays** |
 | 7 | Remaining pages | `[ ]` | Yes | Yes |
@@ -148,7 +148,7 @@ Found by surveying the code. Each is addressed in a specific phase.
 | R1 | **Class collisions.** `.essay-date` styles both the index date and the article date. `.essay-content` is both the index snippet wrapper (`index-generator.js:29`) and the essay body `<section>` (`essay-template.html:41`). Restyling a card silently restyles all 17 essay bodies. → namespace `.essay-card__*` / `.essay-article__*`. | 5, 6 | `[ ]` |
 | R2 | **Essay body elements are unstyled.** Markdown uses `###` (26×), `####` (4×), blockquotes (2×), lists (9×). No CSS rules exist for these inside articles — they render as browser defaults. | 6 | `[ ]` |
 | R3 | **Anti-flash script is a no-op.** Inline script sets `.dark-mode` on `documentElement`; CSS only matches `body.dark-mode`. Never suppressed the flash. → `data-theme` on `<html>`. | 8 | `[ ]` |
-| R4 | **`Momentum->-Motivation.html` has a literal `>` in its filename**, emitted unencoded into hrefs. Works in browsers. **Do not rename** — breaks live URLs + sitemap. Pin with a test. Its title also contains `>`, so breadcrumbs must HTML-escape. | 4 | `[ ]` |
+| R4 | **`Momentum->-Motivation.html` has a literal `>` in its filename**, emitted unencoded into hrefs. Works in browsers. **Do not rename** — breaks live URLs + sitemap. Pin with a test. Its title also contains `>`, so breadcrumbs must HTML-escape. | 4 | `[x]` |
 | R5 | **Two essays embed images** (`Linear-Compound-Exponential`, `Ahhhhhh-When-I-hear-Quick-Wins`) via `../images/…`. Path changes break them. | 6 | `[ ]` |
 | R6 | **`index.html` is rebuilt wholesale** from its template. Hand-edits are lost on next build — all homepage changes go in the template. | 5 | `[ ]` |
 | R7 | **`finds.html`** is an unstyled stub in `sitemap.xml` but not in the nav. Out of scope; excluded from checks. Pre-existing debt. | — | `[ ]` |
@@ -321,14 +321,18 @@ they existed. Phase 8 is now verification and polish, not implementation.
 ✅ **23/23 header tests green.** Unreferenced now: `icons/{book,clock,pen-tool,terminal,user}.svg`
 (+ `favicon.svg`, never referenced) → Phase 9 decision.
 
-### Phase 4 — Breadcrumbs `[ ]`
-- [ ] Add `{{breadcrumb-title}}` to `essay-template.html`
-- [ ] Populate in `generate-pages.js` with **HTML-escaped** title (R4)
-- [ ] Semantic `<nav aria-label="Breadcrumb"><ol>`, `aria-current="page"` on last crumb
-- [ ] Test: `Momentum > Motivation` renders its `>` escaped
-- [ ] Manual pass
+### Phase 4 — Breadcrumbs `[x]`
+- [x] Add `{{breadcrumb-title}}` to `essay-template.html`
+- [x] Populate in `generate-pages.js` with **HTML-escaped** title (R4)
+- [x] **Adjacent fix:** `{{title}}` was never escaped either — the `>` went raw into `<h1>` and
+      `<title>`. Now escaped. All replacements are function-form so content containing `$&`
+      can never be interpreted as a replacement pattern.
+- [x] Semantic `<nav aria-label="Breadcrumb"><ol>`, `aria-current="page"` on last crumb,
+      separator as a pseudo-element so it is not read aloud
+- [x] Test: `Momentum > Motivation` renders its `>` escaped
+- [ ] Manual pass — **you**: open any essay; check the `Momentum > Motivation` one specifically
 
-**Gate:** all 17 essays show 3 correct crumbs; R4 test green.
+**Gate:** all 17 essays show 3 correct crumbs; R4 test green. ✅ **17/17.** R4 closed.
 
 ### Phase 5 — Index hero + 3-column grid `[ ]`
 - [ ] Hero in `index-template.html`: H1 "ESSAYS" + 60ch subtext
@@ -498,3 +502,4 @@ worse than no log.
 | 2026-09-20 | 1 | `tokens.test.js` (18), `markup.test.js` (61), `coverage.test.js` (3) written; `test:guard` / `test:design` scripts added | **Guard 60/60. Design 3/82 (79 red, by design)** | Red for the right reasons — every message names the missing thing. Coverage test already surfaced 3 unstyled intro paragraphs on the live site and 2 dead selectors. |
 | 2026-09-20 | 2 | Tokenised stylesheet (752 lines), `data-theme` mechanism, `toggle.ts` rewrite, anti-flash on all 6 static pages (3 never had it) | **Guard 0 fail. Design 26/82** (tokens 13/16) | First pixel change. Theme mechanism pulled forward — Phase 8 is now polish only. Chrome automation unavailable: visual verification is the user's tab, not my screenshots. |
 | 2026-09-20 | 3 | Split header on all 23 pages; icon-nav retired; test corrected for `about.html` (brand is current, no section active) | **Guard 0 fail. Design 41/82** | 5 nav icons + favicon.svg now unreferenced → Phase 9. |
+| 2026-09-20 | 4 | Breadcrumbs on all 17 essays; title escaping fixed in `<h1>`/`<title>` too; function-form replacements | **Guard 0 fail. Design 59/82** | R4 closed. Canonical URL keeps the literal `>` — it is the live filename. |
