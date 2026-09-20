@@ -203,7 +203,7 @@ only — the nav is *supposed* to change, and gets its own expectations in `mark
 
 | Component | Classes |
 |---|---|
-| Header | `.site-header` › `.site-header__inner` › `.site-nav` › `a` ×5, `a.active[aria-current=page]` |
+| Header | `.site-header` › `.site-header__inner` › `.site-nav` › `ul.site-nav__list` › `li > a[data-priority]` ×5, `a.active[aria-current=page]`; `.site-nav__more` › `button.site-nav__more-button`, `ul.site-nav__more-menu` (JS: `.site-nav--priority`) |
 | Breadcrumbs | — removed 2026-09-20 |
 | Index hero | `section.hero` › `h1.hero__title` (visually hidden), `p.hero__intro` |
 | Index list | `ul.essay-list` › `li.essay-list__item` › `time.essay-list__date`, `.essay-list__body` › `a.essay-list__title`, `p.essay-list__snippet` |
@@ -565,3 +565,4 @@ worse than no log.
 | 2026-09-20 | 7⁵ | Software: same treatment — intro sentence back with the principles it introduces; `.hero--label` | **148/148** | |
 | 2026-09-20 | 4′ | **Breadcrumbs removed** from essays; CSS, generator placeholder, spec and tests updated (absence asserted on all 23 pages) | **132/132** | **Record corrected:** the privacy policy never actually received breadcrumbs in Phase 7 — the script aborted before that step and no test covered it. |
 | 2026-09-20 | 6⁵ | Essay page: gap below the date 5rem → 2rem (the spec's header→body micro spacing) | **132/132** | |
+| 2026-09-20 | 3‴ | **Priority+ nav** (`ts/nav.ts`, zero deps): overflow → “…” dropdown, Time collapses first; mobile list date 0.875rem | **132/132** | No-JS fallback: links wrap. |

@@ -171,7 +171,10 @@ dead space on a phone reads as a broken page, not a premium one.
 - **States:** inactive `--ink`; hover `--accent-ink`; **active `--accent` with a 2px underline**
   and `aria-current="page"`. The underline is not decoration — it is the non-colour indicator
   that makes the below-AA accent acceptable on the active label.
-- **Mobile:** the five links wrap naturally; no icon substitution.
+- **Overflow:** when the five links do not fit on one line, the lowest-priority ones move
+  into a "…" menu that opens a dropdown — **Time first**, then Software, Quotes, Anant Vijay;
+  Essays never collapses. Space returning brings them back. If the current page is inside the
+  menu, the "…" button is marked. Without JavaScript the links simply wrap.
 
 > The header was first built as brand-left / links-right with "ANANT VIJAY" as an
 > always-orange wordmark (2026-09-20), then changed the same day by the author to a single row

@@ -54,7 +54,7 @@ declared dependency, so it only ever worked by accident.
 │   ├── quotes.json        Rendered by js/quotes.js on quotes.html
 │   └── activities.json    Rendered by an inline script on time.html
 ├── css/styles.css         The whole stylesheet — tokens first, then components
-├── ts/                    TypeScript sources (quotes, theme toggle); compiled to js/ by `tsc`
+├── ts/                    TypeScript sources (quotes, theme toggle, priority nav); compiled to js/ by `tsc`
 ├── js/                    Compiled output — do not edit by hand
 ├── quotes.html, software.html, time.html, about.html
 │                          Hand-maintained pages

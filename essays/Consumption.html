@@ -27,11 +27,17 @@
 <header class="site-header">
     <div class="site-header__inner">
         <nav class="site-nav" aria-label="Primary">
-            <a href="../index.html" class="active" aria-current="page">Essays</a>
-            <a href="../quotes.html">Quotes</a>
-            <a href="../software.html">Software</a>
-            <a href="../time.html">Time</a>
-            <a href="../about.html">Anant Vijay</a>
+            <ul class="site-nav__list">
+                <li><a href="../index.html" data-priority="1" class="active" aria-current="page">Essays</a></li>
+                <li><a href="../quotes.html" data-priority="3">Quotes</a></li>
+                <li><a href="../software.html" data-priority="4">Software</a></li>
+                <li><a href="../time.html" data-priority="5">Time</a></li>
+                <li><a href="../about.html" data-priority="2">Anant Vijay</a></li>
+            </ul>
+            <div class="site-nav__more" hidden>
+                <button type="button" class="site-nav__more-button" aria-label="More sections" aria-haspopup="true" aria-expanded="false" aria-controls="site-nav-more-menu">&hellip;</button>
+                <ul class="site-nav__more-menu" id="site-nav-more-menu" hidden></ul>
+            </div>
         </nav>
     </div>
 </header>
@@ -106,5 +112,6 @@
   </label>
 </div>
 <script src="../js/toggle.js"></script>
+<script src="../js/nav.js"></script>
 </body>
 </html>

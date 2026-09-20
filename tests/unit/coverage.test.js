@@ -121,6 +121,7 @@ test('only scripts that pages actually load are considered', () => {
     const scripts = loadedScripts();
     assert.ok(scripts.includes('js/toggle.js'), 'toggle.js should be loaded');
     assert.ok(scripts.includes('js/quotes.js'), 'quotes.js should be loaded');
+    assert.ok(scripts.includes('js/nav.js'), 'nav.js should be loaded');
     // The homepage is generated at build time, so no script builds it in the browser.
     assert.ok(!scripts.some((s) => /essays\.js$/.test(s)), 'no page should load a client-side essay list');
 });

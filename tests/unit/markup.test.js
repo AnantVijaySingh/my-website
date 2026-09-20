@@ -70,6 +70,16 @@ for (const page of allPages()) {
         // The icon-swap mobile nav is retired.
         assert.equal(html.countTags(header, 'img'), 0, 'no <img> in the header — icon nav is retired');
         assert.ok(!/nav-icon|nav-text/.test(header), 'nav-icon / nav-text classes are retired');
+
+        // Priority+ overflow: every link carries a priority, Time collapses first,
+        // and the "…" menu exists (empty and hidden until JS needs it).
+        const priorities = links.map((l) => Number((/data-priority="(\d+)"/.exec(l.attrs) || [])[1]));
+        assert.ok(priorities.every(Number.isFinite), 'every nav link needs data-priority');
+        const timeIndex = NAV_LINKS.findIndex((l) => l.text === 'Time');
+        assert.equal(Math.max(...priorities), priorities[timeIndex], 'Time must be the first link to collapse');
+        assert.match(nav, /<button[^>]*class="site-nav__more-button"[^>]*aria-expanded="false"/, 'more button');
+        assert.match(nav, /<ul class="site-nav__more-menu"[^>]*hidden><\/ul>/, 'more menu starts empty and hidden');
+        assert.ok(doc.includes(`<script src="${prefix}js/nav.js"></script>`), 'page must load js/nav.js');
     });
 }
 
