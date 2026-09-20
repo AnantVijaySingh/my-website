@@ -551,3 +551,4 @@ worse than no log.
 | 2026-09-20 | 6′ | Essay H1 halved: `clamp(2.5rem, 7vw, 5rem)` → `clamp(1.25rem, 3.5vw, 2.5rem)`, line-height 1 → 1.1 | **147/147** | Global `h1` rule; the essay title is its only visible consumer. |
 | 2026-09-20 | 6″ | Essay H1 → fixed `1.2rem`, line-height 1.3; clamp() test relaxed to “clamp or fixed ≤ 2rem” (intent preserved) | **147/147** | |
 | 2026-09-20 | 6‴ | Essay H1 `1.2rem` → `1.25rem` (matches the list title size) | **147/147** | |
+| 2026-09-20 | 6⁗ | Essay H1 back to half size `clamp(1.25rem, 3.5vw, 2.5rem)`, line-height 1.1 — **settled** | **147/147** | Tried fixed 1.2rem and 1.25rem in between. |
