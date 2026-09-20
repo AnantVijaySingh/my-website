@@ -219,7 +219,14 @@ test('essay list is a single column with a fixed date gutter', () => {
     assert.equal(date.color, 'var(--accent-ink)');
 
     const body = css.declarationsFor('.essay-list__body', rules);
-    assert.equal(body['max-width'], 'var(--measure)', 'row text must respect the reading measure');
+    assert.equal(body['min-width'], '0', 'row text must be allowed to shrink inside the column');
+});
+
+test('the container is the reading column, so margins are symmetric on every page', () => {
+    assert.equal(light['--container-max'], 'var(--measure)',
+        'a wider container with left-aligned content piles the leftover width on the right');
+    assert.equal(css.declarationsFor('main', rules)['max-width'], 'var(--container-max)');
+    assert.equal(css.declarationsFor('.site-header__inner', rules)['max-width'], 'var(--container-max)');
 });
 
 test('essay list stacks date above title on small screens', () => {

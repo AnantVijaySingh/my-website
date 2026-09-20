@@ -41,10 +41,11 @@
     --space-2xl: 7.5rem;
     --space-3xl: 10rem;
 
-    /* Layout */
-    --container-max: 1200px;
-    --container-pad: 5vw;
+    /* Layout: one reading column. The container IS the measure, so content is
+       flush-left inside it and the margins either side are equal. */
     --measure: 68ch;
+    --container-max: var(--measure);
+    --container-pad: 5vw;
 
     color-scheme: light;
 }
@@ -360,13 +361,13 @@ main {
     margin: 0;
     display: flex;
     align-items: baseline;
-    gap: var(--space-md);
+    gap: var(--space-sm);
 }
 
 /* Left-aligned so the date text shares the page's left edge with the nav and
    intro; the fixed gutter keeps every title on one column regardless. */
 .essay-list__date {
-    flex: 0 0 9rem;
+    flex: 0 0 8rem;
     text-align: left;
     font-family: var(--font-display);
     font-size: 1rem;
@@ -380,7 +381,6 @@ main {
 .essay-list__body {
     flex: 1 1 auto;
     min-width: 0;
-    max-width: var(--measure);
 }
 
 .essay-list__title {

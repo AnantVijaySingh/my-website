@@ -130,9 +130,14 @@ keeps it from overflowing a 375px phone while still reading as a headline on des
 
 White space is a structural element, not an afterthought.
 
-- **Container width:** cap main content at `max-width: 1200px` with generous side padding
-  (`padding: 0 5vw`) on larger screens. Reading measure for essay body copy is narrower —
-  see §5.
+- **Container width:** one column, **`68ch` wide (`--container-max: var(--measure)`)**,
+  centred, with `5vw` side padding on small screens. Header, hero, list and article all share
+  it and sit flush-left inside it.
+
+  > The original spec said `1200px`. With left-aligned content only ~68ch wide, a 1200px
+  > container piles all the leftover width on the right, so the margins looked unequal
+  > (author feedback, 2026-09-20). Making the container the reading column gives equal
+  > margins on every page without centring the text.
 - **Macro spacing:** 120px–160px of vertical space between major sections (e.g. between the
   hero header and the essay list).
 - **Micro spacing:** minimum 24px–32px below headers before paragraph text begins.
@@ -201,7 +206,7 @@ The essays are a single-column, reverse-chronological list — one row per essay
 
 - **Row anatomy:** a fixed date gutter on the left, then title and snippet stacked on the right.
   Rows are separated by `--space-lg` of white space; no rules between them.
-- **Date:** Display, `1rem`, uppercase, `--accent-ink`, **left-aligned** in a fixed `9rem`
+- **Date:** Display, `1rem`, uppercase, `--accent-ink`, **left-aligned** in a fixed `8rem`
   gutter (e.g. "JUN 02, 2026"). Left, not right, so the date text sits on the same left edge
   as the nav and the intro; the fixed gutter still keeps every title on one column.
 - **Title:** Display, `1.25rem`, bold, `--ink`; `--accent-ink` on hover.
@@ -229,10 +234,8 @@ editorial" experience.
 - Body in Georgia. Because the canvas is cream rather than stark white, reading 1,500+ words
   feels like reading a printed journal, enhancing the philosophical tone.
 
-**Reading measure:** essay body copy is capped at `68ch`, not the 1200px container. 1200px of
-Georgia at 18px is roughly 150 characters per line — far past the 45–75ch comfortable range,
-which would undercut the long-form reading this design exists to serve. The 1200px container
-governs the header and index grid; the article column is narrower and sits within it.
+**Reading measure:** `68ch` — and since 2026-09-20 the container itself is that width, so the
+header, the intro, the list and the article all share one column and one left edge.
 
 ---
 
