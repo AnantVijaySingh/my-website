@@ -558,3 +558,4 @@ worse than no log.
 | 2026-09-20 | L′ | `--measure` 68ch → 74ch (column + article); article body now `var(--measure)` | **148/148** | Still inside the 60–75ch reading range the test enforces. |
 | 2026-09-20 | L″ | `--measure` 74ch → 84ch; test ceiling 75 → 90ch (author preference; still blocks 150-char lines) | **148/148** | |
 | 2026-09-20 | 3″ | Header hairline removed | **148/148** | |
+| 2026-09-20 | 7′ | Quote copy/share icons matched to the About social icons: 24px, opacity 0.7, same gap | **148/148** | Same Feather family already. |
