@@ -395,7 +395,7 @@ main {
     letter-spacing: var(--tracking-caps);
     text-transform: uppercase;
     color: var(--accent-ink);
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-md);
 }
 
 /* Body copy. Everything markdown can emit is styled here explicitly — these

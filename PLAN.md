@@ -564,3 +564,4 @@ worse than no log.
 | 2026-09-20 | 7⁗ | About: first paragraph moved out of the hero into the prose; `.hero--label` (heading only, no bottom gap) | **148/148** | The 5rem intro→content gap belongs between intro and list, not between two paragraphs. |
 | 2026-09-20 | 7⁵ | Software: same treatment — intro sentence back with the principles it introduces; `.hero--label` | **148/148** | |
 | 2026-09-20 | 4′ | **Breadcrumbs removed** from essays; CSS, generator placeholder, spec and tests updated (absence asserted on all 23 pages) | **132/132** | **Record corrected:** the privacy policy never actually received breadcrumbs in Phase 7 — the script aborted before that step and no test covered it. |
+| 2026-09-20 | 6⁵ | Essay page: gap below the date 5rem → 2rem (the spec's header→body micro spacing) | **132/132** | |
