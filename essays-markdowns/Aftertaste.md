@@ -72,7 +72,7 @@ Many of the protests I've seen, where a community has come together to stand up 
 
 The app closes, but the conversation continues. That is perhaps the epitome of good aftertaste.
 
-
+---
 
 We all experience this aftertaste. We just don't have a language for it, let alone a metric.
 

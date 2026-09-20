@@ -77,7 +77,8 @@ shipping stale pages.
 ## Adding an essay
 
 1. Write it as Markdown in `essays-markdowns/`, e.g. `My-Essay.md`. Headings inside the
-   essay should start at `###` (the page's `<h1>` is the title).
+   essay should start at `###` (the page's `<h1>` is the title). For a section break without a
+   heading use `---` — Markdown collapses extra blank lines, so they do not add space.
 2. Add an entry to `data/essays.json`:
    ```json
    {

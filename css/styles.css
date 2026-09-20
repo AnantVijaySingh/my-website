@@ -579,8 +579,13 @@ main {
     margin: var(--space-lg) auto;
 }
 
+/* A thematic break (--- in Markdown) is a section-sized gap with no visible
+   rule: Markdown collapses blank lines, so this is how an essay marks a break
+   without a heading. */
 .essay-article__body hr {
-    margin: var(--space-xl) 0;
+    border: 0;
+    height: 0;
+    margin: var(--space-2xl) 0;
 }
 
 .essay-article__body strong {
