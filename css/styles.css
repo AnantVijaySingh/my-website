@@ -629,10 +629,8 @@ main {
     opacity: 1;
 }
 
-.quote-copy:hover,
-.quote-copy:focus-visible {
-    text-decoration: underline;
-    text-underline-offset: 0.15em;
+.quote-copy:hover {
+    color: var(--ink);
 }
 
 @media (hover: none) {

@@ -560,3 +560,4 @@ worse than no log.
 | 2026-09-20 | 3″ | Header hairline removed | **148/148** | |
 | 2026-09-20 | 7′ | Quote copy/share icons matched to the About social icons: 24px, opacity 0.7, same gap | **148/148** | Same Feather family already. |
 | 2026-09-20 | 7″ | Quote copy icon → “COPY” text `<button>`, revealed on hover/focus, always visible on touch; coverage scanner now strips JS comments | **148/148** | Was an `<img>` with a click handler — unreachable by keyboard. |
+| 2026-09-20 | 7‴ | COPY: no underline on hover (darkens to ink instead) | **148/148** | |
