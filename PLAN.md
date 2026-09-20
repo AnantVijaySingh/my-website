@@ -567,3 +567,4 @@ worse than no log.
 | 2026-09-20 | 6⁵ | Essay page: gap below the date 5rem → 2rem (the spec's header→body micro spacing) | **132/132** | |
 | 2026-09-20 | 3‴ | **Priority+ nav** (`ts/nav.ts`, zero deps): overflow → “…” dropdown, Time collapses first; mobile list date 0.875rem | **132/132** | No-JS fallback: links wrap. |
 | 2026-09-20 | 3⁗ | “…” button is Feather `more-horizontal`, inline SVG, 24px, opacity 0.7 — same as the About social icons | **132/132** | Inline + `currentColor`, so no dark-mode filter needed. |
+| 2026-09-20 | L‴ | `scrollbar-gutter: stable` on `html` — header/column no longer shifts between scrolling and non-scrolling pages | **136/136** | |
