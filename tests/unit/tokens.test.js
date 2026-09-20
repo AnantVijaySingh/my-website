@@ -264,7 +264,7 @@ test('dark-scoped rules only invert line icons — every colour difference is a 
         .filter((rule) => !/\bimg\b/.test(rule.selector) || !/^\s*filter\s*:/m.test(rule.body.trim()))
         .map((rule) => rule.selector);
     assert.deepEqual(offenders, [], `Dark-only overrides that should be tokens:\n  ${offenders.join('\n  ')}`);
-    assert.ok(darkScoped.length >= 3, 'expected icon inversions for essay actions, quote buttons and social links');
+    assert.ok(darkScoped.length >= 2, 'expected icon inversions for essay actions and social links');
 });
 
 test('artwork and author images are never inverted in dark mode', () => {

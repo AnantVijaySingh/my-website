@@ -210,8 +210,8 @@ One runtime dependency (`marked`, zero transitive deps) and two dev dependencies
 ## Known debt
 
 - `finds.html` is an unstyled 10-line stub, unlinked from the nav but present in the sitemap.
-- `icons/{book,clock,pen-tool,terminal,user}.svg` and `icons/favicon.svg` are unreferenced
-  since the icon nav was retired.
+- `icons/{book,clock,pen-tool,terminal,user}.svg` (icon nav retired), `icons/{copy,share}.svg`
+  (quote actions are text now) and `icons/favicon.svg` are unreferenced.
 - `For_AI.md` describes the previous design.
 
 ---

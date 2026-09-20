@@ -40,14 +40,14 @@ function loadQuotes() {
             const quoteAuthor = document.createElement('p');
             quoteAuthor.className = 'quote-author';
             quoteAuthor.textContent = quote.author ? `${quote.author}` : '';
-            const iconsContainer = document.createElement('div');
-            iconsContainer.className = 'quote-icons';
-            const copyIcon = document.createElement('img');
-            copyIcon.className = 'quote-copy';
-            copyIcon.src = 'icons/copy.svg'; // Path to the copy SVG
-            copyIcon.alt = 'Copy';
-            copyIcon.title = 'Copy Quote';
-            copyIcon.addEventListener('click', () => {
+            // A real <button>, so it is reachable by keyboard as well as pointer.
+            // Revealed on hover/focus of the quote by CSS; always visible on touch.
+            const copyButton = document.createElement('button');
+            copyButton.type = 'button';
+            copyButton.className = 'quote-copy';
+            copyButton.textContent = 'Copy';
+            copyButton.setAttribute('aria-label', 'Copy quote');
+            copyButton.addEventListener('click', () => {
                 navigator.clipboard.writeText(quote.text);
                 showToast('Quote copied to clipboard!');
             });
@@ -63,10 +63,8 @@ function loadQuotes() {
             //     navigator.clipboard.writeText(shareUrl);
             //     showToast('Share link copied to clipboard!');
             // });
-            iconsContainer.appendChild(copyIcon);
-            // iconsContainer.appendChild(shareIcon);
             quoteMeta.appendChild(quoteAuthor);
-            quoteMeta.appendChild(iconsContainer);
+            quoteMeta.appendChild(copyButton);
             quoteDiv.appendChild(quoteText);
             quoteDiv.appendChild(quoteMeta);
             quotesContainer.appendChild(quoteDiv);

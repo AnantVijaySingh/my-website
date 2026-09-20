@@ -49,7 +49,12 @@ function loadedScripts() {
     return [...files].sort();
 }
 
-function classesInScript(source) {
+function stripJsComments(source) {
+    return source.replace(/\/\*[\s\S]*?\*\//g, '').replace(/(^|[^:'"`])\/\/.*$/gm, '$1');
+}
+
+function classesInScript(rawSource) {
+    const source = stripJsComments(rawSource);
     const found = new Set();
     const patterns = [
         /\.className\s*=\s*['"`]([^'"`]+)['"`]/g,

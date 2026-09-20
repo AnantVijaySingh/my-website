@@ -607,42 +607,38 @@ main {
     margin: 0;
 }
 
-/* Same treatment as the social icons on the About page. */
-.quote-icons {
-    display: flex;
-    gap: var(--space-sm);
-}
-
-.quote-icons img {
-    width: 24px;
-    height: 24px;
+/* "Copy" appears when the quote is hovered or focused. Touch has no hover,
+   so there it is always visible rather than an invisible tap target. */
+.quote-copy {
+    background: none;
+    border: 0;
+    padding: 0.25rem 0;
     cursor: pointer;
-    opacity: 0.7;
-    transition: opacity 0.2s ease;
-    vertical-align: middle;
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: var(--tracking-caps);
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    opacity: 0;
+    transition: opacity 0.15s ease;
 }
 
-.quote-icons img:hover {
+.quote-item:hover .quote-copy,
+.quote-item:focus-within .quote-copy {
     opacity: 1;
 }
 
-[data-theme="dark"] .quote-icons img {
-    filter: invert(0.9);
-}
-
-.quote-copy,
-.quote-share {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    color: var(--ink-muted);
-    line-height: 0;
-}
-
 .quote-copy:hover,
-.quote-share:hover {
-    color: var(--accent-ink);
+.quote-copy:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+}
+
+@media (hover: none) {
+    .quote-copy {
+        opacity: 1;
+    }
 }
 
 .toast {
