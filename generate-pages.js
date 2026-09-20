@@ -66,6 +66,7 @@ essays.forEach((essay) => {
         .replace(/{{title}}/g, () => safeTitle)
         .replace(/{{breadcrumb-title}}/g, () => safeTitle)
         .replace(/{{date}}/g, () => formattedDate)
+        .replace(/{{iso-date}}/g, () => essay.date)
         .replace(/{{content}}/g, () => htmlContent)
         .replace(/{{canonical-link}}/g, () => canonicalLink)
         .replace(/{{email-link}}/g, () => emailLink)

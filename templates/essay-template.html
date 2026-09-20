@@ -43,26 +43,24 @@
       <li aria-current="page">{{breadcrumb-title}}</li>
     </ol>
   </nav>
-  <article class="essay-container">
+  <article class="essay-article">
     <h1>{{title}}</h1>
-    <p class="essay-date">{{date}}</p>
+    <time class="essay-article__date" datetime="{{iso-date}}">{{date}}</time>
 
-    <section class="essay-content">
+    <section class="essay-article__body">
       {{content}}
     </section>
 
-    <div class="essay-actions">
-      <div class="essay-actions">
-        <a href="{{email-link}}" class="email-feedback">
-          <img src="../icons/email.svg" alt="Email" class="icon">
-          Email me your feedback/comments
-        </a>
-        <a href="../index.html" class="back-to-essays">
-          <img src="../icons/arrow-left.svg" alt="Back" class="icon">
-          Go back to essay list
-        </a>
-      </div>
-    </div>
+    <footer class="essay-article__actions">
+      <a href="{{email-link}}">
+        <img src="../icons/email.svg" alt="">
+        Email me your feedback/comments
+      </a>
+      <a href="../index.html">
+        <img src="../icons/arrow-left.svg" alt="">
+        Go back to essay list
+      </a>
+    </footer>
   </article>
 </main>
 <div class="toggle-container">
