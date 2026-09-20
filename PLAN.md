@@ -562,3 +562,4 @@ worse than no log.
 | 2026-09-20 | 7″ | Quote copy icon → “COPY” text `<button>`, revealed on hover/focus, always visible on touch; coverage scanner now strips JS comments | **148/148** | Was an `<img>` with a click handler — unreachable by keyboard. |
 | 2026-09-20 | 7‴ | COPY: no underline on hover (darkens to ink instead) | **148/148** | |
 | 2026-09-20 | 7⁗ | About: first paragraph moved out of the hero into the prose; `.hero--label` (heading only, no bottom gap) | **148/148** | The 5rem intro→content gap belongs between intro and list, not between two paragraphs. |
+| 2026-09-20 | 7⁵ | Software: same treatment — intro sentence back with the principles it introduces; `.hero--label` | **148/148** | |
