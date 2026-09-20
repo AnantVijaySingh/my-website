@@ -64,7 +64,6 @@ essays.forEach((essay) => {
     const safeTitle = escapeHtml(essay.title);
     const outputHTML = template
         .replace(/{{title}}/g, () => safeTitle)
-        .replace(/{{breadcrumb-title}}/g, () => safeTitle)
         .replace(/{{date}}/g, () => formattedDate)
         .replace(/{{iso-date}}/g, () => essay.date)
         .replace(/{{content}}/g, () => htmlContent)

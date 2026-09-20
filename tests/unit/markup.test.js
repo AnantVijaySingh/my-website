@@ -73,34 +73,13 @@ for (const page of allPages()) {
     });
 }
 
-// ─── Breadcrumbs on every essay ─────────────────────────────────────────────
+// ─── No breadcrumbs (removed by author decision, 2026-09-20) ────────────────
 
-for (const essay of essays()) {
-    test(`breadcrumbs: ${essay.slug}`, () => {
-        const doc = read(essay.absolutePath);
-        const crumbsNav = /<nav\b[^>]*aria-label="Breadcrumb"[^>]*>([\s\S]*?)<\/nav>/i.exec(doc);
-        assert.ok(crumbsNav, 'missing <nav aria-label="Breadcrumb">');
-        assert.ok(/class="[^"]*\bbreadcrumbs\b/.test(crumbsNav[0]), 'breadcrumb nav needs class="breadcrumbs"');
-
-        const items = [...crumbsNav[1].matchAll(/<li\b([^>]*)>([\s\S]*?)<\/li>/gi)]
-            .map((m) => ({ attrs: m[1], inner: m[2], text: html.text(m[2]) }));
-        assert.equal(items.length, 3, `expected 3 crumbs, got ${items.length}`);
-
-        assert.equal(items[0].text, 'Anant Vijay');
-        assert.ok(items[0].inner.includes('href="../about.html"'), 'first crumb → ../about.html');
-        assert.equal(items[1].text, 'Essays');
-        assert.ok(items[1].inner.includes('href="../index.html"'), 'second crumb → ../index.html');
-
-        // Current page: plain text (no link), aria-current, and HTML-escaped —
-        // "Momentum > Motivation" must not inject a raw ">" (PLAN.md R4).
-        assert.equal(items[2].text, essay.title, 'last crumb must be the essay title');
-        assert.ok(/aria-current="page"/.test(items[2].attrs), 'last crumb needs aria-current="page"');
-        assert.equal(html.countTags(items[2].inner, 'a'), 0, 'current page must not be a link');
-        if (essay.title.includes('>')) {
-            assert.ok(items[2].inner.includes('&gt;'), 'title ">" must be escaped as &gt;');
-        }
-    });
-}
+test('no page carries breadcrumbs', () => {
+    for (const page of allPages()) {
+        assert.ok(!/aria-label="Breadcrumb"/.test(read(page.absolutePath)), `${page.relativePath} still has breadcrumbs`);
+    }
+});
 
 // ─── Essay article: namespaced, collision-free (PLAN.md R1) ────────────────
 
@@ -205,8 +184,6 @@ test('templates carry the same header contract as the generated output', () => {
         assert.ok(/class="site-header"/.test(tpl), `${rel}: site-header`);
         assert.ok(/class="site-nav"/.test(tpl), `${rel}: site-nav`);
     }
-    const essayTpl = fs.readFileSync(path.join(ROOT, 'templates/essay-template.html'), 'utf-8');
-    assert.ok(essayTpl.includes('{{breadcrumb-title}}'), 'essay template needs a {{breadcrumb-title}} placeholder');
 });
 
 // Keep staticPages referenced so the list is exercised even if allPages changes.

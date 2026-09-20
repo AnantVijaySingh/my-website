@@ -204,7 +204,7 @@ only — the nav is *supposed* to change, and gets its own expectations in `mark
 | Component | Classes |
 |---|---|
 | Header | `.site-header` › `.site-header__inner` › `.site-nav` › `a` ×5, `a.active[aria-current=page]` |
-| Breadcrumbs | `nav.breadcrumbs[aria-label=Breadcrumb]` › `ol` › `li` ×3, last `[aria-current=page]` |
+| Breadcrumbs | — removed 2026-09-20 |
 | Index hero | `section.hero` › `h1.hero__title` (visually hidden), `p.hero__intro` |
 | Index list | `ul.essay-list` › `li.essay-list__item` › `time.essay-list__date`, `.essay-list__body` › `a.essay-list__title`, `p.essay-list__snippet` |
 | Essay page | `article.essay-article` › `.essay-article__date`, `section.essay-article__body`, `.essay-article__actions` |
@@ -369,7 +369,7 @@ fail, baseline byte-identical across all 17 bodies.
       that do not exist)
 - [x] `software.html` — principles labels in display face, app card above a hairline
 - [x] `time.html` — hairlines between activity rows
-- [x] Privacy policy — **breadcrumbs added** (`ANANT VIJAY > SOFTWARE > PRIVACY POLICY`)
+- [~] Privacy policy — breadcrumbs were **claimed** added here but the edit never ran (script aborted earlier); nothing tested for it. Corrected 2026-09-20; moot since breadcrumbs were then removed site-wide.
 - [x] **Judgment call:** all reading columns (incl. the essay article and its breadcrumbs) are
       now **left-aligned to the hero's edge** rather than centred, so every page shares one
       alignment. One line each to revert (`margin: 0` → `margin: 0 auto`).
@@ -563,3 +563,4 @@ worse than no log.
 | 2026-09-20 | 7‴ | COPY: no underline on hover (darkens to ink instead) | **148/148** | |
 | 2026-09-20 | 7⁗ | About: first paragraph moved out of the hero into the prose; `.hero--label` (heading only, no bottom gap) | **148/148** | The 5rem intro→content gap belongs between intro and list, not between two paragraphs. |
 | 2026-09-20 | 7⁵ | Software: same treatment — intro sentence back with the principles it introduces; `.hero--label` | **148/148** | |
+| 2026-09-20 | 4′ | **Breadcrumbs removed** from essays; CSS, generator placeholder, spec and tests updated (absence asserted on all 23 pages) | **132/132** | **Record corrected:** the privacy policy never actually received breadcrumbs in Phase 7 — the script aborted before that step and no test covered it. |

@@ -44,7 +44,6 @@ Run for **all 17 essays**. Record results in the matrix in `PLAN.md` §8.
 | 3 | **Body copy is Georgia** | Serif, not a sans fallback. If it looks like Arial, the stack is broken. |
 | 4 | **Headings are Space Grotesk** | Geometric sans. If it's Georgia, the webfont failed to load. |
 | 5 | **H1 matches the title** | Same text as `data/essays.json`. |
-| 6 | **Breadcrumb** | Reads `ANANT VIJAY > ESSAYS > <TITLE>`, last crumb in orange. |
 | 7 | **Scroll the whole essay** | `h3`/`h4`, lists, blockquotes all styled — no browser-default artifacts mid-page. This is the one most likely to be missed. |
 | 8 | **Images render** | Only essays 10 and 17. Broken-image icon = path regression. |
 | 9 | **375px: no horizontal scrollbar** | The single most likely failure of this redesign. Resize and try to scroll sideways. |

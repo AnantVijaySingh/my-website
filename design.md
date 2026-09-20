@@ -96,7 +96,7 @@ and a classic serif.
 
 ### Primary Display (Space Grotesk)
 
-- Usage: Site logo, main navigation, breadcrumbs, H1/H2 headers, dates, and UI labels.
+- Usage: Main navigation, H1/H2 headers, dates, and UI labels.
 - Styling: Often `text-transform: uppercase` with bold weights (700) for massive headers.
 - Letter spacing: slight tracking (`0.05em`) on uppercase Space Grotesk for clarity.
 
@@ -113,7 +113,6 @@ and a classic serif.
 | H2 (in-essay) | Display | `clamp(1.5rem, 3vw, 2rem)` | 700 | none |
 | H3 (in-essay) | Display | `1.25rem` | 700 | none |
 | Nav link | Display | `0.875rem` | 500 | uppercase, `0.05em` |
-| Breadcrumb | Display | `0.75rem` | 500 | uppercase, `0.05em` |
 | Date / meta | Display | `0.75rem` | 500 | uppercase, `0.05em` |
 | List title | Display | `1.25rem` | 700 | none |
 | List date | Display | `1rem` | 500 | uppercase, `0.05em` |
@@ -180,11 +179,8 @@ dead space on a phone reads as a broken page, not a premium one.
 
 ### Breadcrumbs
 
-- **Format:** `ANANT VIJAY > ESSAYS > GOOD FRICTION`
-- **Styling:** Space Grotesk, 12px, uppercase, `0.05em` tracking. Separators are `--ink-muted`;
-  the current (last) page is `--accent-ink`.
-- **Markup:** `<nav aria-label="Breadcrumb"><ol>…</ol></nav>` with the current crumb carrying
-  `aria-current="page"`. Separators are CSS pseudo-elements so they are not read aloud.
+None. Breadcrumbs (`ANANT VIJAY > ESSAYS > TITLE`) were implemented on the essay pages and
+removed by the author on 2026-09-20. The nav already marks the section.
 
 ### Typography Hierarchy (the "Hero" section)
 
@@ -229,7 +225,6 @@ editorial" experience.
 
 ### The Essay Reading Page
 
-- Breadcrumb component at the very top: `ANANT VIJAY > ESSAYS > MOMENTUM > MOTIVATION`.
 - Essay title in bold, uppercase Space Grotesk, sized to sit above the text rather than dominate it.
 - Body in Georgia. Because the canvas is cream rather than stark white, reading 1,500+ words
   feels like reading a printed journal, enhancing the philosophical tone.

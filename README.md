@@ -132,7 +132,7 @@ Must be green at every commit. It proves the site still *says* what it said:
 - **Token discipline** — no raw hex outside `:root` / `[data-theme="dark"]`, no colour
   keywords, no legacy blue. A dark-mode rule may only invert a line icon; a colour that dark
   needs and light does not is a missing token, not an override.
-- **Markup contracts** — the header on all 23 pages, breadcrumbs on all 17 essays,
+- **Markup contracts** — the header on all 23 pages, no breadcrumbs,
   namespaced article classes, the hero and 17-row essay list, `data-theme` set before first paint.
 - **Coverage** — every class the pages emit has a CSS rule, and every class selector matches
   something emitted. This is what catches "renamed the class in the generator, forgot the
