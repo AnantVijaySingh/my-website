@@ -685,6 +685,7 @@
         "quotes.html",
         "software.html",
         "software/focustodoprivacypolicy.html",
+        "software/securenotebookprivacypolicy.html",
         "time.html"
       ]
     },
@@ -725,6 +726,21 @@
     {
       "page": "software/focustodoprivacypolicy.html",
       "titleTag": "Focus To-Do Privacy Policy - Anant Vijay",
+      "refs": [
+        "../about.html",
+        "../css/styles.css",
+        "../index.html",
+        "../js/nav.js",
+        "../js/toggle.js",
+        "../quotes.html",
+        "../software.html",
+        "../time.html",
+        "/icons/favicon.ico"
+      ]
+    },
+    {
+      "page": "software/securenotebookprivacypolicy.html",
+      "titleTag": "Secure Notebook Privacy Policy - Anant Vijay",
       "refs": [
         "../about.html",
         "../css/styles.css",

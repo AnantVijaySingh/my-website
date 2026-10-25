@@ -198,5 +198,5 @@ test('templates carry the same header contract as the generated output', () => {
 
 // Keep staticPages referenced so the list is exercised even if allPages changes.
 test('static page list is intact', () => {
-    assert.equal(staticPages().length, 6);
+    assert.equal(staticPages().length, 7);
 });

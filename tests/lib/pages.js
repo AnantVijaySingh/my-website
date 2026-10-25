@@ -22,6 +22,7 @@ const STATIC_PAGES = [
     'time.html',
     'about.html',
     'software/focustodoprivacypolicy.html',
+    'software/securenotebookprivacypolicy.html',
 ];
 
 function slugOf(markdownFilename) {
@@ -53,7 +54,7 @@ function staticPages() {
     }));
 }
 
-/** Every page the design system is responsible for: 6 static + 17 essays. */
+/** Every page the design system is responsible for: 7 static + 17 essays. */
 function allPages() {
     return [
         ...staticPages(),

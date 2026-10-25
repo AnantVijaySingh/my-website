@@ -796,10 +796,16 @@ main {
     border-top: 1px solid var(--rule);
 }
 
-.software-icon img {
+.software-icon img,
+.software-icon__placeholder {
     width: 100px;
     height: 100px;
     border-radius: 22%;
+}
+
+.software-icon__placeholder {
+    box-sizing: border-box;
+    border: 1px dashed var(--rule);
 }
 
 .software-content {
